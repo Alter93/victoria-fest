@@ -1,6 +1,72 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
 {{ error }}
+
+<br>
+<br>
 <form action="/registro" method="post">
     {% csrf_token %}
-    {{ form }}
+    <li><label for="id_nombre">Nombre:</label> <input type="text" name="nombre" maxlength="100" required id="id_nombre"></li>
+    <li><label for="id_apellido">Apellido:</label> <input type="text" name="apellido" maxlength="100" required id="id_apellido"></li>
+    <li><label for="id_email">Email:</label> <input type="email" name="email" required id="id_email"></li>
+    <li><label for="id_genero">Genero:</label> <select name="genero" id="id_genero">
+      <option value="M">Masculino</option>
+
+      <option value="F">Femenino</option>
+
+      <option value="No Binario">No binario</option>
+
+      <option value="NA">Prefiero no decir.</option>
+
+    </select></li>
+    <li><label for="id_telefono">Telefono:</label> <input type="tel" name="telefono" maxlength="11" required id="phone"></li>
+    <div class="alert alert-info" style="display: none;"></div>
+    <div class="alert alert-error" style="display: none;"></div>
+    <li><label for="id_lugar">Lugar:</label> <input type="text" name="lugar" maxlength="100" required id="id_lugar"></li>
+    <li><label for="id_recibir_correos">Recibir correos:</label> <input type="checkbox" name="recibir_correos" id="id_recibir_correos"></li>
+    <li><label for="id_emprendedor">Emprendedor:</label> <select name="emprendedor" id="id_emprendedor">
+      <option value="No">No, no soy emprendedor/a.</option>
+
+      <option value="Tengo una idea de negocio.">Tengo una idea de negocio.</option>
+
+      <option value="Acabo de iniciar un negocio (menos de 2 años).">Acabo de iniciar un negocio (menos de 2 años).</option>
+
+      <option value="Tengo un negocio en crecimiento (2 a 5 años).">Tengo un negocio en crecimiento (2 a 5 años).</option>
+
+      <option value="Tengo un negocio en expansión (más de 5 años).">Tengo un negocio en expansión (más de 5 años).</option>
+
+    </select></li>
     <input type="submit" value="Registrarme"></input>
 </form>
+
+<script>
+      // Handle international prefixes, format phone input field
+      // Uses intl-tel-input plugin
+      const phoneInputField = document.querySelector("#phone");
+      const phoneInput = window.intlTelInput(phoneInputField, {
+        // https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+        preferredCountries: ["mx", "us"],
+        utilsScript:
+          "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+      });
+
+      const info = document.querySelector(".alert-info");
+      const error = document.querySelector(".alert-error");
+
+      function process(event) {
+        event.preventDefault();
+        const phoneNumber = phoneInput.getNumber();
+        info.style.display = "none";
+        error.style.display = "none";
+
+        if (phoneInput.isValidNumber()) {
+          info.style.display = "";
+          info.innerHTML = `Phone number in E.164 format: <strong>${phoneNumber}</strong>`
+        } else {
+          error.style.display = "";
+          error.innerHTML = `Invalid phone number.`
+        }
+      }
+      const form = document.getElementById("registro");
+    </script>

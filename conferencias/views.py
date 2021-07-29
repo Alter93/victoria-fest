@@ -21,7 +21,6 @@ def prerregistro(request):
                     apellido = form.cleaned_data.get('apellido'),
                     email = form.cleaned_data.get('email'),
                     genero = form.cleaned_data.get('genero'),
-                    codigo_pais = form.cleaned_data.get('codigo_pais'),
                     telefono = form.cleaned_data.get('telefono'),
                     lugar = form.cleaned_data.get('lugar'),
                     recibir_correos = form.cleaned_data.get('recibir_correos'),
@@ -30,11 +29,10 @@ def prerregistro(request):
                 registro.save()
                 form = PrerregistroForm()
                 return render(request, 'prerregistro.html', {
-                    "form": form.as_ul(),
                     "error": "Registro guardado con éxito."
                  })
         else:
-            return render(request, 'prerregistro.html', { "form": form.as_ul(), "error": ""})
+            return render(request, 'prerregistro.html', {"error": ""})
     else:
         form = PrerregistroForm()
-        return render(request, 'prerregistro.html', { "form": form.as_ul(), "error": ""})
+        return render(request, 'prerregistro.html', {"error": ""})

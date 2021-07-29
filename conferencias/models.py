@@ -23,7 +23,7 @@ class Prerregistro(models.Model):
     email = models.EmailField(unique=True)
     genero = models.CharField(max_length=20)
     codigo_pais = models.CharField(max_length=4)
-    telefono = models.CharField(max_length=11)
+    telefono = models.CharField(max_length=16)
     lugar = models.CharField(max_length=100)
     recibir_correos = models.BooleanField()
     emprendedor = models.CharField(max_length=100)

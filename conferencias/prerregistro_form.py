@@ -35,11 +35,8 @@ class PrerregistroForm(forms.Form):
     )
     genero = forms.ChoiceField(choices = genero_choices)
 
-    codigo_pais = forms.CharField(max_length=4,error_messages={
-        'invalid': 'Selecciona un código de pais.'
-    })
-    telefono = forms.CharField(max_length=11, error_messages={
-        'required': 'Ingresa un número telefónico (10 digitos)'
+    telefono = forms.CharField(max_length=15, error_messages={
+        'required': 'Ingresa un número telefónico valido.'
     })
 
     lugar = forms.CharField(max_length=100, error_messages={
