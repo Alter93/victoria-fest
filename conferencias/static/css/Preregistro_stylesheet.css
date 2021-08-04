@@ -1,0 +1,339 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Univers LT Std', sans-serif;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+
+.bold {
+    font-family: 'Univers LT Std bold', sans-serif;
+    font-weight: bold;
+}
+
+.boldextended {
+    font-family: 'Univers LT Std boldex', sans-serif;
+    font-weight: bold;
+}
+
+.extended {
+    font-family: 'Univers LT Std ex', sans-serif;
+    font-weight: normal;
+}
+
+.light {
+    font-family: 'Univers LT Std lightcn', sans-serif;
+    font-weight: lighter;
+}
+
+
+.textoScroll {
+    min-height: 10vh;
+    overflow: hidden;
+    position: relative;
+    background: #F082EA;
+    color: #00B774;
+    border: 2px solid #000000;
+}
+
+.textoScroll p {
+    text-transform: uppercase;
+    font-size: 10vh;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    line-height: 1em;
+    text-align: center;
+    /* Starting position */
+    transform: translateX(100%);
+    /* Apply animation to this element */
+    animation: scroll-left 15s linear infinite;
+}
+
+/* Move it (define the animation) */
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+figure img {
+    padding: 0;
+    margin: 0;
+}
+
+.mainContent {
+    background-color: #770BE8;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.contentMainColumns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    min-height: 80vh;
+
+}
+
+.column1 {
+    width: 30vw;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+.deco2 {
+    position: absolute;
+    left: 0;
+    top: 10%;
+}
+
+.deco2 img {
+    max-height: 80px;
+}
+
+.logoNow {
+    position: absolute;
+    left: 70px;
+    bottom: 70px;
+}
+
+.logoNow img {
+    max-height: 420px;
+}
+
+.column2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    width: 70vw;
+    align-items: flex-start;
+}
+
+.contenedorAmarillo {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.fechas {
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.fechas figure {
+    padding: -1px;
+    margin: 0 -1px;
+}
+
+.fechas figure img {
+    height: 501px;
+}
+
+.BotonUnirse {
+    width: 50vw;
+    background-color: #FFC802;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.BotonUnirse button {
+    background-color: #00B774;
+    box-shadow: #770BE8 6px 6px;
+    font-size: 3em;
+    color: white;
+    border: none;
+    padding: 25px 35px;
+    cursor: pointer;
+}
+
+.BotonUnirse button:active,
+.BotonUnirse button:hover {
+    background-color: #770BE8;
+    box-shadow: #00B774 6px 6px;
+}
+
+
+.contactoRS {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0 0 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.contactoRS h2 {
+    font-size: 6em;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #F7582A;
+    color: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+.deco3 img {
+    height: 200px;
+}
+
+.RedesSociales {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+.RedesSociales div {
+    padding-top: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.contactoRS a {
+    color: #F7582A;
+    font-size: 1.7em;
+}
+
+
+
+
+.footerVictoriafest {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: black;
+    margin: 0;
+    min-height: 10vh;
+}
+
+.logoVictoria img {
+    height: 75px;
+    margin-top: 15px;
+}
+
+
+.formularioModal {
+    background-color: #F0F0F0;
+    width: 50vw;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.formularioModal h2 {
+    position: absolute;
+    left: 95%;
+    transform-origin: top left;
+    transform: rotate(90deg);
+    top: 0%;
+    font-size: 17vh;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #F7582A;
+    color: transparent;
+    font-family: 'Univers LT Std bold', sans-serif;
+}
+
+.formularioModal .cross {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+
+}
+
+.formContainer {
+    color: #F7582A;
+    max-width: 600px;
+}
+
+.formContainer p {
+    width: 80%;
+    max-width: 400px;
+    font-size: 1.2em;
+    padding: 10px 0;
+}
+
+.formContainer form input {
+    color: #F7582A;
+    border: 1px #F7582A solid;
+    padding: 0 0 0 20px;
+    width: 400px;
+    height: 50px;
+    font-family: 'Univers LT Std ex', sans-serif;
+    font-weight: normal;
+}
+
+.formContainer form input::placeholder {
+    color: #F7582A;
+}
+
+.formContainer form select {
+    color: #F7582A;
+    border: 1px #F7582A solid;
+    padding: 0 0 0 20px;
+    width: 400px;
+    height: 50px;
+    text-transform: uppercase;
+    font-family: 'Univers LT Std ex', sans-serif;
+    font-weight: normal;
+}
+
+.botonSubmit {
+    background-color: #F7582A;
+    font-size: 2.5em;
+    color: white! important;
+    border: none;
+    padding: 25px 35px;
+    cursor: pointer;
+    font-family: 'Univers LT Std bold', sans-serif !important;
+    font-weight: bold;
+    width: 400px;
+    height: 100px !important;
+    margin-top: 40px
+}
+
+
+.botonSubmit:active,
+.botonSubmit:hover {
+    background-color: #770BE8;
+}
+
+
+
+.hidden {
+    display: none;
+}

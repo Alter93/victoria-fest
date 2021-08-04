@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Univers LT Std boldex';
+    src: url('UniversLTStd-BoldEx.woff2') format('woff2'),
+        url('UniversLTStd-BoldEx.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Univers LT Std ex';
+    src: url('UniversLTStd-Ex.woff2') format('woff2'),
+        url('UniversLTStd-Ex.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Univers LT Std bold';
+    src: url('UniversLTStd-Bold.woff2') format('woff2'),
+        url('UniversLTStd-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Univers LT Std lightcn';
+    src: url('UniversLTStd-LightCn.woff2') format('woff2'),
+        url('UniversLTStd-LightCn.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
