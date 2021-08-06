@@ -4,7 +4,7 @@ body {
     font-family: 'Univers LT Std', sans-serif;
     font-size: 16px;
     overflow-x: hidden;
-    
+
 }
 
 ::selection {
@@ -424,26 +424,26 @@ margin: 0;
 
 
 /* X-Large devices (large desktops, less than 1400px) */
-@media (max-width: 1399.98px) { 
-    
-    
+@media (max-width: 1399.98px) {
+
+
     .formularioModal {
     width: 70vw !important;
     }
-    
+
     .formularioModal .cross img{
     width:70px;
     height: 70px;
     }
-    
+
     .fechas figure img {
     height: 400px;
     }
-    
+
     .BotonUnirse{
         height: auto;
     }
-    
+
     .logoNow{
     left: 50px;
     bottom: 50px;
@@ -451,11 +451,11 @@ margin: 0;
     .logoNow img{
         height: 350px;
     }
-    
+
 
 /* Large devices (desktops, less than 1200px) */
-@media (max-width: 1199.98px) { 
-    
+@media (max-width: 1199.98px) {
+
     .contentMainColumns{
         flex-wrap:wrap;
         height: auto;
@@ -465,23 +465,23 @@ margin: 0;
         height: 520px;
         justify-content: center;
     }
-    
+
      .logoNow{
    margin: 0 auto;
     position: inherit;
     margin-top: 80px;
     }
-    
+
     .deco2{
         bottom: -56px !important;
         top: auto;
     }
-    
+
     .column2{
         width: 100% !important;
          flex-wrap:wrap;
     }
-    
+
     .contenedorAmarillo{
         width: 100%;
     }
@@ -494,12 +494,12 @@ margin: 0;
         top: 80px;
         right: 0;
     }
-    
+
     .contactoRS{
         height: 320px
     }
-    
-    
+
+
 .formularioModal {
     width: 70vw !important;
     }
@@ -507,8 +507,8 @@ margin: 0;
 
 
 /* Medium devices (tablets, less than 992px) */
-@media (max-width: 991.98px) { 
-    
+@media (max-width: 991.98px) {
+
     .formularioModal {
     width: 100% !important;
     }
@@ -518,12 +518,12 @@ margin: 0;
 
 
 /* Small devices (landscape phones, less than 768px) */
-@media (max-width: 767.98px) { 
+@media (max-width: 767.98px) {
 
     .formularioModal h2{
         display: none;
     }
-    
+
      .formularioModal .cross  {
     right: 20px !important;
          left: auto;
@@ -534,68 +534,68 @@ margin: 0;
         height: 520px;
         justify-content:flex-start;
     }
-    
+
     .logoNow{
    margin: 0 auto;
     position: inherit;
     margin-top: 60px;
         margin-left: 40px
     }
-    
+
     .logoVictoria img {
     height: 45px;
     margin-top: 25px;
         margin-bottom: 25px;
 }
-    
+
 }
 
 
 
 /* X-Small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) { 
-       
-    
+@media (max-width: 575.98px) {
+
+
     .textoScroll {
         min-height: 8vh !important ;
     }
-    
+
     .animate-text span{
         font-size: 8vh;
     }
-    
+
     .column1{
         height: 360px;
-   
+
     }
-    
+
     .fechas {
         position: absolute;
         top: 65px;
         right: 0;
     }
-    
+
     .fechas img{
         height: 250px !important;
     }
-    
+
     .logoNow{
    margin: 0 auto;
     position: inherit;
     margin-top: 20px;
     margin-left: 20px
     }
-    
+
     .logoNow img{
         height: 230px
     }
-    
+
     .contactoRS h2 {
         font-size: 4.4em;
         text-align: right;
     }
-    
-    
+
+
     .formContainer {
     max-width: 300px;
     padding-top: 50px
@@ -604,42 +604,42 @@ margin: 0;
 .formContainer form{
     max-width: 300px;
 }
-    
+
     .formContainer form input{
         width: 300px;
          height: 40px;
             padding: 0 0 0 10px;
     }
-    
+
     .formContainer form select {
     padding: 0 0 0 10px;
     width: 300px;
     height: 40px;
 }
-    
+
     .checkCorreos{
         width: 250px;
     }
-    
+
     .botonSubmit {
     background-color: #F7582A;
     font-size: 2em;
     cursor: pointer;
     width: 250px;
     height: 75px !important;
-    margin-top:15px;    
+    margin-top:15px;
 }
     .formContainer p{
             width: 100%;
         }
-    
+
     .RedesSociales div {
     padding-top: 25px;
     flex-direction: column;
     flex-wrap:wrap;
     align-items: center;
 }
-    
+
     .BotonUnirse button {
     background-color: #00B774;
     box-shadow: #770BE8 6px 6px;
@@ -653,7 +653,10 @@ margin: 0;
     .BotonUnirse{
         margin-bottom: 25px
     }
-    
-     
-}
 
+
+}
+.botonSubmit:disabled {
+  opacity: 50%;
+  pointer-events: true;
+}

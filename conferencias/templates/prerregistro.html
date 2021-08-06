@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Victoria Fest 2021 / Registro</title>
@@ -120,7 +120,11 @@
                         <label for="recibir_correos">Sí</label>
                         <input type="checkbox" name="recibir_correos" id="id_recibir_correos">
                     </div>
-                    <input class="botonSubmit " type="submit" value="UNIRME" disabled />
+
+                    <span class="d-inline-block" tabindex="0" id="tooltipbtn" data-bs-toggle="tooltip" data-bs-placement="left" title="Llena los campos obligatorios antes de enviar.">
+                        <input class="botonSubmit " type="submit" value="UNIRME" disabled>
+                    </span>
+
                 </form>
             </div>
 
@@ -143,6 +147,10 @@
 </script>
 
 <script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
     // Handle international prefixes, format phone input field
     // Uses intl-tel-input plugin
     const phoneInputField = document.querySelector("#phone");
@@ -151,8 +159,6 @@
         preferredCountries: ["mx", "us" , "co"],
         utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
     });
-    var form = document.querySelector("form");
-
 
     function cambios_forma() {
         var emprendedor = document.querySelector("#id_emprendedor");
@@ -162,17 +168,31 @@
         var apellido = document.querySelector("#id_apellido");
 
         var subbutton = document.querySelector(".botonSubmit");
+        var btn_tooltip = document.querySelector("#tooltipbtn");
+
         if(emprendedor.value != "" && genero.value != "" &&
            email.value != "" && apellido.value != "" &&
            nombre.value != ""
         ){
             subbutton.removeAttribute("disabled");
+            btn_tooltip.removeAttribute("data-bs-toggle");
+            var myTooltipEl = document.getElementById('tooltipbtn')
+            var tooltip = new bootstrap.Tooltip(myTooltipEl)
+            tooltip.disable()
         }
         else{
             subbutton.setAttribute("disabled","");
+            var myTooltipEl = document.getElementById('tooltipbtn')
+            var tooltip = new bootstrap.Tooltip(myTooltipEl)
+            tooltip.enable()
         }
-    };
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+          return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    }
 
+    var form = document.querySelector("form");
     form.addEventListener("change", cambios_forma);
 
 </script>
