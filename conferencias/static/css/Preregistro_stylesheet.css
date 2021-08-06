@@ -4,8 +4,15 @@ body {
     font-family: 'Univers LT Std', sans-serif;
     font-size: 16px;
     overflow-x: hidden;
+    
 }
 
+::selection {
+  background: #FFC802; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #FFC802; /* Gecko Browsers */
+}
 
 .bold {
     font-family: 'Univers LT Std bold', sans-serif;
@@ -85,7 +92,7 @@ figure img {
     flex-direction: column;
     margin: 0;
     padding: 0;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .contentMainColumns {
@@ -180,6 +187,8 @@ figure img {
     border: none;
     padding: 25px 35px;
     cursor: pointer;
+    transition:  0.3s ease-in-out;
+
 }
 
 .BotonUnirse button:active,
@@ -190,14 +199,15 @@ figure img {
 
 
 .contactoRS {
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content:flex-end;
     padding: 0;
     margin: 0 0 0 auto;
     position: relative;
     overflow: hidden;
+    min-height: 250px
 }
 
 .contactoRS h2 {
@@ -209,8 +219,15 @@ figure img {
     margin: 0;
 }
 
+.deco3{
+margin: 0;
+    position: absolute;
+    left: 10%;
+    bottom: 0;
+    opacity: .5;
+}
 .deco3 img {
-    height: 200px;
+    height: 221px;
 }
 
 .RedesSociales {
@@ -219,6 +236,7 @@ figure img {
     flex-direction: column;
     justify-content: center;
     padding-bottom: 40px;
+    z-index: 2;
 }
 
 .RedesSociales div {
@@ -234,8 +252,10 @@ figure img {
     font-size: 1.7em;
 }
 
-
-
+.contactoRS a:hover {
+    color: #00B774;
+    transition:  0.5s ease-in-out;
+}
 
 .footerVictoriafest {
     display: flex;
@@ -247,14 +267,14 @@ figure img {
 }
 
 .logoVictoria img {
-    height: 75px;
-    margin-top: 15px;
+    height: 65px;
+    margin-top: 25px;
 }
 
 
 .formularioModal {
     background-color: #F0F0F0;
-    width: 50vw !important;
+    min-width: 50vw !important;
     position: static;
     right: 0;
     top: 0;
@@ -267,7 +287,7 @@ figure img {
 
 .formularioModal h2 {
     position: absolute;
-    left: 95%;
+    left: 100%;
     transform-origin: top left;
     transform: rotate(90deg);
     top: 0%;
@@ -276,6 +296,7 @@ figure img {
     -webkit-text-stroke-color: #F7582A;
     color: transparent;
     font-family: 'Univers LT Std bold', sans-serif;
+    opacity: .5;
 }
 
 .formularioModal .cross {
@@ -291,7 +312,11 @@ figure img {
 
 .formContainer {
     color: #F7582A;
-    max-width: 600px;
+    max-width: 400px;
+}
+
+.formContainer form{
+    max-width: 400px;
 }
 
 .formContainer p {
@@ -299,6 +324,7 @@ figure img {
     max-width: 400px;
     font-size: 1.2em;
     padding: 10px 0;
+    margin-bottom: 0rem;
 }
 
 .formContainer form input {
@@ -326,6 +352,55 @@ figure img {
     font-weight: normal;
 }
 
+.checkCorreos{
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    padding-bottom: 20px
+
+}
+
+.checkCorreos input[type='checkbox']{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  outline: 1px solid #F7582A;
+  box-shadow: none;
+  font-size: 1.8em;
+  text-align: center;
+}
+
+.checkCorreos input[type='checkbox']:checked {
+  background: #F7582A;
+}
+
+.checkCorreos input[type='checkbox']:checked:after {
+  content: '✔';
+  color: white;
+}
+
+
+.borderAdjust{
+    margin-top: -1px;
+}
+
+.checkCorreos label{
+    font-size: 1.3em;
+    font-weight: bold
+}
+
+.checkCorreos input{
+    font-size: 1.5em;
+    width: 50px !important;
+    padding: 0!important;
+    margin-left: 15px;
+}
+
+
+
 .botonSubmit {
     background-color: #F7582A;
     font-size: 2.5em;
@@ -337,9 +412,10 @@ figure img {
     font-weight: bold;
     width: 400px;
     height: 100px !important;
-    margin-top: 40px
-}
+    margin-top: 40px;
+    transition:  0.3s ease-in-out;
 
+}
 
 .botonSubmit:active,
 .botonSubmit:hover {
@@ -347,4 +423,237 @@ figure img {
 }
 
 
+/* X-Large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) { 
+    
+    
+    .formularioModal {
+    width: 70vw !important;
+    }
+    
+    .formularioModal .cross img{
+    width:70px;
+    height: 70px;
+    }
+    
+    .fechas figure img {
+    height: 400px;
+    }
+    
+    .BotonUnirse{
+        height: auto;
+    }
+    
+    .logoNow{
+    left: 50px;
+    bottom: 50px;
+    }
+    .logoNow img{
+        height: 350px;
+    }
+    
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) { 
+    
+    .contentMainColumns{
+        flex-wrap:wrap;
+        height: auto;
+    }
+    .column1{
+        width: 100vw !important;
+        height: 520px;
+        justify-content: center;
+    }
+    
+     .logoNow{
+   margin: 0 auto;
+    position: inherit;
+    margin-top: 80px;
+    }
+    
+    .deco2{
+        bottom: -56px !important;
+        top: auto;
+    }
+    
+    .column2{
+        width: 100% !important;
+         flex-wrap:wrap;
+    }
+    
+    .contenedorAmarillo{
+        width: 100%;
+    }
+    .BotonUnirse{
+        width: 100vw;
+        padding: 50px;
+    }
+    .fechas {
+        position: absolute;
+        top: 80px;
+        right: 0;
+    }
+    
+    .contactoRS{
+        height: 320px
+    }
+    
+    
+.formularioModal {
+    width: 70vw !important;
+    }
+}
+
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) { 
+    
+    .formularioModal {
+    width: 100% !important;
+    }
+}
+
+}
+
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { 
+
+    .formularioModal h2{
+        display: none;
+    }
+    
+     .formularioModal .cross  {
+    right: 20px !important;
+         left: auto;
+    }
+
+     .column1{
+        width: 100vw !important;
+        height: 520px;
+        justify-content:flex-start;
+    }
+    
+    .logoNow{
+   margin: 0 auto;
+    position: inherit;
+    margin-top: 60px;
+        margin-left: 40px
+    }
+    
+    .logoVictoria img {
+    height: 45px;
+    margin-top: 25px;
+        margin-bottom: 25px;
+}
+    
+}
+
+
+
+/* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
+       
+    
+    .textoScroll {
+        min-height: 8vh !important ;
+    }
+    
+    .animate-text span{
+        font-size: 8vh;
+    }
+    
+    .column1{
+        height: 360px;
+   
+    }
+    
+    .fechas {
+        position: absolute;
+        top: 65px;
+        right: 0;
+    }
+    
+    .fechas img{
+        height: 250px !important;
+    }
+    
+    .logoNow{
+   margin: 0 auto;
+    position: inherit;
+    margin-top: 20px;
+    margin-left: 20px
+    }
+    
+    .logoNow img{
+        height: 230px
+    }
+    
+    .contactoRS h2 {
+        font-size: 4.4em;
+        text-align: right;
+    }
+    
+    
+    .formContainer {
+    max-width: 300px;
+    padding-top: 50px
+}
+
+.formContainer form{
+    max-width: 300px;
+}
+    
+    .formContainer form input{
+        width: 300px;
+         height: 40px;
+            padding: 0 0 0 10px;
+    }
+    
+    .formContainer form select {
+    padding: 0 0 0 10px;
+    width: 300px;
+    height: 40px;
+}
+    
+    .checkCorreos{
+        width: 250px;
+    }
+    
+    .botonSubmit {
+    background-color: #F7582A;
+    font-size: 2em;
+    cursor: pointer;
+    width: 250px;
+    height: 75px !important;
+    margin-top:15px;    
+}
+    .formContainer p{
+            width: 100%;
+        }
+    
+    .RedesSociales div {
+    padding-top: 25px;
+    flex-direction: column;
+    flex-wrap:wrap;
+    align-items: center;
+}
+    
+    .BotonUnirse button {
+    background-color: #00B774;
+    box-shadow: #770BE8 6px 6px;
+    font-size: 2.5em;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    cursor: pointer;
+    transition:  0.3s ease-in-out;
+}
+    .BotonUnirse{
+        margin-bottom: 25px
+    }
+    
+     
+}
 
