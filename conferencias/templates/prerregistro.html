@@ -73,21 +73,22 @@
     </div>
 
 
-    <div class="offcanvas offcanvas-end formularioModal" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas offcanvas-end formularioModal {{ class }}" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="visibility: {{ visibilidad }};">
 
         <div class="offcanvas-body">
             <h2>INSCRÍBETE</h2>
-            {{ error }}
+
 
             <figure class="cross text-reset" data-bs-dismiss="offcanvas"><img src="/static/img/cross.png"></figure>
             <div class="formContainer">
                 <p class="bold">Regístrate para recibir noticias sobre las actividades y eventos que estamos preparando para tí.</p>
                 <form action="/registro" method="post">
                     {% csrf_token %}
-                    <br>
-                    <input type="email" placeholder="EMAIL" name="email" required id="id_email">
-                    <input class="borderAdjust" type="text" name="nombre" placeholder="NOMBRE" maxlength="100" required id="id_nombre">
-                    <input class="borderAdjust" type="text" placeholder="APELLIDO" name="apellido" maxlength="100" required id="id_apellido">
+                    <p class="light">{{ error }}</p>
+
+                    <input type="email" placeholder="EMAIL" name="email" required id="id_email" oninput="cambios_forma()">
+                    <input class="borderAdjust" type="text" name="nombre" placeholder="NOMBRE" maxlength="100" required id="id_nombre" oninput="cambios_forma()">
+                    <input class="borderAdjust" type="text" placeholder="APELLIDO" name="apellido" maxlength="100" required id="id_apellido" oninput="cambios_forma()">
                     <select class="borderAdjust" name="genero" id="id_genero">
                     <option disabled selected value="">Género</option>
                     <option value="F">Femenino.</option>
@@ -119,7 +120,7 @@
                         <label for="recibir_correos">Sí</label>
                         <input type="checkbox" name="recibir_correos" id="id_recibir_correos">
                     </div>
-                    <input class="botonSubmit " type="submit" value="UNIRME"/>
+                    <input class="botonSubmit " type="submit" value="UNIRME" disabled hidden/>
                 </form>
             </div>
 
@@ -150,23 +151,30 @@
         preferredCountries: ["mx", "us" , "co"],
         utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
     });
+    var form = document.querySelector("form");
 
-    const info = document.querySelector(".alert-info");
-    const error = document.querySelector(".alert-error");
 
-    function process(event) {
-        event.preventDefault();
-        const phoneNumber = phoneInput.getNumber();
-        info.style.display = "none";
-        error.style.display = "none";
+    function cambios_forma() {
+        var emprendedor = document.querySelector("#id_emprendedor");
+        var genero = document.querySelector("#id_genero");
+        var email = document.querySelector("#id_email");
+        var nombre = document.querySelector("#id_nombre");
+        var apellido = document.querySelector("#id_apellido");
 
-        if (phoneInput.isValidNumber()) {
-            info.style.display = "";
-            info.innerHTML = `Phone number in E.164 format: <strong>${phoneNumber}</strong>`
-        } else {
-            error.style.display = "";
-            error.innerHTML = 'Invalid phone number.'
+        var subbutton = document.querySelector(".botonSubmit");
+        if(emprendedor.value != "" && genero.value != "" &&
+           email.value != "" && apellido.value != "" &&
+           nombre.value != ""
+        ){
+            subbutton.removeAttribute("disabled");
+            subbutton.removeAttribute("hidden");
         }
-    }
-    const form = document.getElementById("registro");
+        else{
+            subbutton.setAttribute("disabled","");
+            subbutton.setAttribute("hidden","");
+        }
+    };
+
+    form.addEventListener("change", cambios_forma);
+
 </script>

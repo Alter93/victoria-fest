@@ -35,16 +35,6 @@ class PrerregistroForm(forms.Form):
     )
     genero = forms.ChoiceField(choices = genero_choices)
 
-    telefono = forms.CharField(max_length=15, error_messages={
-        'required': 'Ingresa un número telefónico valido.'
-    })
-
-    lugar = forms.CharField(max_length=100, error_messages={
-        'required': 'Selecciona un lugar de residencia.'
-    })
-    recibir_correos = forms.BooleanField(required = False)
-
-
     emprendedor_choices =(
         ("No", "No, no soy emprendedor/a."),
         ("Tengo una idea de negocio.", "Tengo una idea de negocio."),
@@ -53,3 +43,7 @@ class PrerregistroForm(forms.Form):
         ("Tengo un negocio en expansión (más de 5 años).", "Tengo un negocio en expansión (más de 5 años)."),
     )
     emprendedor = forms.ChoiceField(choices = emprendedor_choices)
+
+    telefono = forms.CharField(max_length=15, required = False)
+    lugar = forms.CharField(max_length=100, required = False)
+    recibir_correos = forms.BooleanField(required = False)
