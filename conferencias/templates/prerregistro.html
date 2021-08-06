@@ -1,10 +1,7 @@
-<!doctype html>
-<html lang="es">
-    
-    <head>
-    <link rel="stylesheet" href="../static/css/Preregistro_stylesheet.css" />
-    <link rel="stylesheet" href="../static/css/normalize.css" />
-    <link rel="stylesheet" href="../static/fonts/fontstylesheet.css" />
+<head>
+    <link rel="stylesheet" href="/static/css/Preregistro_stylesheet.css" />
+    <link rel="stylesheet" href="/static/css/normalize.css" />
+    <link rel="stylesheet" href="/static/fonts/fontstylesheet.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
 
@@ -35,8 +32,8 @@
         <div class="contentMainColumns">
             <div class="column1">
                 <div>
-                    <figure class="deco2"><img src="../static/img/deco2.png"></figure>
-                    <figure class="logoNow"><img src="../static/img/logonowblanco.png"></figure>
+                    <figure class="deco2"><img src="/static/img/deco2.png"></figure>
+                    <figure class="logoNow"><img src="/static/img/logonowblanco.png"></figure>
 
                 </div>
 
@@ -46,7 +43,7 @@
             <div class="column2">
                 <div class="contenedorAmarillo">
                     <div class="fechas">
-                        <figure><img src="../static/img/fechas.png"></figure>
+                        <figure><img src="/static/img/fechas.png"></figure>
                     </div>
                     <div class="BotonUnirse">
                         <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="bold">UNIRME</button>
@@ -54,7 +51,7 @@
                 </div>
 
                 <div class="contactoRS">
-                    <figure class="deco3"><img src="../static/img/deco3.png"></figure>
+                    <figure class="deco3"><img src="/static/img/deco3.png"></figure>
                     <div class="RedesSociales">
                         <h2 class="bold">CONTACTO</h2>
                         <div>
@@ -68,7 +65,7 @@
         </div>
 
         <footer class="footerVictoriafest">
-            <a href="https://victoria147.org/"> <figure class="logoVictoria"><img src="../static/img/logoVictoriaBlanco.png"></figure></a>
+            <a href="https://victoria147.org/"> <figure class="logoVictoria"><img src="/static/img/logoVictoriaBlanco.png"></figure></a>
 
         </footer>
 
@@ -77,12 +74,12 @@
 
 
     <div class="offcanvas offcanvas-end formularioModal" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-       
+
         <div class="offcanvas-body">
             <h2>INSCRÍBETE</h2>
             {{ error }}
 
-            <figure class="cross text-reset" data-bs-dismiss="offcanvas"><img src="../static/img/cross.png"></figure>
+            <figure class="cross text-reset" data-bs-dismiss="offcanvas"><img src="/static/img/cross.png"></figure>
             <div class="formContainer">
                 <p class="bold">Regístrate para recibir noticias sobre las actividades y eventos que estamos preparando para tí.</p>
                 <form action="/registro" method="post">
@@ -101,12 +98,12 @@
 
                     <p class="light">campos opcionales ✱</p>
 
-                    <input type="tel" placeholder="TELÉFONO ✱" name="telefono" maxlength="11" required id="phone">
+                    <input type="tel" placeholder="TELÉFONO ✱" name="telefono" maxlength="11" id="phone">
                     <div class="alert alert-info" style="display: none;"></div>
                     <div class="alert alert-error" style="display: none;"></div>
-                    <input class="borderAdjust" type="text" placeholder="LUGAR DE RESIDENCIA ✱" name="lugar" maxlength="100" required id="id_lugar">
-                    
-                    
+                    <input class="borderAdjust" type="text" placeholder="LUGAR DE RESIDENCIA ✱" name="lugar" maxlength="100" id="id_lugar">
+
+
                     <select class="borderAdjust" name="emprendedor" id="id_emprendedor">
                           <option disabled selected value="">¿Eres emprendedor/a?</option>
                           <option value="No">No, no soy emprendedor/a.</option>
@@ -116,7 +113,7 @@
                           <option value="Tengo un negocio en expansión (más de 5 años).">Tengo un negocio en expansión (más de 5 años).</option>
 
                         </select>
-                    
+
                     <p>Estoy interesad@ en recibir correos informativos sobre los programas de Victoria147</p>
                     <div class="checkCorreos">
                         <label for="recibir_correos">Sí</label>
@@ -168,7 +165,7 @@
             info.innerHTML = `Phone number in E.164 format: <strong>${phoneNumber}</strong>`
         } else {
             error.style.display = "";
-            error.innerHTML = `Invalid phone number.`
+            error.innerHTML = 'Invalid phone number.'
         }
     }
     const form = document.getElementById("registro");
