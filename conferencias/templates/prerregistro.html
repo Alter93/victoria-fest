@@ -120,7 +120,7 @@
                         <label for="recibir_correos">Sí</label>
                         <input type="checkbox" name="recibir_correos" id="id_recibir_correos">
                     </div>
-                    <input class="botonSubmit " type="submit" value="UNIRME" disabled hidden/>
+                    <input class="botonSubmit " type="submit" value="UNIRME" disabled />
                 </form>
             </div>
 
@@ -167,11 +167,9 @@
            nombre.value != ""
         ){
             subbutton.removeAttribute("disabled");
-            subbutton.removeAttribute("hidden");
         }
         else{
             subbutton.setAttribute("disabled","");
-            subbutton.setAttribute("hidden","");
         }
     };
 
