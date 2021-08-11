@@ -19,7 +19,8 @@ def prerregistro(request):
                 return render(request, 'prerregistro.html', {
                     "error": "Ese correo ya ha sido registrado, por favor usa uno diferente.",
                     "visibilidad":"visible",
-                    "class": 'show'
+                    "class": 'show',
+                    "texto_boton": "UNIRME"
                  })
             except Prerregistro.DoesNotExist:
                 registro = Prerregistro(
@@ -32,7 +33,7 @@ def prerregistro(request):
                     recibir_correos = form.cleaned_data.get('recibir_correos'),
                     emprendedor = form.cleaned_data.get('emprendedor'),
                 )
-                registro.save()
+
                 contenido = render_to_string(
                     'email_prerregistro.html', {
                         "nombre": form.cleaned_data.get('nombre'),
@@ -42,15 +43,17 @@ def prerregistro(request):
                 message = contenido
                 email_from = "info@altec.dev"
                 recipient_list = [form.cleaned_data.get('email'),]
-                send_mail( subject, message, email_from, recipient_list , html_message=contenido)
+                #send_mail( subject, message, email_from, recipient_list , html_message=contenido)
                 form = PrerregistroForm()
+                registro.save()
                 return render(request, 'prerregistro.html', {
                     "error": "Registro guardado con éxito.",
                     "visibilidad":"visible",
-                    "class": 'show'
+                    "class": 'show',
+                    "texto_boton": "Listo!"
                     })
         else:
 
-            return render(request, 'prerregistro.html', {"error": form.errors, "visibilidad":"visible", "class": 'show'})
+            return render(request, 'prerregistro.html', {"error": form.errors, "visibilidad":"visible", "class": 'show', "texto_boton": "UNIRME"})
     else:
-        return render(request, 'prerregistro.html', {"error": "", "visibilidad":"hidden"})
+        return render(request, 'prerregistro.html', {"error": "", "visibilidad":"hidden", "texto_boton": "UNIRME"})

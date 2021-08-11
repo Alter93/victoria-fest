@@ -83,7 +83,7 @@
             <div class="formContainer">
                 <p class="bold">Regístrate para recibir noticias sobre las actividades y eventos que estamos preparando para tí.</p>
                 <form action="/registro" method="post">
-                   
+
                     {% csrf_token %}
 
                     <input type="email" placeholder="EMAIL" name="email" required id="id_email" oninput="cambios_forma()">
@@ -120,11 +120,11 @@
                         <label for="recibir_correos">Sí</label>
                         <input type="checkbox" name="recibir_correos" id="id_recibir_correos">
                     </div>
-                    
+
                         <p class="boldextended">{{ error }}</p>
-                        
+
                     <span class="d-inline-block" tabindex="0" id="tooltipbtn" data-bs-toggle="tooltip" data-bs-placement="left" title="Llena los campos obligatorios antes de enviar.">
-                        <input class="botonSubmit " type="submit" value="UNIRME" disabled>
+                        <input class="botonSubmit " type="submit" value="{{ texto_boton }}" disabled>
                     </span>
 
                 </form>
@@ -180,6 +180,7 @@
             btn_tooltip.removeAttribute("data-bs-toggle");
             var myTooltipEl = document.getElementById('tooltipbtn')
             var tooltip = new bootstrap.Tooltip(myTooltipEl)
+            subbutton.setAttribute("value","UNIRME");
             tooltip.disable()
         }
         else{
