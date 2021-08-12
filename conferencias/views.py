@@ -41,9 +41,9 @@ def prerregistro(request):
                 )
                 subject = 'Gracias por registrarte'
                 message = contenido
-                email_from = "info@altec.dev"
+                email_from = "paola@victoria147.org"
                 recipient_list = [form.cleaned_data.get('email'),]
-                #send_mail( subject, message, email_from, recipient_list , html_message=contenido)
+                send_mail( subject, message, email_from, recipient_list , html_message=contenido)
                 form = PrerregistroForm()
                 registro.save()
                 return render(request, 'prerregistro.html', {
