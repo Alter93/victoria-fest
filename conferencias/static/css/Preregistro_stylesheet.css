@@ -54,7 +54,7 @@ body {
 }
 
 .animate-text {
-    animation: text-scrolling 20s linear infinite;
+    animation: text-scrolling 22s linear infinite;
     will-change: transform;
     display: block;
     position: relative;
@@ -66,7 +66,7 @@ body {
 }
 
 .animate-text span {
-    font-size: 10vh;
+    font-size: 6vh;
     -webkit-text-stroke: 1px #30442a;
     text-transform: uppercase;
     display: inline-block;
@@ -77,7 +77,7 @@ body {
 
 
 .textoScroll {
-    min-height: 10vh;
+    min-height: 6vh;
     overflow: hidden;
     position: relative;
     background: #F082EA;
@@ -254,12 +254,12 @@ figure img {
 }
 
 .contactoRS a {
-    color: #F7582A;
+    color: #FFF;
     font-size: 1.7em;
 }
 
 .contactoRS a:hover {
-    color: #00B774;
+    color: #F7582A;
     transition: 0.5s ease-in-out;
 }
 
