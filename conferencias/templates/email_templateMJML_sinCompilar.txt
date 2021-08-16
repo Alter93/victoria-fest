@@ -1,21 +1,27 @@
 <mjml>
-  <mj-body background-color="#770BE8">
+  <mj-body background-color="#00B774">
     <mj-wrapper border="2px solid #000000" padding="0px">
       <mj-section padding='0'>
         <mj-column background-color="#F7582A">
-          <mj-image width="150px" padding='20px 0' src="https://35.209.50.228/static/img/logonowblanco.png"></mj-image>
+          <mj-image width="175px" padding='40px 0' src="https://35.209.50.228/static/img/logonowblanco.png"></mj-image>
 
-          <mj-text align="center" font-size="24px" color="#FFFFFF" font-family="helvetica,Arial,sans-serif">¡Felicidades, ya eres parte del VictoriaFest 2021!</mj-text>
-          <mj-text padding-bottom='30px' align="center" font-size="22px" color="#FFFFFF" font-family="helvetica,Arial,sans-serif" font-weight='bold'>Now is all there is
+          <mj-text align="center" font-size="32px" color="#FFFF" font-family="helvetica,Arial,sans-serif" font-weight='bold' padding-bottom='25px'>¡Felicidades, ya eres parte del <b>VictoriaFest 2021</b>!</mj-text>
+        </mj-column>
+      </mj-section>
+
+      <mj-section padding='0'>
+        <mj-column background-color="#FFC802">
+          <mj-spacer height="10px" />
+          <mj-text padding-bottom='15px' align="center" font-size="28px" color="#770BE8" font-family="helvetica,Arial,sans-serif" font-weight='bold'>NOW IS ALL THERE IS
           </mj-text>
         </mj-column>
       </mj-section>
 
       <mj-section background-color="#FFFFFF">
-        <mj-column padding='20px'>
-          <mj-text align="left" font-size="22px" color="#00B774" font-family="helvetica,Arial,sans-serif" font-weight='bold'> (nombre del registrad@).
+        <mj-column padding='25px'>
+          <mj-text align="left" font-size="28px" color="#000000" font-family="helvetica,Arial,sans-serif" font-weight='bold'> (nombre del registrad@).
           </mj-text>
-          <mj-text align="left" font-size="18px" color="#00B774" font-family="helvetica,Arial,sans-serif">
+          <mj-text align="left" font-size="18px" color="#000000" font-family="helvetica,Arial,sans-serif">
             <p>Nos emociona mucho que seas parte de este increíble evento en su cuarta edición. </p>
 
             <p>Miles de personas alrededor de todo el mundo coincidiremos el próximo <b>6 de octubre</b> para inspirarnos, aprender, conectar y encender nuestra chispa.</p>
@@ -30,7 +36,7 @@
       </mj-section>
 
 
-      <mj-section background-color="#F7582A">
+      <mj-section background-color="#770BE8">
         <mj-column padding='25px'>
           <mj-text align="left" font-size="18px" color="#FFFFFF" font-family="helvetica,Arial,sans-serif">
             <p>Recuerda:
@@ -41,15 +47,13 @@
           </mj-text>
 
           <mj-text align="left" font-size="16px" color="#FFFFFF" font-family="helvetica,Arial,sans-serif" padding='0 25px'>
-            <p>¿No es tu zona horaria? ¡No te preocupes! Utiliza este <a style="color:#770BE8" href="https://time.is/es/compare"><b>convertidor de zona horaria</b></a> para que no te pierdas ni un minuto del VictoriaFest.
+            <p>¿No es tu zona horaria? ¡No te preocupes! Utiliza este <a style="color:#F7582A" href="https://time.is/es/compare"><b>convertidor de zona horaria</b></a> para que no te pierdas ni un minuto del VictoriaFest.
             </p>
           </mj-text>
           <mj-text align="center" font-size="20px" color="#FFFFFF" font-family="helvetica,Arial,sans-serif">
             <p>👀 Sigue al pendiente de nuestras redes y comparte esta experiencia con tus conocidos e invítalos a este gran evento.
-
             </p>
-            <p>🎉¡Nos vemos pronto!🎉
-            </p>
+            <p><b>🎉¡Nos vemos pronto!🎉</b></p>
           </mj-text>
 
         </mj-column>
@@ -67,10 +71,10 @@
 
 
       <mj-section padding='0'>
-        <mj-column background-color="#2a3448">
-          <mj-text align="center" color="#ffffff" font-family="Arial, sans-serif" font-size="13px" line-height="22px" padding="10px 25px">¿Tienes dudas? Escríbenos a este correo: <a style="color:#ffffff" href="mailto:paola@victoria147.org"><b>paola@victoria147.org</b></a></mj-text>
-          <mj-text align="center" font-size="20px" color="#F45E43" font-family="helvetica,Arial,sans-serif">
-            <p>6 de octubre - Evento Online - Acceso gratuito - 9 AM MEX</p>
+        <mj-column background-color="#FFC802">
+          <mj-text align="center" color="#000000" font-family="Arial, sans-serif" font-size="13px" line-height="22px" padding="10px 25px">¿Tienes dudas? Escríbenos a este correo: <a style="color:#770BE8" href="mailto:paola@victoria147.org"><b>paola@victoria147.org</b></a></mj-text>
+          <mj-text align="center" font-size="28px" color="#F45E43" font-family="helvetica,Arial,sans-serif">
+            <p><b>6 de octubre - Evento Online <br /> Acceso gratuito - 9 AM MEX</b></p>
           </mj-text>
 
         </mj-column>
@@ -81,23 +85,26 @@
 
 
     <mj-section padding='0'>
-      <mj-column background-color="#2a3448">
-        <mj-text align="center" font-size="16px" color="#F45E43" font-family="helvetica,Arial,sans-serif">
+      <mj-column background-color="#CDD9D9">
+        <mj-text align="center" font-size="16px" color="#770BE8" font-family="helvetica,Arial,sans-serif">
           <p> Este evento sin costo es posible gracias a nuestros aliados:</p>
         </mj-text>
 
       </mj-column>
     </mj-section>
 
-    <mj-section background-color="#2a3448">
+    <mj-section background-color="#FFFFFF">
       <mj-column>
-        <mj-image width="100px" src="https://35.209.50.228/static/img/logoVictoriaBlanco.png"></mj-image>
+        <mj-image width="100px" src="https://35.209.50.228/static/img/logo_fb.jpg"></mj-image>
       </mj-column>
       <mj-column>
-        <mj-image width="100px" src="https://35.209.50.228/static/img/logoVictoriaBlanco.png"></mj-image>
+        <mj-image width="100px" src="https://35.209.50.228/static/img/logo_bbva.jpg"></mj-image>
       </mj-column>
       <mj-column>
-        <mj-image width="100px" src="https://35.209.50.228/static/img/logoVictoriaBlanco.png"></mj-image>
+        <mj-image width="100px" src="https://35.209.50.228/static/img/logo_herdez.jpg"></mj-image>
+      </mj-column>
+      <mj-column>
+        <mj-image width="100px" src="https://35.209.50.228/static/img/logo_nutrisa.jpg"></mj-image>
       </mj-column>
     </mj-section>
 

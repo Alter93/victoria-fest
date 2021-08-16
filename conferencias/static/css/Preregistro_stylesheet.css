@@ -321,6 +321,7 @@ figure img {
 .formContainer {
     color: #F7582A;
     max-width: 400px;
+    margin: 4vh 0 0 0;
 }
 
 .formContainer form {
@@ -363,7 +364,7 @@ figure img {
      display: flex;
     flex-direction: row;
         justify-content:space-between;
-
+        width: 100%;
 }
 
 .checkCorreosContainer p{
@@ -428,6 +429,7 @@ figure img {
     font-family: 'Univers LT Std bold', sans-serif !important;
     font-weight: bold;
     max-width: 370px;
+    width: 100%;
     height: 90px !important;
     margin-top: 40px;
     transition: 0.3s ease-in-out;
