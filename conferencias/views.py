@@ -47,7 +47,7 @@ def prerregistro(request):
                 form = PrerregistroForm()
                 registro.save()
                 return render(request, 'prerregistro.html', {
-                    "error": "Registro guardado con éxito.",
+                    "error": "Registro guardado con éxito. ¡Ya eres parte del VictoriaFest! Revisa tu email para más información.",
                     "visibilidad":"visible",
                     "class": 'show',
                     "texto_boton": "Listo!"
