@@ -7,23 +7,23 @@ https://mjml.io/try-it-live/MIcVS2L8YN0
     <mj-wrapper border="1px solid #000000" padding="0px 0px">
       <mj-section padding='0 0'>
         <mj-column background-color="#F7582A" padding='0 0'>
-          <mj-image width="560px" padding='0 0' src="https://35.209.50.228/static/img/header_mailing.jpg"></mj-image>
+          <mj-image width="600px" padding='0 0' src="https://eventos.victoria147.org/static/img/header_mailing.jpg"></mj-image>
         </mj-column>
       </mj-section>
 
       <mj-section padding='0'>
         <mj-column background-color="#EF82EA">
           <mj-text align="center" font-size="18px" color="#770BE8" font-family="helvetica,Arial,sans-serif">
-            <p>9 AM MEX ● <b>EVENTO ONLINE</b> ◍ ACCESO GRATUITO </p>
+            <p>9 AM MEX ● <b>EVENTO ONLINE</b> ● ACCESO GRATUITO </p>
           </mj-text>
         </mj-column>
       </mj-section>
 
       <mj-section background-color="#FFFFFF">
         <mj-column padding='25px'>
-          <mj-text align="left" font-size="24px" color="#000000" font-family="helvetica,Arial,sans-serif" font-weight='bold'> (nombre del registrad@).
+          <mj-text align="left" font-size="20px" color="#000000" font-family="helvetica,Arial,sans-serif" font-weight='bold'> (nombre del registrad@).
           </mj-text>
-          <mj-text align="left" font-size="18px" color="#000000" font-family="helvetica,Arial,sans-serif">
+          <mj-text align="left" font-size="16px" line-height='1.4' color="#000000" font-family="helvetica,Arial,sans-serif">
             <p>Nos emociona mucho que seas parte de este increíble evento en su cuarta edición. </p>
 
             <p>Miles de personas alrededor de todo el mundo coincidiremos el próximo <b>6 de octubre</b> para inspirarnos, aprender, conectar y encender nuestra chispa.</p>
@@ -36,7 +36,7 @@ https://mjml.io/try-it-live/MIcVS2L8YN0
         </mj-column>
       </mj-section>
 
-      <mj-section padding='0'>
+      <mj-section padding='0 0'>
         <mj-column background-color="#EF82EA">
           <mj-text align="center" font-size="22px" color="#FFF" font-family="helvetica,Arial,sans-serif">
             <p><b>LOUNGE</b> DEL VICTORIAFEST EN TELEGRAM </p>
@@ -46,8 +46,8 @@ https://mjml.io/try-it-live/MIcVS2L8YN0
 
 
       <mj-section background-color="#FFF" padding='0 0'>
-        <mj-column padding='25px'>
-          <mj-text>
+        <mj-column padding='0px 25px 15px 25px'>
+          <mj-text font-size="16px" line-height='1.4'>
             <p>Queremos que empieces a vivir la experiencia desde hoy, únete a nuestro <a style="color:#770BE8" href="https://t.me/joinchat/eX6_c3OaomMyZTJh"><b>LOUNGE del VictoriaFest</b></a> en Telegram e inicia la conversación. <br></br>Tendremos novedades y dinámicas exclusivas.</p>
           </mj-text>
           <mj-button font-family="Helvetica" background-color="#FFC802" color="#FF585D" href='https://t.me/joinchat/eX6_c3OaomMyZTJh' font-size="22px" font-weight='bolder' padding='2px' border='1px solid black'>
@@ -55,7 +55,7 @@ https://mjml.io/try-it-live/MIcVS2L8YN0
           </mj-button>
         </mj-column>
         <mj-column padding='0px'>
-          <mj-image padding='0 0' src="https://35.209.50.228/static/img/telegram_mailing.jpg"></mj-image>
+          <mj-image padding='0 0' src="https://eventos.victoria147.org/static/img/telegram_mailing2.jpg"></mj-image>
         </mj-column>
       </mj-section>
 
@@ -69,35 +69,36 @@ https://mjml.io/try-it-live/MIcVS2L8YN0
 
 
       <mj-section background-color="#FFF" padding='0 0'>
-        <mj-column padding='0px'>
-          <mj-image padding='0 0' src="https://35.209.50.228/static/img/deco_mailing.jpg"></mj-image>
+        <mj-column padding='0px 0'>
+          <mj-image padding='0 0' src="https://eventos.victoria147.org/static/img/deco_mailing.jpg"></mj-image>
         </mj-column>
         <mj-column padding='0px 25px'>
-          <mj-text color='#770BE8'>
-            <p>Nuestro evento es el <b>6 de octubre de 09:00 a 18:00 hrs</b> (Hora de la Ciudad de México).
+
+          <mj-text color='#770BE8' font-size="18px" line-height='1.4'>
+            <p>La clave para ingresar al evento es:
             </p>
+            <p><b>VICTORIAFEST2021</b></p>
           </mj-text>
-          <mj-text padding='0px 25px'>
-            <p><b>Un día antes de dar inicio, te llegará el link para que puedas acceder a la plataforma.
-              </b></p>
+          <mj-button font-family="Helvetica" background-color="#FFC802" color="#FF585D" href='https://eventos.victoria147.org' font-size="22px" font-weight='bolder' padding='0px' border='1px solid black'>
+            IR AL LOBBY
+          </mj-button>
+
+          <mj-text padding='0px 25px' font-size="16px" line-height='1.4'>
+
             <p>Sigue al pendiente de nuestras redes y comparte esta experiencia con tus conocidos e invítalos a este gran evento.
             </p>
           </mj-text>
-
-
         </mj-column>
       </mj-section>
 
 
-      <mj-section>
+      <mj-section padding='0px 0'>
         <mj-column background-color="#FFC802" padding='20px 0' border="1px solid #000">
-          <mj-text align="center" color="#770BE8" font-family="Arial, sans-serif" font-size="20px" line-height="28px" padding="5px 25px" font-weight='bolder'>¿Tienes dudas? </mj-text>
-          <mj-text align="center" color="#000" font-family="Arial, sans-serif" font-size="16px" line-height="22px" padding="5px 25px">Escríbenos a este correo: <a style="color:#770BE8" href="mailto:paola@victoria147.org"><b>paola@victoria147.org</b></a></mj-text>
+          <mj-text align="center" color="#770BE8" font-family="Arial, sans-serif" font-size="20px" line-height="28px" font-weight='bolder'>¿Tienes dudas? </mj-text>
+          <mj-text align="center" color="#000" font-family="Arial, sans-serif" font-size="16px" line-height="22px">Escríbenos a este correo: <a style="color:#770BE8" href="mailto:paola@victoria147.org"><b>paola@victoria147.org</b></a></mj-text>
 
         </mj-column>
       </mj-section>
-
-
 
       <mj-section padding='0'>
         <mj-column background-color="#FFF">
@@ -110,16 +111,16 @@ https://mjml.io/try-it-live/MIcVS2L8YN0
 
       <mj-section background-color="#FFFFFF" padding='0 0 20px 0'>
         <mj-column>
-          <mj-image width="100px" src="https://35.209.50.228/static/img/logo_fb.jpg"></mj-image>
+          <mj-image width="100px" src="https://eventos.victoria147.org/static/img/logo_fb.jpg"></mj-image>
         </mj-column>
         <mj-column>
-          <mj-image width="100px" src="https://35.209.50.228/static/img/logo_bbva.jpg"></mj-image>
+          <mj-image width="100px" src="https://eventos.victoria147.org/static/img/logo_bbva.jpg"></mj-image>
         </mj-column>
         <mj-column>
-          <mj-image width="100px" src="https://35.209.50.228/static/img/logo_herdez.jpg"></mj-image>
+          <mj-image width="100px" src="https://eventos.victoria147.org/static/img/logo_herdez.jpg"></mj-image>
         </mj-column>
         <mj-column>
-          <mj-image width="100px" src="https://35.209.50.228/static/img/logo_nutrisa.jpg"></mj-image>
+          <mj-image width="100px" src="https://eventos.victoria147.org/static/img/logo_nutrisa.jpg"></mj-image>
         </mj-column>
       </mj-section>
 
@@ -133,7 +134,7 @@ https://mjml.io/try-it-live/MIcVS2L8YN0
 
       <mj-section background-color="#000000" padding='25px'>
         <mj-column>
-          <mj-image width="200px" src="https://35.209.50.228/static/img/logoVictoriaBlanco.png"></mj-image>
+          <mj-image width="200px" src="https://eventos.victoria147.org/static/img/logoVictoriaBlanco.png"></mj-image>
         </mj-column>
       </mj-section>
     </mj-wrapper>
