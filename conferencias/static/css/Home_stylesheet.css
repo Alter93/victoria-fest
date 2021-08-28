@@ -1,0 +1,367 @@
+::selection {
+    background: #FFC802;
+    /* WebKit/Blink Browsers */
+}
+
+::-moz-selection {
+    background: #FFC802;
+    /* Gecko Browsers */
+}
+
+
+/*  Menú global   */
+.navbar {
+    background-color: black !important;
+    width: 100%;
+    padding-left: 5rem !important;
+    padding-right: 5rem !important;
+}
+
+.nav-link {
+    text-transform: uppercase;
+    font-size: 20px;
+    color: white !important;
+    padding-left: 1em !important;
+    transition: 0.5s ease-in-out;
+}
+
+.nav-link:hover,
+nav-link:active {
+    color: #FFC802 !important;
+}
+
+.navbar-nav {
+    margin: 0 auto;
+}
+
+.nav_CTA {
+    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.nav_CTA a {
+    background-color: #00B774;
+    margin: 0;
+    height: 100%;
+    padding: 1em 2em !important;
+    transition: 0.5s ease-in-out;
+    text-align: center;
+
+}
+
+.nav_CTA a:hover {
+    background-color: #770BE8;
+}
+
+@media (max-width: 991.98px) {
+    .nav_CTA {
+        display: none;
+    }
+}
+
+
+/*  Font weights   */
+
+.bold {
+    font-family: 'Univers LT Std bold', sans-serif;
+    font-weight: bold;
+}
+
+.boldextended {
+    font-family: 'Univers LT Std boldex', sans-serif;
+    font-weight: bold;
+}
+
+.extended {
+    font-family: 'Univers LT Std ex', sans-serif;
+    font-weight: normal;
+}
+
+.light {
+    font-family: 'Univers LT Std lightcn', sans-serif;
+    font-weight: lighter;
+}
+
+
+
+/* //////////// MAIN ////////////  */
+
+.hero {
+    height: 40vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.anavicHero {
+    background: lightblue url("../static/img/anavictoriaHero.jpg") no-repeat fixed center;
+    width: 40vw;
+    height: 100%;
+}
+
+.anavicHero figure,
+.anavicHero figure img {
+    width: 100%;
+    height: 100%;
+}
+
+.rightHero {
+    width: 60vw;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.livenowHero {
+    width: 100%;
+    height: 10%;
+    background: linear-gradient(90deg, rgba(240, 130, 234, 1) 0%, rgba(119, 11, 232, 1) 100%);
+    border: solid #000000 2px;
+}
+
+.logoHero {
+    background-color: #FF585D;
+    height: 90%;
+    width: 50%;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 40px;
+    border: solid #000000 2px;
+    border-top: 0;
+    border-right: 0;
+}
+
+.fechaHero {
+    background-color: #770BE8;
+    height: 90%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+    padding-bottom: 20px;
+
+    border: solid #000000 2px;
+    border-top: 0;
+}
+
+.bannerCTA {
+    width: 100%;
+    background: #FFC802;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.bannerCTA img {
+    width: 100%;
+    ;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.bannerCTA button {
+    background-color: #00B774;
+    box-shadow: #770BE8 6px 6px;
+    font-size: 3em;
+    color: white;
+    border: none;
+    padding: 25px 35px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    z-index: 1;
+}
+
+.bannerCTA button:hover {
+    background-color: #770BE8;
+    box-shadow: #00B774 6px 6px;
+}
+
+.dosColumnas {
+    align-items: center;
+}
+
+.dosColumnas div {
+    height: 100%;
+}
+
+.dosColumnas figure {
+    width: 100%;
+    height: 100%;
+    margin: 0 !important;
+}
+
+.dosColumnas p {
+    color: #00B774;
+    max-width: 680px;
+    line-height: 1.4;
+    font-size: 1.2em
+}
+
+.dosColumnas h2 {
+    color: #00B774;
+    font-size: 4.5em;
+    max-width: 680px;
+    line-height: 1.1;
+    padding-bottom: 0.5em;
+}
+
+#speakers {
+    background-color: #FFC802;
+}
+
+#speakers h2 {
+    display: none;
+}
+
+.titleSpeakers {
+    width: 100%;
+}
+
+.titleSpeakers img {
+    width: 99%;
+}
+
+
+.speakersContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    align-items: flex-start;
+
+}
+
+.singleSpeaker {
+    width: 300px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 6rem;
+}
+
+.singleSpeaker figure img {
+    border-radius: 30%;
+    transition: 0.6s ease-in-out;
+}
+
+.singleSpeaker figure img:hover {
+    border-radius: 5%;
+}
+
+.rsSpeakers {
+    width: 120px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 10px;
+
+}
+
+.rsSpeakers a:hover {
+    opacity: 0.75;
+}
+
+
+#agenda {
+    background-color: #00B774;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding-bottom: 120px;
+}
+
+.test {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    background: lightblue url(../static/img/DecoDotsGreen.svg) repeat center;
+    z-index: 1000;
+}
+
+.encabezadosAgenda {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+#agenda h2 {
+    font-size: 4em;
+    display: none;
+}
+
+.titleAgenda {
+    width: 35vw;
+    margin: 0 auto;
+    padding: 4em 0;
+}
+
+.titleAgenda img {
+    width: 100%;
+}
+
+#agenda h4 {
+    font-size: 2.6em;
+    color: #770BE8;
+}
+
+.eventoSingle {
+    background-color: white;
+    width: 100%;
+    height: auto;
+    padding: 30px 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.eventoSingle div:first-child p {
+    font-size: 24px;
+}
+
+.eventoSingle div h5 {
+    max-width: 580px;
+    font-size: 24px;
+}
+
+.eventoSingle div p {
+    max-width: 580px;
+}
+
+.eventoSingle div:last-child p {
+    font-size: 24px;
+    text-align: center
+}
+
+
+#patrocinadores{
+    background-color: #770BE8;
+     display: flex;
+    flex-direction: column;
+    align-items: center;  
+    padding: 100px 0;
+}
+
+#patrocinadores .fila1{
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    justify-content: space-around;
+    max-width: 1100px;
+}
+
+
+
+
