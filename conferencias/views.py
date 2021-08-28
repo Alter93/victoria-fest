@@ -8,6 +8,8 @@ from .models import Prerregistro
 
 
 # Create your views here.
+def home(request):
+    return render(request, 'home.html', {})
 
 def prerregistro(request):
     if request.method == 'POST':
