@@ -17,6 +17,24 @@
     padding-right: 5rem !important;
 }
 
+.navbar-dark .navbar-toggler-icon {
+    background-image: url(../img/menuIcon.svg) !important;
+        transition: 0.5s ease-in-out;
+}
+
+.navbar-dark .navbar-toggler:hover {
+    transform: rotateZ(90deg);
+    transition: 0.5s ease-in-out;
+}
+
+.navbar-dark .navbar-toggler {
+    color: rgba(255,255,255,.55);
+    border-color: rgba(255,255,255,0) !important; 
+    box-shadow: 0 0 0 0rem !important;
+    border: none !important;
+}
+
+
 .nav-link {
     text-transform: uppercase;
     font-size: 20px;
@@ -282,15 +300,20 @@ nav-link:active {
     padding-bottom: 120px;
 }
 
-.test {
+.decoDots {
     position: absolute;
+    height: 100%;
+    width: 229px;
+    max-width: 30%;
     left: 0;
     top: 0;
-    height: 100vh;
-    background: lightblue url(../static/img/DecoDotsGreen.svg) repeat center;
-    z-index: 1000;
+    background: lightblue url('../img/DecoDotsGreen.svg') repeat left;
+    z-index: 0;
 }
 
+.containerAgenda{
+    z-index: 1;
+}
 .encabezadosAgenda {
     display: flex;
     flex-direction: row;
@@ -307,6 +330,8 @@ nav-link:active {
     width: 35vw;
     margin: 0 auto;
     padding: 4em 0;
+        z-index: 1;
+
 }
 
 .titleAgenda img {
