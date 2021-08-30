@@ -27,5 +27,8 @@ class Prerregistro(models.Model):
     recibir_correos = models.BooleanField()
     emprendedor = models.CharField(max_length=100)
 
+    def __str__(self):
+        return '%s %s' % (self.nombre, self.apellido)
+
     class Meta:
         db_table = "prerregistro"
