@@ -4,6 +4,7 @@ from django.template.loader import render_to_string
 
 from .prerregistro_form import PrerregistroForm
 from .models import Prerregistro
+from correos.views import crear_correo
 
 
 
@@ -36,18 +37,23 @@ def prerregistro(request):
                     emprendedor = form.cleaned_data.get('emprendedor'),
                 )
 
+
+                subject = 'Gracias por registrarte'
+                email_from = "paola@victoria147.org"
+                recipient_list = [form.cleaned_data.get('email'),]
+                registro.save()
+                id_mail = crear_correo(subject, registro)
                 contenido = render_to_string(
                     'email_prerregistro.html', {
                         "nombre": form.cleaned_data.get('nombre'),
+                        "idmail": id_mail,
                     }
                 )
-                subject = 'Gracias por registrarte'
+
                 message = contenido
-                email_from = "paola@victoria147.org"
-                recipient_list = [form.cleaned_data.get('email'),]
                 send_mail( subject, message, email_from, recipient_list , html_message=contenido)
                 form = PrerregistroForm()
-                registro.save()
+
                 return render(request, 'prerregistro.html', {
                     "error": "Registro guardado con éxito. ¡Ya eres parte del VictoriaFest! Revisa tu email para más información.",
                     "visibilidad":"visible",

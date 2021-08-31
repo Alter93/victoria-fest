@@ -18,5 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     path('', include('conferencias.urls')),
+    path('correos/', include('correos.urls')),
     path('admin/', admin.site.urls),
 ]
