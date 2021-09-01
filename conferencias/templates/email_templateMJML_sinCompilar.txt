@@ -75,9 +75,9 @@ https://mjml.io/try-it-live/MIcVS2L8YN0
         <mj-column padding='0px 25px'>
 
           <mj-text color='#770BE8' font-size="18px" line-height='1.4'>
-            <p>La clave para ingresar al evento es:
+            <p>La dirección para ingresar al evento es:
             </p>
-            <p><b>VICTORIAFEST2021</b></p>
+            <p>eventos.victoria147.org</p>
           </mj-text>
           <mj-button font-family="Helvetica" background-color="#FFC802" color="#FF585D" href='https://eventos.victoria147.org' font-size="22px" font-weight='bolder' padding='0px' border='1px solid black'>
             IR AL LOBBY
