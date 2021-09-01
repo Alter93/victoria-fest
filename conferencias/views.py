@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 
@@ -9,8 +9,11 @@ from correos.views import crear_correo
 
 
 # Create your views here.
+def gracias(request):
+    return render(request, 'gracias.html', {})
+
 def home(request):
-    return render(request, 'home.html', {})
+    return render(request, 'home.html', {"texto_boton": "REGISTRARME"})
 
 def prerregistro(request):
     if request.method == 'POST':
@@ -39,7 +42,7 @@ def prerregistro(request):
 
 
                 subject = 'Gracias por registrarte'
-                email_from = "paola@victoria147.org"
+                email_from = "contacto@victoria147.org"
                 recipient_list = [form.cleaned_data.get('email'),]
                 registro.save()
                 id_mail = crear_correo(subject, registro)
@@ -53,15 +56,19 @@ def prerregistro(request):
                 message = contenido
                 send_mail( subject, message, email_from, recipient_list , html_message=contenido)
                 form = PrerregistroForm()
+                # return render(request, 'prerregistro.html', {
+                #     "error": "Registro guardado con éxito. ¡Ya eres parte del VictoriaFest! Revisa tu email para más información.",
+                #     "visibilidad":"visible",
+                #     "class": 'show',
+                #     "texto_boton": "Listo!"
+                #     })
+                return redirect("/gracias")
 
-                return render(request, 'prerregistro.html', {
-                    "error": "Registro guardado con éxito. ¡Ya eres parte del VictoriaFest! Revisa tu email para más información.",
-                    "visibilidad":"visible",
-                    "class": 'show',
-                    "texto_boton": "Listo!"
-                    })
         else:
 
             return render(request, 'prerregistro.html', {"error": form.errors, "visibilidad":"visible", "class": 'show', "texto_boton": "REGISTRARME"})
     else:
-        return render(request, 'prerregistro.html', {"error": "", "visibilidad":"hidden", "texto_boton": "REGISTRARME"})
+        pagina = render(request, 'prerregistro.html', {"error": "", "visibilidad":"hidden", "texto_boton": "REGISTRARME"})
+        if request.path == "/registro":
+            pagina = render(request, 'prerregistro.html', {"error": "", "visibilidad":"visible","class":"show", "texto_boton": "REGISTRARME"})
+        return pagina
