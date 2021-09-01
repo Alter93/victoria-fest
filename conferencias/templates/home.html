@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/static/css/normalize.css" />
     <link rel="stylesheet" href="/static/fonts/fontstylesheet.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
@@ -42,28 +43,37 @@
                         <a class="nav-link" href="#agenda">Agenda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Stations</a>
+                        <a class="nav-link" href="#faqs">FAQ's</a>
                     </li>
                 </ul>
 
 
             </div>
             <div class="nav_CTA col-2">
-                <a class="nav-link boldextended"  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" href="#">Registro</a>
+                <a class="nav-link boldextended" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" href="#">REGISTRARME</a>
             </div>
         </div>
     </nav>
 
+    <div id="scrollmenu" class="fixedbot">
+      <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="bold">REGISTRARME</button>
+      </div>
 
 
 
     <div class="mainContent">
-        <div class="hero">
+        <div id="heroHeader" class="hero">
             <div class="anavicHero">
-                <figure><img src="/static/img/anavictoriaHero.jpg"></figure>
+
             </div>
             <div class="rightHero">
                 <div class="livenowHero">
+                   
+            <div class="textoScroll boldextended">
+                <span>EVENTO GRATUITO&nbsp; </span>
+                <span>9AM - 7PM&nbsp; </span>
+            </div>
+        
                 </div>
                 <div class="logoHero">
                     <figure><img src="/static/img/logonowblanco.svg"></figure>
@@ -76,14 +86,14 @@
         </div>
 
         <div class="bannerCTA">
-            <img src="/static/img/bannerCTABG.svg">
-            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="bold">ÚNETE AQUÍ</button>
+            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="bold">REGISTRARME</button>
         </div>
 
 
         <div class="dosColumnas row g-12">
-            <div class="col-lg ">
-                <figure><img class="img-fluid" src="/static/img/Foto_Deco1.jpg"></figure>
+            <div class="col-lg">
+                <div class="columnLeft"></div>
+
             </div>
             <div class="col-lg p-5 align-middle">
                 <h2 class="bold">ES EL MOMENTO <wbr> DE EMPRENDER.</h2>
@@ -92,8 +102,7 @@
                     posuere vestibulum. Phasellus facilisis vehicula aliquet. Nam
                     et porttitor felis, aliquet tristique nulla. Etiam ac lobortis risus.
                     Integer tortor felis, dapibus ut justo sit amet, tincidunt finibus
-                    dui. Nunc a quam felis. Suspendisse laoreet suscipit
-                    condimentum.
+                    dui.
                 </p>
                 <p> Phasellus facilisis vehicula aliquet. Nam et porttitor felis, aliquet
                     tristique nulla. Etiam ac lobortis risus.
@@ -110,142 +119,188 @@
             <figure class="titleSpeakers"><img class="img-fluid" src="/static/img/SPEAKERS.svg"></figure>
             <div class="speakersContainer container">
 
-                <div class="singleSpeaker" data-bs-toggle="collapse" href="#collapseMAR" role="button" aria-expanded="false" aria-controls="collapseMAR">
+                <div class="singleSpeaker">
+                    <figure><img class="img-fluid" src="/static/img/Speakers/anavictoria.jpg"></figure>
+                    <h4 class="bold">Ana Victoria García</h4>
+                    <h5 class="light">Fundadora de Victoria147, empresaria, autora de Ellas</h5>
+                    <a data-bs-toggle="collapse" class="btn btn-dark" href="#collapseAVG" role="button" aria-expanded="false" aria-controls="collapseAVG">Saber más</a>
+
+                    <div class="collapse" id="collapseAVG">
+                        <div class="card card-body">
+                            <p>Ana Victoria García es emprendedora, escritora y promotora del talento femenino; Su misión es equilibrar el mundo de los negocios en pro de la equidad de género.</p>
+
+                            <div class="rsSpeakers">
+                                <a href="https://www.instagram.com/anavictoriagarcia/" target="_blank">
+                                    <img class="img-fluid" src="/static/img/instagram.svg"></a>
+                                <a href="https://twitter.com/anavictoriaga/" target="_blank">
+                                    <img class="img-fluid" src="/static/img/twitter.svg"></a>
+                                <a href="#" target="_blank"><img class="img-fluid" src="/static/img/globe.svg"></a>
+                                <a href="https://www.facebook.com/AnaVictoria147/" target="_blank">
+                                    <img class="img-fluid" src="/static/img/facebook.svg"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="singleSpeaker">
+                    <figure><img class="img-fluid" src="/static/img/Speakers/dafneschilling.jpg"></figure>
+                    <h4 class="bold">Dafne Schilling</h4>
+                    <h5 class="light">Actriz, bailarina, <br>instructora de yoga.</h5>
+                    <a data-bs-toggle="collapse" class="btn btn-dark" href="#collapseDS" role="button" aria-expanded="false" aria-controls="collapseDS">Saber más</a>
+
+                    <div class="collapse" id="collapseDS">
+                        <div class="card card-body">
+                            <p>Creadora del método INTENCIÓN EN MOVIMIENTO, el cual busca reconectar con las emociones a través de la danza, el yoga y la meditación. Autora de Doce Estaciones del Alma y Despertá tu magia. </p>
+
+                            <div class="rsSpeakers">
+                                <a href="https://www.instagram.com/dafneschilling/" target="_blank">
+                                    <img class="img-fluid" src="/static/img/instagram.svg"></a>
+                                <a href="https://www.dafneschilling.com/ " target="_blank"><img class="img-fluid" src="/static/img/globe.svg"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/marcoantonioregil.jpg"></figure>
                     <h4 class="bold">Marco Antonio Regil</h4>
-                    <h5 class="light">Conductor</h5>
+                    <h5 class="light">Conductor, conferencista y animador de TV</h5>
+                    <a data-bs-toggle="collapse" class="btn btn-dark" href="#collapseMAR" role="button" aria-expanded="false" aria-controls="collapseMAR">Saber más</a>
 
                     <div class="collapse" id="collapseMAR">
                         <div class="card card-body">
-                            Phasellus facilisis vehicula aliquet. Nam et porttitor felis, aliquet tristique nulla. Etiam ac lobortis risus. Integer tortor felis, dapibus ut justo sit amet, tincidunt finibus dui. Nunc a quam felis.
+                            <p>Es un exitoso animador de TV y conferencista internacional. Ha impartido talleres y cursos sobre Estabilidad Financiera e Inteligencia Emocional a más de un millón de personas.</p>
+
+                            <div class="rsSpeakers">
+                                <a href="https://www.instagram.com/marcoantonioregil/" target="_blank">
+                                    <img class="img-fluid" src="/static/img/instagram.svg"></a>
+                                <a href="www.marcoantonioregil.com" target="_blank"><img class="img-fluid" src="/static/img/globe.svg"></a>
+                                <a href="https://www.facebook.com/MarcoAntonioRegil/" target="_blank">
+                                    <img class="img-fluid" src="/static/img/facebook.svg"></a>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="rsSpeakers">
-                        <a href="#" target="_blank"><img class="img-fluid" src="/static/img/twitter-bird-logo.png"></a>
-                        <a href="#" target="_blank"><img class="img-fluid" src="/static/img/sharing-files.png"></a>
-                        <a href="#" target="_blank"><img class="img-fluid" src="/static/img/facebook-social-network-logo.png"></a>
-                    </div>
                 </div>
 
-                <div class="singleSpeaker" data-bs-toggle="collapse" href="#collapseMV" role="button" aria-expanded="false" aria-controls="collapseMV">
+                <div class="singleSpeaker">
+                    <figure><img class="img-fluid" src="/static/img/Speakers/elisasacal.jpg"></figure>
+                    <h4 class="bold">Elisa Sacal</h4>
+                    <h5 class="light">Médico cirujano, asesora de sueño, integra medicina funcional y homeópata.</h5>
+                    <a data-bs-toggle="collapse" class="btn btn-dark" href="#collapseES" role="button" aria-expanded="false" aria-controls="collapseES">Saber más</a>
+
+                    <div class="collapse" id="collapseES">
+                        <div class="card card-body">
+                            <p>Es Médico cirujano, se dedica a la medicina integrativa, integra la medicina funcional, homeopatía y cambio de hábitos para resolver los padecimientos desde sus causas.</p>
+
+                            <div class="rsSpeakers">
+                                <a href="https://www.instagram.com/dra.elisasacal/" target="_blank">
+                                    <img class="img-fluid" src="/static/img/instagram.svg"></a>
+                                <a href="https://www.facebook.com/dra.elisasacal/" target="_blank">
+                                    <img class="img-fluid" src="/static/img/facebook.svg"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="singleSpeaker">
+                    <figure><img class="img-fluid" src="/static/img/Speakers/leticiagasca.jpg"></figure>
+                    <h4 class="bold">Leticia Gasca</h4>
+                    <h5 class="light">Directora de Fuckup nights, emprendedora y autora.</h5>
+                    <a data-bs-toggle="collapse" class="btn btn-dark" href="#collapseLG" role="button" aria-expanded="false" aria-controls="collapseLG">Saber más</a>
+
+                    <div class="collapse" id="collapseLG">
+                        <div class="card card-body">
+                            <p>Directora de Fuckup Nights, movimiento global para contar historias de fracasos de negocios. Fundadora de The Failure Institute y FUN Nights. Autora de Cambia todo, Sobrevivir al Fracaso y columnista.</p>
+
+                            <div class="rsSpeakers">
+                                <a href="https://www.instagram.com/letgasca/" target="_blank">
+                                    <img class="img-fluid" src="/static/img/instagram.svg"></a>
+                                <a href="https://twitter.com/letigasca/" target="_blank">
+                                    <img class="img-fluid" src="/static/img/twitter.svg"></a>
+                                <a href="https://leticiagasca.com/" target="_blank"><img class="img-fluid" src="/static/img/globe.svg"></a>
+                                <a href="https://www.facebook.com/letigasca/" target="_blank">
+                                    <img class="img-fluid" src="/static/img/facebook.svg"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/manuelavillegas.jpg"></figure>
                     <h4 class="bold">Manuela Villegas</h4>
-                    <h5 class="light">CEO Si Señor Agencia</h5>
+                    <h5 class="light">Emprendedora, Growth hacker e Inbound marketer.</h5>
+                    <a data-bs-toggle="collapse" class="btn btn-dark" href="#collapseMV" role="button" aria-expanded="false" aria-controls="collapseMV">Saber más</a>
+
                     <div class="collapse" id="collapseMV">
                         <div class="card card-body">
-                            Phasellus facilisis vehicula aliquet. Nam et porttitor felis, aliquet tristique nulla. Etiam ac lobortis risus. Integer tortor felis, dapibus ut justo sit amet, tincidunt finibus dui. Nunc a quam felis.
+                            <p>CEO de #SíSeñorAgencia. Especialista en proyectos de generación de demanda y ventas a través de estrategias digitales multiplataforma, basadas en metodologías y experimentación Inbound y Growth Marketing.</p>
+
+                            <div class="rsSpeakers">
+                                <a href="https://www.instagram.com/manuelavillegas/" target="_blank">
+                                    <img class="img-fluid" src="/static/img/instagram.svg"></a>
+                                <a href="https://twitter.com/manuelavillegas" target="_blank">
+                                    <img class="img-fluid" src="/static/img/twitter.svg"></a>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="rsSpeakers">
-                        <a href="#" target="_blank"><img class="img-fluid" src="/static/img/twitter-bird-logo.png"></a>
-                        <a href="#" target="_blank"><img class="img-fluid" src="/static/img/sharing-files.png"></a>
-                        <a href="#" target="_blank"><img class="img-fluid" src="/static/img/facebook-social-network-logo.png"></a>
-                    </div>
-                </div>                <div class="singleSpeaker" data-bs-toggle="collapse" href="#collapseMAR2" role="button" aria-expanded="false" aria-controls="collapseMAR2">
-                    <figure><img class="img-fluid" src="/static/img/Speakers/marcoantonioregil.jpg"></figure>
-                    <h4 class="bold">Marco Antonio Regil</h4>
-                    <h5 class="light">Conductor</h5>
-
-                    <div class="collapse" id="collapseMAR2">
-                        <div class="card card-body">
-                            Phasellus facilisis vehicula aliquet. Nam et porttitor felis, aliquet tristique nulla. Etiam ac lobortis risus. Integer tortor felis, dapibus ut justo sit amet, tincidunt finibus dui. Nunc a quam felis.
-                        </div>
-                    </div>
-
-                    <div class="rsSpeakers">
-                        <a href="#" target="_blank"><img class="img-fluid" src="/static/img/twitter-bird-logo.png"></a>
-                        <a href="#" target="_blank"><img class="img-fluid" src="/static/img/sharing-files.png"></a>
-                        <a href="#" target="_blank"><img class="img-fluid" src="/static/img/facebook-social-network-logo.png"></a>
-                    </div>
                 </div>
 
-                <div class="singleSpeaker" data-bs-toggle="collapse" href="#collapseMV2" role="button" aria-expanded="false" aria-controls="collapseMV2">
-                    <figure><img class="img-fluid" src="/static/img/Speakers/manuelavillegas.jpg"></figure>
-                    <h4 class="bold">Manuela Villegas</h4>
-                    <h5 class="light">CEO Si Señor Agencia</h5>
-                    <div class="collapse" id="collapseMV2">
+                <div class="singleSpeaker">
+                    <figure><img class="img-fluid" src="/static/img/Speakers/diegobarraza.jpg"></figure>
+                    <h4 class="bold">Diego Barrazas</h4>
+                    <h5 class="light">Emprendedor, creador de contenido, estratega de negocios</h5>
+                    <a data-bs-toggle="collapse" class="btn btn-dark" href="#collapseDB" role="button" aria-expanded="false" aria-controls="collapseDB">Saber más</a>
+
+                    <div class="collapse" id="collapseDB">
                         <div class="card card-body">
-                            Phasellus facilisis vehicula aliquet. Nam et porttitor felis, aliquet tristique nulla. Etiam ac lobortis risus. Integer tortor felis, dapibus ut justo sit amet, tincidunt finibus dui. Nunc a quam felis.
+                            <p>Consultor y creativo obsesionado con ayudar a otras personas a alcanzar su potencial. Es Host y creador del podcast DEMENTES uno de los podcasts más populares en Latinoamérica.</p>
+
+                            <div class="rsSpeakers">
+                                <a href="https://www.instagram.com/diegobarrazas/" target="_blank">
+                                    <img class="img-fluid" src="/static/img/instagram.svg"></a>
+                                <a href="https://twitter.com/diegobarrazas/" target="_blank">
+                                    <img class="img-fluid" src="/static/img/twitter.svg"></a>
+                                <a href="https://diegobarrazas.com/" target="_blank"><img class="img-fluid" src="/static/img/globe.svg"></a>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="rsSpeakers">
-                        <a href="#" target="_blank"><img class="img-fluid" src="/static/img/twitter-bird-logo.png"></a>
-                        <a href="#" target="_blank"><img class="img-fluid" src="/static/img/sharing-files.png"></a>
-                        <a href="#" target="_blank"><img class="img-fluid" src="/static/img/facebook-social-network-logo.png"></a>
-                    </div>
-                </div>                <div class="singleSpeaker" data-bs-toggle="collapse" href="#collapseMAR" role="button" aria-expanded="false" aria-controls="collapseMAR">
-                    <figure><img class="img-fluid" src="/static/img/Speakers/marcoantonioregil.jpg"></figure>
-                    <h4 class="bold">Marco Antonio Regil</h4>
-                    <h5 class="light">Conductor</h5>
-
-                    <div class="collapse" id="collapseMAR">
-                        <div class="card card-body">
-                            Phasellus facilisis vehicula aliquet. Nam et porttitor felis, aliquet tristique nulla. Etiam ac lobortis risus. Integer tortor felis, dapibus ut justo sit amet, tincidunt finibus dui. Nunc a quam felis.
-                        </div>
-                    </div>
-
-                    <div class="rsSpeakers">
-                        <a href="#" target="_blank"><img class="img-fluid" src="/static/img/twitter-bird-logo.png"></a>
-                        <a href="#" target="_blank"><img class="img-fluid" src="/static/img/sharing-files.png"></a>
-                        <a href="#" target="_blank"><img class="img-fluid" src="/static/img/facebook-social-network-logo.png"></a>
-                    </div>
                 </div>
 
-                <div class="singleSpeaker" data-bs-toggle="collapse" href="#collapseMV" role="button" aria-expanded="false" aria-controls="collapseMV">
-                    <figure><img class="img-fluid" src="/static/img/Speakers/manuelavillegas.jpg"></figure>
-                    <h4 class="bold">Manuela Villegas</h4>
-                    <h5 class="light">CEO Si Señor Agencia</h5>
-                    <div class="collapse" id="collapseMV">
+                <div class="singleSpeaker">
+                    <figure><img class="img-fluid" src="/static/img/Speakers/imyoni.jpg"></figure>
+                    <h4 class="bold">I.M. YONI
+                    </h4>
+                    <h5 class="light">Colectivo de mujeres que abordar el tema de la equidad a través del arte.</h5>
+                    <a data-bs-toggle="collapse" class="btn btn-dark" href="#collapseIMY" role="button" aria-expanded="false" aria-controls="collapseIMY">Saber más</a>
+
+                    <div class="collapse" id="collapseIMY">
                         <div class="card card-body">
-                            Phasellus facilisis vehicula aliquet. Nam et porttitor felis, aliquet tristique nulla. Etiam ac lobortis risus. Integer tortor felis, dapibus ut justo sit amet, tincidunt finibus dui. Nunc a quam felis.
+                            <p>El colectivo fue formado por un grupo musical que produce canciones originales en distintos idiomas dentro de los géneros Funk, R&B, Dance, Pop entre otros.</p>
+
+                            <div class="rsSpeakers">
+                                <a href="https://www.instagram.com/imyonicreative/" target="_blank">
+                                    <img class="img-fluid" src="/static/img/instagram.svg"></a>
+                                <a href="https://twitter.com/imyoni1" target="_blank">
+                                    <img class="img-fluid" src="/static/img/twitter.svg"></a>
+                                <a href="https://www.facebook.com/imyonimusic/" target="_blank">
+                                    <img class="img-fluid" src="/static/img/facebook.svg"></a>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="rsSpeakers">
-                        <a href="#" target="_blank"><img class="img-fluid" src="/static/img/twitter-bird-logo.png"></a>
-                        <a href="#" target="_blank"><img class="img-fluid" src="/static/img/sharing-files.png"></a>
-                        <a href="#" target="_blank"><img class="img-fluid" src="/static/img/facebook-social-network-logo.png"></a>
-                    </div>
-                </div>                <div class="singleSpeaker" data-bs-toggle="collapse" href="#collapseMAR" role="button" aria-expanded="false" aria-controls="collapseMAR">
-                    <figure><img class="img-fluid" src="/static/img/Speakers/marcoantonioregil.jpg"></figure>
-                    <h4 class="bold">Marco Antonio Regil</h4>
-                    <h5 class="light">Conductor</h5>
-
-                    <div class="collapse" id="collapseMAR">
-                        <div class="card card-body">
-                            Phasellus facilisis vehicula aliquet. Nam et porttitor felis, aliquet tristique nulla. Etiam ac lobortis risus. Integer tortor felis, dapibus ut justo sit amet, tincidunt finibus dui. Nunc a quam felis.
-                        </div>
-                    </div>
-
-                    <div class="rsSpeakers">
-                        <a href="#" target="_blank"><img class="img-fluid" src="/static/img/twitter-bird-logo.png"></a>
-                        <a href="#" target="_blank"><img class="img-fluid" src="/static/img/sharing-files.png"></a>
-                        <a href="#" target="_blank"><img class="img-fluid" src="/static/img/facebook-social-network-logo.png"></a>
-                    </div>
                 </div>
 
-                <div class="singleSpeaker" data-bs-toggle="collapse" href="#collapseMV" role="button" aria-expanded="false" aria-controls="collapseMV">
-                    <figure><img class="img-fluid" src="/static/img/Speakers/manuelavillegas.jpg"></figure>
-                    <h4 class="bold">Manuela Villegas</h4>
-                    <h5 class="light">CEO Si Señor Agencia</h5>
-                    <div class="collapse" id="collapseMV">
-                        <div class="card card-body">
-                            Phasellus facilisis vehicula aliquet. Nam et porttitor felis, aliquet tristique nulla. Etiam ac lobortis risus. Integer tortor felis, dapibus ut justo sit amet, tincidunt finibus dui. Nunc a quam felis.
-                        </div>
-                    </div>
-
-                    <div class="rsSpeakers">
-                        <a href="#" target="_blank"><img class="img-fluid" src="/static/img/twitter-bird-logo.png"></a>
-                        <a href="#" target="_blank"><img class="img-fluid" src="/static/img/sharing-files.png"></a>
-                        <a href="#" target="_blank"><img class="img-fluid" src="/static/img/facebook-social-network-logo.png"></a>
-                    </div>
-                </div>
 
 
             </div>
+
         </div>
 
         <div id="agenda">
@@ -320,78 +375,149 @@
             </div>
         </div>
 
-        <div id='patrocinadores' >
-         <div class="fila1 container-fluid">
-             <figure><img class="img-fluid" src="/static/img/logo1.png"></figure>
-              <figure><img class="img-fluid" src="/static/img/logo2.png"></figure>
-              <figure><img class="img-fluid" src="/static/img/logo3.png"></figure>
-              <figure><img class="img-fluid" src="/static/img/logo4.png"></figure>
+        <div id="faqs">
+            <h2 class="bold">Preguntas<br> Frecuentes</h2>
+
+            <div class="faqsContainer container">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="flush-headingOne">
+                            <button class="boldextended accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                ¿Pregunta de faqs #1?
+                            </button>
+                        </h3>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod arcu nec odio congue vulputate. Sed in vehicula arcu. Fusce metus mauris, blandit in vestibulum eu, eleifend nec lacus.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="flush-headingTwo">
+                            <button class="boldextended accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                ¿Pregunta de faqs #2?
+                            </button>
+                        </h3>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod arcu nec odio congue vulputate. Sed in vehicula arcu. Fusce metus mauris, blandit in vestibulum eu, eleifend nec lacus.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="flush-headingThree">
+                            <button class="boldextended accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                ¿Pregunta de faqs #3?
+                            </button>
+                        </h3>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod arcu nec odio congue vulputate. Sed in vehicula arcu. Fusce metus mauris, blandit in vestibulum eu, eleifend nec lacus.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="flush-headingFour">
+                            <button class="boldextended accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                ¿Pregunta de faqs #4?
+                            </button>
+                        </h3>
+                        <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod arcu nec odio congue vulputate. Sed in vehicula arcu. Fusce metus mauris, blandit in vestibulum eu, eleifend nec lacus.</div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
 
+        
+        
+        <div class="dosColumnas row g-12">
+            <div class="col-lg">
+                <div class="columnLeft preFooter"></div>
 
-            <div class="offcanvas offcanvas-end formularioModal {{ class }}" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="visibility: {{ visibilidad }};">
+            </div>
+            <div class="col-lg p-5 align-middle">
+                <h2 class="bold">REPROGRAMARSE ES <wbr> CUESTIONAR LO ESTABLECIDO.</h2>
+                <p>¿Te han tratado de rebelde? ¿de insumisa? ¿incluso de loca?<br> Lógico, las personas que no quieren cambiar van a intentar que tú tampoco lo hagas, que te quedes donde estás, haciendo las cosas como otros dijeron que hay que hacerlas. Pero nadie ha logrado nada quedándose en el mismo sitio, repitiendo fórmulas que no dan resultados. Los verdaderos cambios vienen de las inadaptadas, de las rebeldes, de esas mujeres a las que llaman locas. Si eres una de ellas, este lugar es para ti.
+                </p>
 
-        <div class="offcanvas-body">
-            <h2>INSCRÍBETE</h2>
-
-
-            <figure class="cross text-reset" data-bs-dismiss="offcanvas"><img src="/static/img/cross.png"></figure>
-            <div class="formContainer">
-                <p class="bold">Regístrate para recibir noticias sobre las actividades y eventos que estamos preparando para tí.</p>
-                <form action="/registro" method="post">
-
-                    {% csrf_token %}
-
-                    <input type="email" placeholder="EMAIL" name="email" required id="id_email" oninput="cambios_forma()">
-                    <input class="borderAdjust" type="text" name="nombre" placeholder="NOMBRE" maxlength="100" required id="id_nombre" oninput="cambios_forma()">
-                    <input class="borderAdjust" type="text" placeholder="APELLIDO" name="apellido" maxlength="100" required id="id_apellido" oninput="cambios_forma()">
-                    <select class="borderAdjust" name="genero" id="id_genero">
-                    <option disabled selected value="">Género</option>
-                    <option value="F">Femenino.</option>
-                    <option value="M">Masculino.</option>
-                    <option value="No Binario">No binario.</option>
-                    <option value="NA">Prefiero no decir.</option>
-                </select>
-
-                    <p class="light">campos opcionales ✱</p>
-
-                    <input type="tel" placeholder="TELÉFONO ✱" name="telefono" maxlength="11" id="phone">
-                    <div class="alert alert-info" style="display: none;"></div>
-                    <div class="alert alert-error" style="display: none;"></div>
-                    <input class="borderAdjust" type="text" placeholder="LUGAR DE RESIDENCIA ✱" name="lugar" maxlength="100" id="id_lugar">
+            </div>
+        </div>
+        
 
 
-                    <select class="borderAdjust" name="emprendedor" id="id_emprendedor">
-                          <option disabled selected value="">¿Eres emprendedor/a?</option>
-                          <option value="No">No, no soy emprendedor/a.</option>
-                          <option value="Tengo una idea de negocio.">Tengo una idea de negocio.</option>
-                          <option value="Acabo de iniciar un negocio (menos de 2 años).">Acabo de iniciar un negocio (menos de 2 años).</option>
-                          <option value="Tengo un negocio en crecimiento (2 a 5 años).">Tengo un negocio en crecimiento (2 a 5 años).</option>
-                          <option value="Tengo un negocio en expansión (más de 5 años).">Tengo un negocio en expansión (más de 5 años).</option>
+        <div id='patrocinadores'>
+            <div class="fila1 container-fluid">
+                <figure><img class="img-fluid" src="/static/img/logo1.png"></figure>
+                <figure><img class="img-fluid" src="/static/img/logo2.png"></figure>
+                <figure><img class="img-fluid" src="/static/img/logo3.png"></figure>
+                <figure><img class="img-fluid" src="/static/img/logo4.png"></figure>
+            </div>
+        </div>
+        
+         <footer class="footerVictoriafest">
+            <a href="https://victoria147.org/"> <figure class="logoVictoria"><img src="/static/img/logoVictoriaBlanco.png"></figure></a>
+
+        </footer>
+
+
+        <div class="offcanvas offcanvas-end formularioModal {{ class }}" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="visibility: {{ visibilidad }};">
+
+            <div class="offcanvas-body">
+                <h2>INSCRÍBETE</h2>
+
+
+                <figure class="cross text-reset" data-bs-dismiss="offcanvas"><img src="/static/img/cross.png"></figure>
+                <div class="formContainer">
+                    <p class="bold">Regístrate para recibir noticias sobre las actividades y eventos que estamos preparando para tí.</p>
+                    <form action="/registro" method="post">
+
+                        {% csrf_token %}
+
+                        <input type="email" placeholder="EMAIL" name="email" required id="id_email" oninput="cambios_forma()">
+                        <input class="borderAdjust" type="text" name="nombre" placeholder="NOMBRE" maxlength="100" required id="id_nombre" oninput="cambios_forma()">
+                        <input class="borderAdjust" type="text" placeholder="APELLIDO" name="apellido" maxlength="100" required id="id_apellido" oninput="cambios_forma()">
+                        <select class="borderAdjust" name="genero" id="id_genero">
+                            <option disabled selected value="">Género</option>
+                            <option value="F">Femenino.</option>
+                            <option value="M">Masculino.</option>
+                            <option value="No Binario">No binario.</option>
+                            <option value="NA">Prefiero no decir.</option>
+                        </select>
+
+                        <p class="light">campos opcionales ✱</p>
+
+                        <input type="tel" placeholder="TELÉFONO ✱" name="telefono" maxlength="11" id="phone">
+                        <div class="alert alert-info" style="display: none;"></div>
+                        <div class="alert alert-error" style="display: none;"></div>
+                        <input class="borderAdjust" type="text" placeholder="LUGAR DE RESIDENCIA ✱" name="lugar" maxlength="100" id="id_lugar">
+
+
+                        <select class="borderAdjust" name="emprendedor" id="id_emprendedor">
+                            <option disabled selected value="">¿Eres emprendedor/a?</option>
+                            <option value="No">No, no soy emprendedor/a.</option>
+                            <option value="Tengo una idea de negocio.">Tengo una idea de negocio.</option>
+                            <option value="Acabo de iniciar un negocio (menos de 2 años).">Acabo de iniciar un negocio (menos de 2 años).</option>
+                            <option value="Tengo un negocio en crecimiento (2 a 5 años).">Tengo un negocio en crecimiento (2 a 5 años).</option>
+                            <option value="Tengo un negocio en expansión (más de 5 años).">Tengo un negocio en expansión (más de 5 años).</option>
 
                         </select>
-                    <div class="checkCorreosContainer">
-                    <p>Estoy interesad@ en recibir correos informativos sobre los programas de Victoria147</p>
-                    <div class="checkCorreos">
-                        <label for="recibir_correos">Sí</label>
-                        <input type="checkbox" name="recibir_correos" id="id_recibir_correos">
-                    </div>
-                    </div>
+                        <div class="checkCorreosContainer">
+                            <p>Estoy interesad@ en recibir correos informativos sobre los programas de Victoria147</p>
+                            <div class="checkCorreos">
+                                <input type="checkbox" name="recibir_correos" checked id="id_recibir_correos">
+                            </div>
+                        </div>
 
                         <p class="boldextended">{{ error }}</p>
 
-                    <span class="d-inline-block" tabindex="0" id="tooltipbtn" data-bs-toggle="tooltip" data-bs-placement="left" title="Llena los campos obligatorios antes de enviar.">
-                        <input class="botonSubmit " type="submit" value="{{ texto_boton }}" disabled>
-                    </span>
+                        <span class="d-inline-block" tabindex="0" id="tooltipbtn" data-bs-toggle="tooltip" data-bs-placement="left" title="Llena los campos obligatorios antes de enviar.">
+                            <input class="botonSubmit " type="submit" value="{{ texto_boton }}" disabled>
+                        </span>
 
-                </form>
+                    </form>
+                </div>
+
+
+
             </div>
-
-
-
         </div>
-    </div>
 
 
     </div>
@@ -402,3 +528,71 @@
 </html>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+
+<script>
+        $(window).scroll(function() {
+    var height = $(window).scrollTop();
+    var element = $('#heroHeader');
+    var botonregistro = $('#scrollmenu');
+    if(height  > element.offset().top) {
+        botonregistro.removeClass('esconde');     
+    }
+    if(height  < element.offset().top) {
+        botonregistro.addClass('esconde');
+    
+    }
+});
+          
+    </script>
+
+
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+    // Handle international prefixes, format phone input field
+    // Uses intl-tel-input plugin
+    const phoneInputField = document.querySelector("#phone");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+        // https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+        preferredCountries: ["mx", "us", "co"],
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+
+    function cambios_forma() {
+        var emprendedor = document.querySelector("#id_emprendedor");
+        var genero = document.querySelector("#id_genero");
+        var email = document.querySelector("#id_email");
+        var nombre = document.querySelector("#id_nombre");
+        var apellido = document.querySelector("#id_apellido");
+
+        var subbutton = document.querySelector(".botonSubmit");
+        var btn_tooltip = document.querySelector("#tooltipbtn");
+
+        if (emprendedor.value != "" && genero.value != "" &&
+            email.value != "" && apellido.value != "" &&
+            nombre.value != ""
+        ) {
+            subbutton.removeAttribute("disabled");
+            btn_tooltip.removeAttribute("data-bs-toggle");
+            var myTooltipEl = document.getElementById('tooltipbtn')
+            var tooltip = new bootstrap.Tooltip(myTooltipEl)
+            subbutton.setAttribute("value", "REGISTRARME");
+            tooltip.disable()
+        } else {
+            subbutton.setAttribute("disabled", "");
+            var myTooltipEl = document.getElementById('tooltipbtn')
+            var tooltip = new bootstrap.Tooltip(myTooltipEl)
+            tooltip.enable()
+        }
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    }
+
+    var form = document.querySelector("form");
+    form.addEventListener("change", cambios_forma);
+</script>

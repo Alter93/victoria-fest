@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8" />
+      
+      
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <script
+			  src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+			  integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+			  crossorigin="anonymous"></script>
+      
+      
+      
+  <style>
+      
+      body
+{
+height:2000px;
+
+}
+  div {
+  width: 100%;
+  height: 800px;
+  font-size: 3rem;
+  background-color: aquamarine;
+}
+      .fixedbot{
+          background-color: coral;
+           position: fixed; bottom: 30px; right: 30px; width: 300px; display:block; max-height: 75px; 
+           z-index: 100;
+           transition: 1s ease-in-out;
+           pointer-events: auto;
+      } 
+      
+      
+      .black
+{
+  background-color:black !important;
+  color:white;
+  padding:20px;
+}
+      
+      .esconde{opacity: 0 !important;
+      pointer-events: none;
+      }
+      
+  </style>
+  </head>
+  <body>
+
+      <div >
+      
+      </div>
+          <div>
+      
+      </div>
+        <div>
+      
+      </div>
+        <div id="prueba">
+      
+      </div>
+      <div id="scrollmenu" class="fixedbot">
+      <a href="#"> PRUEBA</a>
+      </div>
+        <div>
+      
+      </div>
+        <div>
+      
+      </div>
+      
+      
+  </body>
+    
+    <script>
+        $(window).scroll(function() {
+    var height = $(window).scrollTop();
+    var element = $('#prueba');
+    var botonregistro = $('#scrollmenu');
+    if(height  > element.offset().top) {
+        element.addClass('black');
+        botonregistro.addClass('esconde');
+    }
+    if(height  < element.offset().top) {
+        element.removeClass('black');
+        botonregistro.removeClass('esconde');     
+    }
+});
+          
+    </script>
+</html>
+
+

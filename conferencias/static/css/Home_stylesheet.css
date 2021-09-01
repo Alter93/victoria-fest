@@ -79,6 +79,43 @@ nav-link:active {
 }
 
 
+/*  Floating button   */
+
+ .fixedbot{
+           position: fixed;
+     bottom: 30px;
+     right: 30px; 
+     display:block; 
+           z-index: 3;
+           transition: 1s ease-in-out;
+           pointer-events: auto;
+      } 
+
+
+.fixedbot button {
+    background-color: #00B774;
+    box-shadow: #770BE8 6px 6px;
+    font-size: 1.8em;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.fixedbot button:hover {
+    background-color: #770BE8;
+    box-shadow: #00B774 6px 6px;
+}
+      
+      
+      .esconde{opacity: 0 !important;
+      pointer-events: none;
+      }
+
+
+
+
 /*  Font weights   */
 
 .bold {
@@ -112,16 +149,15 @@ nav-link:active {
 }
 
 .anavicHero {
-    background: lightblue url("../static/img/anavictoriaHero.jpg") no-repeat fixed center;
+    background: lightblue url("/conferencias/static/img/anavictoriaHero.jpg") no-repeat center center;
+ -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
     width: 40vw;
-    height: 100%;
+    height: auto;
 }
 
-.anavicHero figure,
-.anavicHero figure img {
-    width: 100%;
-    height: 100%;
-}
 
 .rightHero {
     width: 60vw;
@@ -136,6 +172,21 @@ nav-link:active {
     height: 10%;
     background: linear-gradient(90deg, rgba(240, 130, 234, 1) 0%, rgba(119, 11, 232, 1) 100%);
     border: solid #000000 2px;
+    color: #00B774;
+}
+.textoScroll{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.textoScroll span {
+    font-size: 2.5vw;
+    color: #000000;
+    height: 5vh;
+    text-align: center;
 }
 
 .logoHero {
@@ -174,6 +225,11 @@ nav-link:active {
     justify-content: center;
     position: relative;
     overflow: hidden;
+    background: lightblue url("/conferencias/static/img/bannerCTABG.svg") repeat center center;
+ -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .bannerCTA img {
@@ -204,23 +260,47 @@ nav-link:active {
 
 .dosColumnas {
     align-items: center;
+     min-height:30vw;
+     height: 800px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-content: flex-start;    
+}
+
+.columnLeft{
+     background: lightblue url("/conferencias/static/img/DSC_0024OK.jpg") no-repeat center center;
+ -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    height: auto;
+    width: 100%;
+}
+
+.preFooter{
+     background: lightblue url("/conferencias/static/img/anavictoria2.jpg") no-repeat center center !important;  
 }
 
 .dosColumnas div {
     height: 100%;
+    width: auto;
 }
 
-.dosColumnas figure {
-    width: 100%;
-    height: 100%;
-    margin: 0 !important;
+.dosColumnas div:last-child{
+    display: flex;
+    flex-direction: column;
+    flex-wrap:nowrap;
+    justify-content:center;
+    align-content: flex-start;    
 }
 
 .dosColumnas p {
     color: #00B774;
     max-width: 680px;
     line-height: 1.4;
-    font-size: 1.2em
+    font-size: 1.5em
 }
 
 .dosColumnas h2 {
@@ -267,6 +347,12 @@ nav-link:active {
     padding-bottom: 6rem;
 }
 
+.singleSpeaker h5, .singleSpeaker h4{
+    margin-bottom: 15px;
+    text-align: center
+
+}
+
 .singleSpeaker figure img {
     border-radius: 30%;
     transition: 0.6s ease-in-out;
@@ -277,13 +363,14 @@ nav-link:active {
 }
 
 .rsSpeakers {
-    width: 120px;
+    width: 90%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
     padding-top: 10px;
-
+    border-top: lightgray 1px solid;
+    margin: 0 auto;
 }
 
 .rsSpeakers a:hover {
@@ -370,6 +457,53 @@ nav-link:active {
     text-align: center
 }
 
+#faqs{
+    padding: 80px 0 100px 0;
+    background: rgb(250,250,250);
+background: linear-gradient(180deg, rgba(250,250,250,1) 0%, rgba(255,200,2,1) 100%);
+}
+
+
+#faqs h2{
+    text-transform: uppercase;
+    font-size: 6.5em;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #F7582A;
+    color: transparent;
+    margin: 20px auto 45px;
+    text-align: center;
+    line-height: 1;
+}
+
+.faqsContainer h3 button{
+    font-size: 0.8em;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.faqsContainer .accordion-body{
+    max-width: 900px;
+    font-size: 1.1em;
+}
+
+.faqsContainer .accordion-button:not(.collapsed) {
+    color: #F7582A;
+    background-color: #fff5f2;
+    box-shadow: inset 0 -1px 0 rgb(0 0 0 / 20%);
+}
+
+.faqsContainer .accordion-button{
+        box-shadow: inset 0 -1px 0 rgb(0 0 0 / 20%);
+
+}
+
+
+
+#faqs .accordion-button::after {
+    background-image: url(/conferencias/static/img/plus.svg);
+}
+
 
 #patrocinadores{
     background-color: #770BE8;
@@ -387,6 +521,19 @@ nav-link:active {
     max-width: 1100px;
 }
 
+.footerVictoriafest {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: black;
+    margin: 0;
+    padding: 25px 0;
+    min-height: 10vh;
+}
 
+.logoVictoria img {
+    height: 65px;
+    margin-top: 25px;
+}
 
 

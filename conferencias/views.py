@@ -23,7 +23,7 @@ def prerregistro(request):
                     "error": "Ese correo ya ha sido registrado, por favor usa uno diferente.",
                     "visibilidad":"visible",
                     "class": 'show',
-                    "texto_boton": "UNIRME"
+                    "texto_boton": "REGISTRARME"
                  })
             except Prerregistro.DoesNotExist:
                 registro = Prerregistro(
@@ -62,6 +62,6 @@ def prerregistro(request):
                     })
         else:
 
-            return render(request, 'prerregistro.html', {"error": form.errors, "visibilidad":"visible", "class": 'show', "texto_boton": "UNIRME"})
+            return render(request, 'prerregistro.html', {"error": form.errors, "visibilidad":"visible", "class": 'show', "texto_boton": "REGISTRARME"})
     else:
-        return render(request, 'prerregistro.html', {"error": "", "visibilidad":"hidden", "texto_boton": "UNIRME"})
+        return render(request, 'prerregistro.html', {"error": "", "visibilidad":"hidden", "texto_boton": "REGISTRARME"})
