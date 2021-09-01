@@ -201,6 +201,19 @@ nav-link:active {
     border-right: 0;
 }
 
+.logoHero figure{
+    width: 90%;
+    max-width: 350px;
+    height: auto;
+        margin: 0;
+
+}
+
+.logoHero figure img{
+    width: 100%;    
+    height: auto;
+}
+
 .fechaHero {
     background-color: #770BE8;
     height: 90%;
@@ -214,6 +227,19 @@ nav-link:active {
     border: solid #000000 2px;
     border-top: 0;
 }
+
+.fechaHero figure{
+    width: 90%;
+    max-width: 250px;
+    height: auto;
+    margin: 0;
+}
+
+.fechaHero figure img{
+    width: 100%;    
+    height: auto;
+}
+
 
 .bannerCTA {
     width: 100%;
@@ -536,4 +562,152 @@ background: linear-gradient(180deg, rgba(250,250,250,1) 0%, rgba(255,200,2,1) 10
     margin-top: 25px;
 }
 
+.mensajeError{
+background-color: #770BE8;
+width: 370px;
+padding: 15px;
+color: white;
+}
 
+/*  MEDIA QUERIES  */
+
+/* X-Large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+    
+    .dosColumnas h2 {
+    font-size: 3.5em;
+    }
+    .dosColumnas p {
+    font-size: 1.3em;
+    max-width: 90%
+    }
+    
+}
+
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+    
+    .nav_CTA {
+    display: none;
+}
+    
+    .logoHero {
+    background-color: #FF585D;
+    height: 90%;
+    width: 50%;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 25px;
+    }
+    .logoHero figure {
+    width: 75%;
+    }
+    
+    .fechaHero{
+        padding: 25px;
+    }
+    
+    .fechaHero figure {
+        width: 70%;
+    }
+    .preFooter {
+    background: lightblue url(../img/anavictoria2.jpg) no-repeat 30% center !important;
+    }
+    .dosColumnas div:last-child{
+            padding: 1em!important;
+    }
+    .dosColumnas h2 {
+    font-size: 2.5em;
+    }
+    .dosColumnas p {
+    font-size: 1.1em;
+    }
+    
+}
+
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    
+    .nav-link {
+    text-align: center;
+    }
+    .dosColumnas {
+    height: 650px;
+    }
+    .dosColumnas div:first-child{
+        display: none;
+    }
+    .dosColumnas h2 {
+    font-size: 3.5em;
+        text-align: center;
+    }
+    .dosColumnas p {
+    font-size: 1.1em;
+        margin: 0 auto;
+        width: 90%;
+        max-width: 640px;
+    }
+    .bannerCTA button {
+    font-size: 2em;
+    }
+    .encabezadosAgenda {
+    display: none !important;
+    }
+    .eventoSingle{
+    padding: 15px 20px;
+    }
+    .eventoSingle div:first-of-type p, .eventoSingle div h5{
+        text-align: center;
+        font-size: 1.6em;
+    }
+    #faqs h2 {
+        font-size: 4.5em;
+    }
+    
+}
+
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    
+    .bannerCTA {
+        height: 240px;
+    }
+    .bannerCTA button {
+    font-size: 1.5em;
+    }
+    .singleSpeaker {
+    width: 240px;
+    }
+    .dosColumnas {
+    height: 580px;
+    }
+    .dosColumnas h2 {
+    font-size: 2.7em;
+    width: 90%;
+        margin: 0 auto;
+}
+    
+}
+
+
+
+/* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    
+    .navbar-brand img{
+        height: 28px !important; 
+    }
+    #faqs h2 {
+    font-size: 3em;
+    }
+    .eventoSingle {
+    max-width: 90%;
+    margin: 15px auto !important;
+}
+    
+    
+    
+}

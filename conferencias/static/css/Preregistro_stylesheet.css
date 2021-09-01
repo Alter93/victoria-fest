@@ -471,7 +471,7 @@ figure img {
     .logoNow img {
         height: 350px;
     }
-
+}
 
     /* Large devices (desktops, less than 1200px) */
     @media (max-width: 1199.98px) {
@@ -537,7 +537,7 @@ figure img {
         }
     }
 
-}
+
 
 
 /* Small devices (landscape phones, less than 768px) */
