@@ -11,14 +11,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    
-    
+
+
+
     <!-- Facebook Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -58,8 +57,8 @@ gtag('js', new Date());
 gtag('config', 'AW-350427249');
 </script>
 
-    
-    
+
+
 
     <title>Victoria Fest 2021 / Home</title>
 
@@ -112,12 +111,12 @@ gtag('config', 'AW-350427249');
             </div>
             <div class="rightHero">
                 <div class="livenowHero">
-                   
+
             <div class="textoScroll boldextended">
                 <span>EVENTO GRATUITO&nbsp; </span>
                 <span>9AM - 7PM&nbsp; </span>
             </div>
-        
+
                 </div>
                 <div class="logoHero">
                     <figure><img src="/static/img/logonowblanco.svg"></figure>
@@ -469,8 +468,8 @@ gtag('config', 'AW-350427249');
 
         </div>
 
-        
-        
+
+
         <div class="dosColumnas row g-12">
             <div class="col-lg">
                 <div class="columnLeft preFooter"></div>
@@ -483,7 +482,7 @@ gtag('config', 'AW-350427249');
 
             </div>
         </div>
-        
+
 
 
         <div id='patrocinadores'>
@@ -494,12 +493,30 @@ gtag('config', 'AW-350427249');
                 <figure><img class="img-fluid" src="/static/img/logo4.png"></figure>
             </div>
         </div>
-        
+
          <footer class="footerVictoriafest">
             <a href="https://victoria147.org/"> <figure class="logoVictoria"><img src="/static/img/logoVictoriaBlanco.png"></figure></a>
 
         </footer>
+        {% if gracias %}
+        <script>
+            jQuery(window).on('load', function () {
+                $('#modalGracias').modal('show');
+            });
+        </script>
+        <div class="modal fade" id="modalGracias" tabindex="-1" aria-labelledby="modalGracias" aria-hidden="false">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
 
+                <h3>Registro guardado con éxito.</h3>
+                <p>¡Ya eres parte del <b>VictoriaFest!</b></p>
+                <p>Revisa tu email para más información.</p>
+
+              </div>
+          </div>
+        </div>
+
+        {% endif %}
 
         <div class="offcanvas offcanvas-end formularioModal {{ class }}" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="visibility: {{ visibilidad }};">
 
@@ -548,9 +565,9 @@ gtag('config', 'AW-350427249');
                                 <input type="checkbox" name="recibir_correos" checked id="id_recibir_correos">
                             </div>
                         </div>
-
+                        {% if error %}
                         <p class="boldextended mensajeError">{{ error }}</p>
-
+                        {% endif %}
                         <span class="d-inline-block" tabindex="0" id="tooltipbtn" data-bs-toggle="tooltip" data-bs-placement="left" title="Llena los campos obligatorios antes de enviar.">
                             <input class="botonSubmit " type="submit" value="{{ texto_boton }}" disabled>
                         </span>
@@ -580,16 +597,15 @@ gtag('config', 'AW-350427249');
     var element = $('#heroHeader');
     var botonregistro = $('#scrollmenu');
     if(height  > element.offset().top) {
-        botonregistro.removeClass('esconde');     
+        botonregistro.removeClass('esconde');
     }
     if(height  < element.offset().top) {
         botonregistro.addClass('esconde');
-    
+
     }
 });
-          
-    </script>
 
+    </script>
 
 <script>
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
@@ -639,4 +655,6 @@ gtag('config', 'AW-350427249');
 
     var form = document.querySelector("form");
     form.addEventListener("change", cambios_forma);
+
+
 </script>
