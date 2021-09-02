@@ -289,7 +289,7 @@ nav-link:active {
 .dosColumnas {
     align-items: center;
      min-height:30vw;
-     height: 800px;
+     min-height: 800px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -454,7 +454,7 @@ nav-link:active {
 }
 
 #agenda h4 {
-    font-size: 2.6em;
+    font-size: 2.3em;
     color: #770BE8;
 }
 
@@ -691,7 +691,7 @@ color: white;
     text-align: center;
     }
     .dosColumnas {
-    height: 650px;
+    min-height: 650px;
     }
     .dosColumnas div:first-child{
         display: none;
@@ -739,12 +739,15 @@ color: white;
     width: 240px;
     }
     .dosColumnas {
-    height: 580px;
+    min-height: 580px;
     }
     .dosColumnas h2 {
     font-size: 2.7em;
     width: 90%;
         margin: 0 auto;
+}
+    #agenda h4 {
+    font-size: 1.2em;
 }
     
 }
@@ -763,6 +766,10 @@ color: white;
     .eventoSingle {
     max-width: 90%;
     margin: 15px auto !important;
+}
+    
+    #agenda h4 {
+    font-size: 1.1em;
 }
     
     
