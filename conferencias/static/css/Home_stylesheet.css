@@ -571,6 +571,25 @@ padding: 15px;
 color: white;
 }
 
+#modalGracias .modal-content{
+    background-color: #770BE8;
+    padding: 2em;
+    color: white;
+    text-align: center;
+    box-shadow: #00B774 8px 8px;
+    border-radius: 0;
+
+}
+#modalGracias .modal-content:last-of-type p{
+    font-size: 1rem;
+}
+
+
+#modalGracias .modal-content:first-of-type p{
+    font-size: 1.5rem;
+}
+
+
 /*  MEDIA QUERIES  */
 
 /* X-Large devices (large desktops, less than 1400px) */
