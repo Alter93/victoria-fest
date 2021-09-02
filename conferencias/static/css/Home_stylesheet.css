@@ -480,6 +480,28 @@ nav-link:active {
     max-width: 580px;
 }
 
+/*  Activar fechas y descripción */
+
+.encabezadosAgenda h4:last-of-type{
+    display:none;
+}
+
+.eventoSingle div:last-of-type{
+    display: none !important;
+}
+
+.eventoSingle h5, .eventoSingle p{
+    font-size: 2em !important;
+}
+
+.descripcionEvento{
+    display: none !important;
+}
+
+
+/*  Activar fechas y descripción END */
+
+
 .eventoSingle div:last-child p {
     font-size: 24px;
     text-align: center
@@ -533,8 +555,17 @@ background: linear-gradient(180deg, rgba(250,250,250,1) 0%, rgba(255,200,2,1) 10
 }
 
 
+.preFooterRight{
+    background-color: #00B774;
+}
+
+.preFooterRight h2, .preFooterRight p{
+        color: white !important;
+
+}
+
 #patrocinadores{
-    background-color: #770BE8;
+    background-color: #fff;
      display: flex;
     flex-direction: column;
     align-items: center;  
@@ -544,9 +575,25 @@ background: linear-gradient(180deg, rgba(250,250,250,1) 0%, rgba(255,200,2,1) 10
 #patrocinadores .fila1{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center; 
     justify-content: space-around;
     max-width: 1100px;
+}
+
+#patrocinadores figure{
+    max-width: 250px;
+    height: 100px;
+    width: 250px;
+    padding: 5px;
+    align-items: center; 
+    display: flex;
+}
+
+#patrocinadores figure img{
+    height:100%;
+    margin: 0 auto;
+    
 }
 
 .footerVictoriafest {
