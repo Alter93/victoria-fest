@@ -10,8 +10,12 @@ from correos.views import crear_correo
 
 # Create your views here.
 def gracias(request):
-    return render(request, 'home.html', {"gracias": True})
-
+    if 'prerregistro'in request.session:
+        pagina = render(request, 'home.html', {"gracias": True, "texto_boton": "REGISTRARME"})
+        del request.session['prerregistro']
+    else:
+        pagina = redirect("/")
+    return pagina
 def home(request):
     return render(request, 'home.html', {"texto_boton": "REGISTRARME"})
 
@@ -62,6 +66,7 @@ def prerregistro(request):
                 #     "class": 'show',
                 #     "texto_boton": "Listo!"
                 #     })
+                request.session['prerregistro'] = 1
                 return redirect('/gracias')
 
         else:
