@@ -482,20 +482,9 @@ nav-link:active {
 
 /*  Activar fechas y descripción */
 
-.encabezadosAgenda h4:last-of-type{
-    display:none;
-}
-
-.eventoSingle div:last-of-type{
-    display: none !important;
-}
 
 .eventoSingle h5, .eventoSingle p{
     font-size: 2em !important;
-}
-
-.descripcionEvento{
-    display: none !important;
 }
 
 
