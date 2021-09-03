@@ -94,8 +94,8 @@ https://mjml.io/try-it-live/MIcVS2L8YN0
 
       <mj-section padding='0px 0'>
         <mj-column background-color="#FFC802" padding='20px 0' border="1px solid #000">
-          <mj-text align="center" color="#770BE8" font-family="Arial, sans-serif" font-size="20px" line-height="28px" font-weight='bolder'>¿Tienes dudas? </mj-text>
-          <mj-text align="center" color="#000" font-family="Arial, sans-serif" font-size="16px" line-height="22px">Escríbenos a este correo: <a style="color:#770BE8" href="mailto:paola@victoria147.org"><b>paola@victoria147.org</b></a></mj-text>
+          <mj-text align="center" color="#770BE8" font-family="Arial, sans-serif" font-size="20px" line-height="28px" font-weight='bolder'><a style="color:#770BE8" href="https://eventos.victoria147.org/#faqs">¿Tienes dudas?</a> </mj-text>
+          <mj-text align="center" color="#000" font-family="Arial, sans-serif" font-size="16px" line-height="22px">Escríbenos a este correo: <a style="color:#770BE8" href="mailto:contacto@victoria147.org"><b>contacto@victoria147.org</b></a></mj-text>
 
         </mj-column>
       </mj-section>

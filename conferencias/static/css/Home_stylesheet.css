@@ -8,6 +8,11 @@
     /* Gecko Browsers */
 }
 
+body{
+    width: 100%;
+    overflow-x: hidden;
+}
+
 
 /*  Menú global   */
 .navbar {
@@ -289,7 +294,7 @@ nav-link:active {
 .dosColumnas {
     align-items: center;
      min-height:30vw;
-     min-height: 800px;
+    height: 900px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -298,7 +303,7 @@ nav-link:active {
 }
 
 .columnLeft{
-     background: lightblue url("../img/DSC_0024OK.jpg") no-repeat center center;
+     background: lightblue url("../img/Foto_Deco1.jpg") no-repeat center center;
  -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -308,7 +313,8 @@ nav-link:active {
 }
 
 .preFooter{
-     background: lightblue url("../img/anavictoria2.jpg") no-repeat center center !important;  
+     background: #00B774 url("../img/Re_Programa.jpg") no-repeat center center !important;  
+    
 }
 
 .dosColumnas div {
@@ -668,9 +674,7 @@ color: white;
     .fechaHero figure {
         width: 70%;
     }
-    .preFooter {
-    background: lightblue url(../img/anavictoria2.jpg) no-repeat 30% center !important;
-    }
+    
     .dosColumnas div:last-child{
             padding: 1em!important;
     }
@@ -697,7 +701,7 @@ color: white;
         display: none;
     }
     .dosColumnas h2 {
-    font-size: 3.5em;
+    font-size: 3em;
         text-align: center;
     }
     .dosColumnas p {
@@ -720,7 +724,7 @@ color: white;
         font-size: 1.6em;
     }
     #faqs h2 {
-        font-size: 4.5em;
+        font-size: 3.5em;
     }
     
 }
@@ -742,13 +746,16 @@ color: white;
     min-height: 580px;
     }
     .dosColumnas h2 {
-    font-size: 2.7em;
+    font-size: 1.7em;
     width: 90%;
         margin: 0 auto;
 }
     #agenda h4 {
     font-size: 1.2em;
 }
+    .formularioModal h2 {
+ opacity: 0 !important; 
+    }
     
 }
 
@@ -761,7 +768,7 @@ color: white;
         height: 28px !important; 
     }
     #faqs h2 {
-    font-size: 3em;
+    font-size: 2em;
     }
     .eventoSingle {
     max-width: 90%;
