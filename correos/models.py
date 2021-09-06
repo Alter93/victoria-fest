@@ -7,5 +7,5 @@ class Correo(models.Model):
     usuario = models.ForeignKey(Prerregistro, on_delete=models.CASCADE, null=True)
     leido = models.IntegerField()
 
-        def __str__(self):
-            return '%s - %s' % (self.asunto, self.usuario.nombre)
+    def __str__(self):
+        return '%s - %s' % (self.asunto, self.usuario.nombre)
