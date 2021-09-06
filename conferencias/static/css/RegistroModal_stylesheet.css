@@ -233,10 +233,14 @@
 /* X-Small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
 
-
+    .offcanvas-body{
+    overflow-y: scroll;    
+        
+    }
+    
     .formContainer {
         max-width: 300px;
-        padding-top: 50px
+        padding-top: 12px;
     }
 
     .formContainer form {
@@ -245,18 +249,21 @@
 
     .formContainer form input {
         width: 300px;
-        height: 40px;
+        height: 28px;
         padding: 0 0 0 10px;
     }
 
     .formContainer form select {
         padding: 0 0 0 10px;
         width: 300px;
-        height: 40px;
+        height: 28px;
     }
 
     .checkCorreos {
-        width: 250px;
+    }
+    
+    .checkCorreos input{
+    height: 40px !important;
     }
 
     .botonSubmit {
