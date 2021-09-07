@@ -260,6 +260,8 @@
     }
 
     .checkCorreos {
+        width: 90px;
+z-index: 100;
     }
     
     .checkCorreos input{

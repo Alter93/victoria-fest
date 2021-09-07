@@ -768,7 +768,7 @@ color: white;
 @media (max-width: 575.98px) {
     
     .navbar-brand img{
-        height: 28px !important; 
+        height: 25px !important; 
     }
     #faqs h2 {
     font-size: 2em;
