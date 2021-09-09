@@ -19,7 +19,7 @@
     top: 0%;
     font-size: 17vh;
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #F7582A;
+    -webkit-text-stroke-color: #770BE8;
     color: transparent;
     font-family: 'Univers LT Std bold', sans-serif;
     opacity: .5;
@@ -32,13 +32,18 @@
     cursor: pointer;
 }
 
+.cross img{
+        height: 60px;
+
+}
+
 .formularioModal .cross:hover {
     transform: rotate(90deg);
     transition: 0.5s ease-in-out;
 }
 
 .formContainer {
-    color: #F7582A;
+    color: #770BE8;
     max-width: 400px;
     margin: 4vh 0 0 0;
 }
@@ -56,8 +61,8 @@
 }
 
 .formContainer form input {
-    color: #F7582A;
-    border: 1px #F7582A solid;
+    color: #770BE8;
+    border: 1px #770BE8 solid;
     padding: 0 0 0 20px;
     width: 370px;
     height: 40px;
@@ -66,12 +71,12 @@
 }
 
 .formContainer form input::placeholder {
-    color: #F7582A;
+    color: #770BE8;
 }
 
 .formContainer form select {
-    color: #F7582A;
-    border: 1px #F7582A solid;
+    color: #770BE8;
+    border: 1px #770BE8 solid;
     padding: 0 0 0 20px;
     width: 370px;
     height: 40px;
@@ -105,14 +110,14 @@
     -moz-appearance: none;
     -o-appearance: none;
     appearance: none;
-    outline: 0px solid #F7582A;
+    outline: 0px solid #770BE8;
     box-shadow: none;
     font-size: 1.5em;
     text-align: center;
 }
 
 .checkCorreos input[type='checkbox']:checked {
-    background: #F7582A;
+    background: #770BE8;
 }
 
 .checkCorreos input[type='checkbox']:checked:after {
@@ -140,7 +145,7 @@
 
 
 .botonSubmit {
-    background-color: #F7582A;
+    background-color: #770BE8;
     font-size: 2.5em;
     color: white ! important;
     border: none;
@@ -173,8 +178,8 @@
     }
 
     .formularioModal .cross img {
-        width: 40px;
-        height: 40px;
+        width: 32px;
+        height: 32px;
     }
 
 
@@ -269,7 +274,7 @@ z-index: 100;
     }
 
     .botonSubmit {
-        background-color: #F7582A;
+        background-color: #770BE8;
         font-size: 2em;
         cursor: pointer;
         width: 250px;
