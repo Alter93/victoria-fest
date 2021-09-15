@@ -116,17 +116,20 @@ https://mjml.io/try-it-live/MIcVS2L8YN0
         <mj-column>
           <mj-image width="100px" src="https://eventos.victoria147.org/static/img/logo_bbva.jpg"></mj-image>
         </mj-column>
-        <mj-column>
+       
+      </mj-section>
+      <mj-section background-color="#FFFFFF" padding='0 0 20px 0'>
+         <mj-column>
           <mj-image width="100px" src="https://eventos.victoria147.org/static/img/logo_gto.jpg"></mj-image>
         </mj-column>
         <mj-column>
           <mj-image width="100px" src="https://eventos.victoria147.org/static/img/logo_ideagto.jpg"></mj-image>
         </mj-column>
-      </mj-section>
-      <mj-section background-color="#FFFFFF" padding='0 0 20px 0'>
         <mj-column>
           <mj-image width="100px" src="https://eventos.victoria147.org/static/img/logo_leon.jpg"></mj-image>
         </mj-column>
+         </mj-section>
+       <mj-section background-color="#FFFFFF" padding='0 0 20px 0'>
         <mj-column>
           <mj-image width="100px" src="https://eventos.victoria147.org/static/img/logo_quickbooks.jpg"></mj-image>
         </mj-column>
@@ -135,6 +138,9 @@ https://mjml.io/try-it-live/MIcVS2L8YN0
         </mj-column>
         <mj-column>
           <mj-image width="100px" src="https://eventos.victoria147.org/static/img/logo_diageo.jpg"></mj-image>
+        </mj-column>
+           <mj-column>
+          <mj-image width="100px" src="https://eventos.victoria147.org/static/img/logo_nxxt.jpg"></mj-image>
         </mj-column>
       </mj-section>
       <mj-section background-color="#FFFFFF" padding='0 0 20px 0'>
@@ -147,6 +153,7 @@ https://mjml.io/try-it-live/MIcVS2L8YN0
         <mj-column>
           <mj-image width="100px" src="https://eventos.victoria147.org/static/img/logo_converse.jpg"></mj-image>
         </mj-column>
+       
         <mj-column>
           <mj-image width="100px" src="https://eventos.victoria147.org/static/img/logo_gaia.jpg"></mj-image>
         </mj-column>
