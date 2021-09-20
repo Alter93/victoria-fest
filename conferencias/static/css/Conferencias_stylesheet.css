@@ -1,0 +1,231 @@
+::selection {
+    background: #FFC802;
+    /* WebKit/Blink Browsers */
+}
+
+::-moz-selection {
+    background: #FFC802;
+    /* Gecko Browsers */
+}
+
+body{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
+/*  Menú global   */
+.navbar {
+    background-color: black !important;
+    width: 100%;
+    padding-left: 5rem !important;
+    padding-right: 5rem !important;
+}
+
+.navbar-dark .navbar-toggler-icon {
+    background-image: url(../img/menuIcon.svg) !important;
+        transition: 0.5s ease-in-out;
+}
+
+.navbar-dark .navbar-toggler:hover {
+    transform: rotateZ(90deg);
+    transition: 0.5s ease-in-out;
+}
+
+.navbar-dark .navbar-toggler {
+    color: rgba(255,255,255,.55);
+    border-color: rgba(255,255,255,0) !important; 
+    box-shadow: 0 0 0 0rem !important;
+    border: none !important;
+    transform: rotateZ(0deg);
+
+}
+
+
+.nav-link {
+    text-transform: uppercase;
+    font-size: 20px;
+    color: white !important;
+    padding-left: 1em !important;
+    transition: 0.5s ease-in-out;
+}
+
+.nav-link:hover,
+nav-link:active {
+    color: #FFC802 !important;
+}
+
+.navbar-nav {
+    margin: 0 auto;
+}
+
+.nav_CTA {
+    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.nav_CTA a {
+    background-color: #00B774;
+    margin: 0;
+    height: 100%;
+    padding: 1em 2em !important;
+    transition: 0.5s ease-in-out;
+    text-align: center;
+
+}
+
+.nav_CTA a:hover {
+    background-color: #770BE8;
+}
+
+@media (max-width: 991.98px) {
+    .nav_CTA {
+        display: none;
+    }
+}
+
+/*  Font weights   */
+
+.bold {
+    font-family: 'Univers LT Std bold', sans-serif;
+    font-weight: bold;
+}
+
+.boldextended {
+    font-family: 'Univers LT Std boldex', sans-serif;
+    font-weight: bold;
+}
+
+.extended {
+    font-family: 'Univers LT Std ex', sans-serif;
+    font-weight: normal;
+}
+
+.light {
+    font-family: 'Univers LT Std lightcn', sans-serif;
+    font-weight: lighter;
+}
+
+
+.barraAvisos{
+    background-color: #FF585D;
+    height: 90px;
+    color: white;
+    
+}
+
+.barraAvisos h1{
+    text-align: center;
+        font-size: 2.5rem;
+        line-height: 1;
+        margin: auto;
+}
+
+.barraAvisos h2{
+    text-align: center;
+    font-size: 2.5rem;
+    line-height: 1;
+        margin: auto;
+}
+
+.barraAvisos .horario{
+    text-align: center;
+    font-size: 2.5rem;
+    line-height: 1;
+    margin: auto;
+}
+
+.gradientMorado{
+background: rgb(119,11,232);
+background: linear-gradient(180deg, rgba(119,11,232,1) 0%, rgba(134,26,232,1) 21%, rgba(240,130,234,1) 100%);
+}
+
+.gradientVerde{
+background: rgb(255,255,255);
+background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(0,183,116,1) 100%);
+}
+
+.gradientNaranja{
+background: rgb(255,255,255);
+background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(247,88,42,1) 100%);
+}
+
+.mainContent{
+    width: 100%;
+    height: auto;
+    padding: 90px 0;
+}
+
+.videoWrap{
+    max-width: 60vw;
+    margin: 0 auto;
+    border: 12px solid white;
+}
+
+
+#patrocinadores{
+    width: 80%;
+    margin: 0 auto;
+     display: flex;
+    flex-direction: column;
+    align-items: center;  
+    padding: 70px 0 0 0;
+    max-width: 1200px;
+
+}
+
+#patrocinadores .fila1{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center; 
+    justify-content: space-around;
+    max-width: 1200px;
+    width: 100%;
+}
+
+#patrocinadores .fila1 figure{
+    max-width: 250px;
+    height: auto;
+    width: 250px;
+    padding: 20px 0;
+    align-items: center; 
+    display: flex;
+}
+
+
+
+#patrocinadores figure{
+    height: 120px !important;
+    width: 250px;
+    align-items: center; 
+    display: flex;
+    
+}
+
+#patrocinadores figure img{
+    height:100%;
+    margin: 0 auto;
+}
+
+
+
+
+
+.footerVictoriafest {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: black;
+    margin: 0;
+    padding: 25px 0;
+    min-height: 10vh;
+}
+
+.logoVictoria img {
+    height: 65px;
+    margin-top: 25px;
+}
+
+
