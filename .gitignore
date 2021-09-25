@@ -2,5 +2,5 @@ __pycache__
 .DS_Store
 *.pyc
 env
-migrations/0*.py
+*/migrations/0*.py
 *.log
