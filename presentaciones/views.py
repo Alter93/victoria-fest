@@ -7,16 +7,6 @@ from presentaciones.models import Conferencia
 from prerregistro.models import Prerregistro
 from django.utils.safestring import mark_safe
 
-from presentaciones.presentacion_util import ConferenciaZoom
-
-chat_ids = ["str"] * 6
-chat_ids[0] = "5P0zQBeDb"
-chat_ids[1] = "WoK1w_ogm"
-chat_ids[2] = "VptaZdj3F"
-chat_ids[3] = "CmjkD-okh"
-chat_ids[4] = "jH9b6e_x4"
-chat_ids[5] = "KDoi834zH"
-
 # Create your views here.
 def home(request):
     if request.user.is_authenticated:
