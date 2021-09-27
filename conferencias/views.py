@@ -2,20 +2,54 @@ from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 
-from .prerregistro_form import PrerregistroForm
+from .prerregistro_form import PrerregistroForm, EntrarForm
 from .models import Prerregistro
 from correos.views import crear_correo
 
+def verificar(request, username=None):
+    try:
+        user = Prerregistro.objects.get(email=username)
+        request.session['email'] = username
+    except Prerregistro.DoesNotExist:
+        return None
+
+    return user
 
 
 # Create your views here.
 def gracias(request):
     if 'prerregistro'in request.session:
         pagina = render(request, 'home.html', {"gracias": True, "texto_boton": "REGISTRARME"})
+        request.session['email'] = username
         del request.session['prerregistro']
     else:
         pagina = redirect("/")
     return pagina
+
+def entrar(request):
+    if 'email' in request.session:
+        return redirect("/")
+
+    if request.method == 'POST':
+        form = EntrarForm(request.POST)
+        if form.is_valid():
+            user = verificar(request, username=form.cleaned_data.get('email'))
+            if user == None:
+                return render(request, 'LoginEvento.html', {
+                    "error_login": "El email no existe. Favor de registrarse.",
+                    "texto_boton": "REGISTRARME"
+                })
+            else:
+                return redirect("/")
+    else:
+        return render(request, 'LoginEvento.html', {"texto_boton": "REGISTRARME"})
+
+
+def salir(request):
+    del request.session['email']
+    return redirect("/")
+
+
 def home(request):
     return render(request, 'home.html', {"texto_boton": "REGISTRARME"})
 
