@@ -1,0 +1,255 @@
+<head>
+    <link rel="stylesheet" href="/static/css/RegistroModal_stylesheet.css" />
+    <link rel="stylesheet" href="/static/css/LoginEvento_stylesheet.css" />
+
+    <link rel="stylesheet" href="/static/css/normalize.css" />
+    <link rel="stylesheet" href="/static/fonts/fontstylesheet.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1697646777131073');
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117257163-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-117257163-1');
+</script>
+
+<!-- Global site tag (gtag.js) - Google Ads: 350427249 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-350427249"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'AW-350427249');
+</script>
+
+
+    <title>Victoria Fest 2021 / Registro</title>
+
+
+</head>
+
+<body>
+
+    <div class="mainContent">
+
+
+        <div class=" textoScroll bg-text-container">
+            <div class="animate-text left">
+                <span>✱ es tu momento ● es tu momento&nbsp; </span>
+                <span>✱ es tu momento ● es tu momento&nbsp; </span>
+                <span>✱ es tu momento ● es tu momento&nbsp; </span>
+            </div>
+        </div>
+
+
+
+        <div class="contentMainColumns">
+            <div class="column1">
+                <div>
+                    <figure class="deco2"><img src="/static/img/deco2.png"></figure>
+                    <figure class="logoNow"><img src="/static/img/logonowblanco.svg"></figure>
+
+                </div>
+
+            </div>
+
+
+            <div class="column2">
+                <div class="contenedorAmarillo">
+                    <div class="fechas">
+                        <figure><img src="/static/img/fechas.png"></figure>
+                    </div>
+                    <div class="BotonUnirse">
+                        <p>Estás a un paso de empezar a vivir esta experiencia, ingresa y disfruta todo el contenido que tenemos preparado para ti.</p>
+                        <input type="email" placeholder="Email con el que te registraste" name="email" required id="id_email" oninput="cambios_forma()">
+                        
+                        <button type="button" data-bs-toggle="offcanvas" data-bs-target="#" aria-controls="offcanvasRight" class="bold">ENTRAR</button>
+                    </div>
+                </div>
+                
+                <div class="registrosnuevos">
+                    <p>¿No cuentas con registro? <br>¡No hay problema, puedes hacerlo ahora!</p>
+                    <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="bold">REGISTRARME</button>
+                </div>
+
+                <div class="contactoRS">
+                    <figure class="deco3"><img src="/static/img/deco3.png"></figure>
+                    <div class="RedesSociales">
+                        
+                    
+                        <h2 class="bold">CONTACTO</h2>
+                        <div>
+                            <a class="light" target="_blank" href="https://www.instagram.com/victoria147org/">INSTAGRAM</a>
+                            <a class="light" target="_blank" href="https://www.facebook.com/Victoria147org/">FACEBOOK</a>
+                            <a class="light" target="_blank" href="https://www.youtube.com/user/CanalV147/">YOUTUBE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footerVictoriafest">
+            <a href="https://victoria147.org/"> <figure class="logoVictoria"><img src="/static/img/logoVictoriaBlanco.png"></figure></a>
+
+        </footer>
+
+
+    </div>
+
+
+    <div class="offcanvas offcanvas-end formularioModal {{ class }}" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="visibility: {{ visibilidad }};">
+
+        <div class="offcanvas-body">
+            <h2>INSCRÍBETE</h2>
+
+
+            <figure class="cross text-reset" data-bs-dismiss="offcanvas"><img src="/static/img/cross.png"></figure>
+            <div class="formContainer">
+                <p class="bold">Regístrate para recibir noticias sobre las actividades y eventos que estamos preparando para tí.</p>
+                <form action="/registro" method="post">
+
+                    {% csrf_token %}
+
+                    <input type="email" placeholder="EMAIL" name="email" required id="id_email" oninput="cambios_forma()">
+                    <input class="borderAdjust" type="text" name="nombre" placeholder="NOMBRE" maxlength="100" required id="id_nombre" oninput="cambios_forma()">
+                    <input class="borderAdjust" type="text" placeholder="APELLIDO" name="apellido" maxlength="100" required id="id_apellido" oninput="cambios_forma()">
+                    <select class="borderAdjust" name="genero" id="id_genero">
+                    <option disabled selected value="">Género</option>
+                    <option value="F">Femenino.</option>
+                    <option value="M">Masculino.</option>
+                    <option value="No Binario">No binario.</option>
+                    <option value="NA">Prefiero no decir.</option>
+                </select>
+
+                    <p class="light">campos opcionales ✱</p>
+
+                    <input type="tel" placeholder="TELÉFONO ✱" name="telefono" maxlength="11" id="phone">
+                    <div class="alert alert-info" style="display: none;"></div>
+                    <div class="alert alert-error" style="display: none;"></div>
+                    <input class="borderAdjust" type="text" placeholder="LUGAR DE RESIDENCIA ✱" name="lugar" maxlength="100" id="id_lugar">
+
+
+                    <select class="borderAdjust" name="emprendedor" id="id_emprendedor">
+                          <option disabled selected value="">¿Eres emprendedor/a?</option>
+                          <option value="No">No, no soy emprendedor/a.</option>
+                          <option value="Tengo una idea de negocio.">Tengo una idea de negocio.</option>
+                          <option value="Acabo de iniciar un negocio (menos de 2 años).">Acabo de iniciar un negocio (menos de 2 años).</option>
+                          <option value="Tengo un negocio en crecimiento (2 a 5 años).">Tengo un negocio en crecimiento (2 a 5 años).</option>
+                          <option value="Tengo un negocio en expansión (más de 5 años).">Tengo un negocio en expansión (más de 5 años).</option>
+
+                        </select>
+                    <div class="checkCorreosContainer">
+                    <p>Estoy interesad@ en recibir correos informativos sobre los programas de Victoria147</p>
+                    <div class="checkCorreos">
+                                <input type="checkbox" name="recibir_correos" checked id="id_recibir_correos">
+                            </div>
+                    </div>
+
+                        <p class="boldextended">{{ error }}</p>
+
+                    <span class="d-inline-block" tabindex="0" id="tooltipbtn" data-bs-toggle="tooltip" data-bs-placement="left" title="Llena los campos obligatorios antes de enviar.">
+                        <input class="botonSubmit " type="submit" value="{{ texto_boton }}" disabled>
+                    </span>
+
+                </form>
+            </div>
+
+
+
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+<script>
+    /* TEXT SCROLL BANNER  Set width of all animated text to match container */
+    let parent = document.querySelectorAll('.animate-text');
+    for (let i = 0; i < parent.length; i++) {
+        parent[i].style.width = parent[i].children[0].clientWidth + "px";
+    };
+</script>
+
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+    // Handle international prefixes, format phone input field
+    // Uses intl-tel-input plugin
+    const phoneInputField = document.querySelector("#phone");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+        // https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+        preferredCountries: ["mx", "ar", "co", "cl"],
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+
+    function cambios_forma() {
+        var emprendedor = document.querySelector("#id_emprendedor");
+        var genero = document.querySelector("#id_genero");
+        var email = document.querySelector("#id_email");
+        var nombre = document.querySelector("#id_nombre");
+        var apellido = document.querySelector("#id_apellido");
+
+        var subbutton = document.querySelector(".botonSubmit");
+        var btn_tooltip = document.querySelector("#tooltipbtn");
+
+        if(emprendedor.value != "" && genero.value != "" &&
+           email.value != "" && apellido.value != "" &&
+           nombre.value != ""
+        ){
+            subbutton.removeAttribute("disabled");
+            btn_tooltip.removeAttribute("data-bs-toggle");
+            var myTooltipEl = document.getElementById('tooltipbtn')
+            var tooltip = new bootstrap.Tooltip(myTooltipEl)
+            subbutton.setAttribute("value","REGISTRARME");
+            tooltip.disable()
+        }
+        else{
+            subbutton.setAttribute("disabled","");
+            var myTooltipEl = document.getElementById('tooltipbtn')
+            var tooltip = new bootstrap.Tooltip(myTooltipEl)
+            tooltip.enable()
+        }
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+          return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    }
+
+    var form = document.querySelector("form");
+    form.addEventListener("change", cambios_forma);
+
+</script>
