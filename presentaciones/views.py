@@ -34,10 +34,35 @@ def en_vivo(request):
 
     return HttpResponse(texto_en_vivo)
 
-def conferencia(request, conf_uid):
+def conferencia(request, conf_uid = None):
+    fecha = timezone.now()
     if 'email' in request.session:
-        return render(request, 'conferencia.html', {
-            "color": "gradientMorado"
-        })
+        if conf_uid == None:
+            conferencias_filtradas = []
+            conferencias = Conferencia.objects.filter(
+                fecha_hora__lte=fecha
+            )
+            for conferencia in conferencias:
+                if (conferencia.fecha_hora + conferencia.duracion > fecha):
+                    conferencias_filtradas.append(conferencia)
+            if len(conferencias_filtradas) < 1:
+                return render(request, 'conferencia.html', {
+                    "conferencia": None,
+                    "fin": None,
+                })
+            return redirect(f"/evento/{conferencias_filtradas[0].uuid}")
+        else:
+            try:
+                conferencia = Conferencia.objects.get(
+                    uuid=conf_uid
+                )
+            except:
+                return redirect(f"/evento")
+                
+            return render(request, 'conferencia.html', {
+                "conferencia": conferencia,
+                "fin": conferencia.fecha_hora + conferencia.duracion,
+            })
+
     else:
         return redirect("/entrar")

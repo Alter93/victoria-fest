@@ -19,6 +19,8 @@ class Conferencia(models.Model):
     vimeo = models.CharField(max_length=200,null=True, blank = True)
     uuid = models.UUIDField(primary_key=False, default=uuid.uuid4, editable=False)
     color = models.CharField(max_length=200,null=True, blank = True)
+    id_conferencista = models.ForeignKey('Conferencista', on_delete=models.CASCADE, null=True, blank=True)
+
 
     def __str__(self):
         return '%s %s' % (self.titulo, self.fecha_hora)
