@@ -6,6 +6,15 @@
     min-height: 100vh;
 }
 
+
+.titleSpeakers {
+    width: 100%;
+}
+
+.titleSpeakers img {
+    width: 99%;
+}
+
 .filaBloques{
     margin-bottom: 100px;
 }
