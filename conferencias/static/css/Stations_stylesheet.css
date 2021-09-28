@@ -6,6 +6,15 @@
     min-height: 100vh;
 }
 
+
+.titleSpeakers {
+    width: 100%;
+}
+
+.titleSpeakers img {
+    width: 99%;
+}
+
 .filaBloques{
     margin-bottom: 100px;
 }
@@ -20,6 +29,14 @@
     flex-direction: column;
     align-items: center;
     border: 2px solid #FFC802;
+}
+
+.dobleBlock{
+    border: 2px solid #770be8;
+}
+
+.dobleBlock .blockRS{
+    background-color: #770be8;
 }
 
 .logoBlock{

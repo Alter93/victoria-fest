@@ -164,6 +164,28 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(247,88,42,1) 10
 }
 
 
+
+.botonReprograma {
+    background-color: #FF585D;
+    box-shadow: #770BE8 6px 6px;
+    font-size: 1.8em;
+    color: white;
+    border: none;
+    padding: 40px 35px;
+    cursor: pointer;
+    transition: 0.7s ease-in-out;
+    z-index: 1;
+    margin: 50px auto 0;
+    width: 400px;
+}
+
+.botonReprograma:hover {
+    background-color: #770BE8;
+    box-shadow: #FF585D 6px 6px;
+    color: white !important;
+}
+
+
 #patrocinadores{
     width: 80%;
     margin: 0 auto;
