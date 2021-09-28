@@ -22,6 +22,14 @@
     border: 2px solid #FFC802;
 }
 
+.dobleBlock{
+    border: 2px solid #770be8;
+}
+
+.dobleBlock .blockRS{
+    background-color: #770be8;
+}
+
 .logoBlock{
     background-color: white;
     width: 100%;
