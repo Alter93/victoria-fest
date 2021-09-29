@@ -88,7 +88,7 @@ def prerregistro(request):
                         "idmail": id_mail,
                     }
                 )
-                request.session['email'] = form.cleaned_data.get('email')
+                ##request.session['email'] = form.cleaned_data.get('email')
                 message = contenido
                 send_mail( subject, message, email_from, recipient_list , html_message=contenido)
                 form = PrerregistroForm()
