@@ -1,11 +1,14 @@
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
+from django.utils import timezone
 from django.template.loader import render_to_string
 
 from .prerregistro_form import PrerregistroForm, EntrarForm
 from .models import Prerregistro
+from presentaciones.models import Conferencia
 from correos.views import crear_correo
 
+# Create your views here.
 def verificar(request, username=None):
     try:
         user = Prerregistro.objects.get(email=username)
@@ -16,7 +19,6 @@ def verificar(request, username=None):
     return user
 
 
-# Create your views here.
 def gracias(request):
     if 'prerregistro'in request.session:
         pagina = render(request, 'home.html', {"gracias": True, "texto_boton": "REGISTRARME"})
@@ -25,6 +27,7 @@ def gracias(request):
     else:
         pagina = redirect("/")
     return pagina
+
 
 def entrar(request):
     if 'email' in request.session:
@@ -36,7 +39,7 @@ def entrar(request):
             user = verificar(request, username=form.cleaned_data.get('email'))
             if user == None:
                 return render(request, 'LoginEvento.html', {
-                    "error_login": "El email no existe. Favor de registrarse.",
+                    "error_login": "El email no esta registrado. Favor de registrarse para poder acceder al evento.",
                     "texto_boton": "REGISTRARME"
                 })
             else:
@@ -51,7 +54,36 @@ def salir(request):
 
 
 def home(request):
+    fecha = timezone.now()
+    conferencias_pasado = Conferencia.objects.filter(
+        fecha_hora__lte=fecha
+    )
+    conferencias_pasado = [x for x in conferencias_pasado if not (x.fecha_hora + x.duracion >= fecha)]
+
+    conferencias_presente = Conferencia.objects.filter(
+        fecha_hora__lte=fecha
+    )
+    conferencias_presente = [x for x in conferencias_presente if (x.fecha_hora + x.duracion >= fecha)]
+    conferencias_futuro = Conferencia.objects.filter(
+        fecha_hora__gt=fecha
+    )
+    if 'email' in request.session:
+        return render(request, 'EventoHome.html', {
+            "texto_boton": "REGISTRARME",
+            "conferencias_pasado": conferencias_pasado,
+            "conferencias_presente": conferencias_presente,
+            "conferencias_futuro": conferencias_futuro,
+
+        })
     return render(request, 'home.html', {"texto_boton": "REGISTRARME"})
+
+
+def stations(request):
+    if 'email' in request.session:
+        return render(request, 'stations.html', {})
+    else:
+        return redirect("/")
+
 
 def prerregistro(request):
     if request.method == 'POST':
@@ -94,15 +126,9 @@ def prerregistro(request):
                 message = contenido
                 send_mail( subject, message, email_from, recipient_list , html_message=contenido)
                 form = PrerregistroForm()
-                # return render(request, 'prerregistro.html', {
-                #     "error": "Registro guardado con éxito. ¡Ya eres parte del VictoriaFest! Revisa tu email para más información.",
-                #     "visibilidad":"visible",
-                #     "class": 'show',
-                #     "texto_boton": "Listo!"
-                #     })
                 request.session['prerregistro'] = 1
-                return redirect('/gracias')
 
+                return redirect('/gracias')
         else:
 
             return render(request, 'prerregistro.html', {"error": form.errors, "visibilidad":"visible", "class": 'show', "texto_boton": "REGISTRARME"})

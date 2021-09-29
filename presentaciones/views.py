@@ -46,10 +46,8 @@ def conferencia(request, conf_uid = None):
                 if (conferencia.fecha_hora + conferencia.duracion > fecha):
                     conferencias_filtradas.append(conferencia)
             if len(conferencias_filtradas) < 1:
-                return render(request, 'conferencia.html', {
-                    "conferencia": None,
-                    "fin": None,
-                })
+                return redirect("/#agenda")
+
             return redirect(f"/evento/{conferencias_filtradas[0].uuid}")
         else:
             try:
@@ -58,7 +56,7 @@ def conferencia(request, conf_uid = None):
                 )
             except:
                 return redirect(f"/evento")
-                
+
             return render(request, 'conferencia.html', {
                 "conferencia": conferencia,
                 "fin": conferencia.fecha_hora + conferencia.duracion,
