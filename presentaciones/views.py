@@ -11,9 +11,7 @@ from django.utils.safestring import mark_safe
 def verificar(request, username=None):
     try:
         user = Prerregistro.objects.get(email=username)
-        if username == "alexae93@gmail.com":
-            request.session['email'] = username
-            
+        request.session['email'] = username
     except Prerregistro.DoesNotExist:
         return None
 

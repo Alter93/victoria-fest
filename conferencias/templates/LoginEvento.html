@@ -98,7 +98,7 @@ gtag('config', 'AW-350427249');
                             <p>{{ error_login }}</p>
 
                             {% endif %}
-                            <input type="email" placeholder="Email con el que te registraste" name="email" required id="id_email" oninput="cambios_forma()">
+                            <input type="email" placeholder="Email con el que te registraste" name="email" required id="log_id_email">
 
                             <button type="submit" data-bs-toggle="offcanvas" data-bs-target="#" aria-controls="offcanvasRight" class="bold">ENTRAR</button>
                         </div>
@@ -144,7 +144,7 @@ gtag('config', 'AW-350427249');
             <figure class="cross text-reset" data-bs-dismiss="offcanvas"><img src="/static/img/cross.png"></figure>
             <div class="formContainer">
                 <p class="bold">Regístrate para recibir noticias sobre las actividades y eventos que estamos preparando para tí.</p>
-                <form action="/registro" method="post">
+                <form action="/registro" method="post" id="form_reg">
 
                     {% csrf_token %}
 
@@ -257,7 +257,7 @@ gtag('config', 'AW-350427249');
         })
     }
 
-    var form = document.querySelector("form");
+    var form = document.querySelector("#form_reg");
     form.addEventListener("change", cambios_forma);
 
 </script>

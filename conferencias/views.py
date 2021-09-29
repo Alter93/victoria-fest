@@ -16,7 +16,7 @@ def gracias(request):
         del request.session['prerregistro']
     else:
         pagina = redirect("/")
-    return pagina
+    return redirect("/")
 
 
 def home(request):
@@ -41,7 +41,8 @@ def home(request):
             "conferencias_futuro": conferencias_futuro,
 
         })
-    return render(request, 'home.html', {"texto_boton": "REGISTRARME"})
+    else:
+        return redirect("/evento/entrar")
 
 
 def stations(request):
@@ -58,7 +59,7 @@ def prerregistro(request):
             ## Insertar mensaje a BD
             try:
                 usuario = Prerregistro.objects.get(email=form.cleaned_data.get('email'))
-                return render(request, 'prerregistro.html', {
+                return render(request, 'LoginEvento.html', {
                     "error": "Ese correo ya ha sido registrado, por favor usa uno diferente.",
                     "visibilidad":"visible",
                     "class": 'show',
@@ -88,7 +89,7 @@ def prerregistro(request):
                         "idmail": id_mail,
                     }
                 )
-                ##request.session['email'] = form.cleaned_data.get('email')
+                request.session['email'] = form.cleaned_data.get('email')
                 message = contenido
                 send_mail( subject, message, email_from, recipient_list , html_message=contenido)
                 form = PrerregistroForm()
@@ -97,9 +98,9 @@ def prerregistro(request):
                 return redirect('/gracias')
         else:
 
-            return render(request, 'prerregistro.html', {"error": form.errors, "visibilidad":"visible", "class": 'show', "texto_boton": "REGISTRARME"})
+            return render(request, 'LoginEvento.html', {"error": form.errors, "visibilidad":"visible", "class": 'show', "texto_boton": "REGISTRARME"})
     else:
-        pagina = render(request, 'prerregistro.html', {"error": "", "visibilidad":"hidden", "texto_boton": "REGISTRARME"})
+        pagina = render(request, 'LoginEvento.html', {"error": "", "visibilidad":"hidden", "texto_boton": "REGISTRARME"})
         if request.path == "/registro":
-            pagina = render(request, 'prerregistro.html', {"error": "", "visibilidad":"visible","class":"show", "texto_boton": "REGISTRARME"})
+            pagina = render(request, 'LoginEvento.html', {"error": "", "visibilidad":"visible","class":"show", "texto_boton": "REGISTRARME"})
         return pagina
