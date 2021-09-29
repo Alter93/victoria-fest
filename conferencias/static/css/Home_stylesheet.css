@@ -66,7 +66,7 @@ nav-link:active {
 }
 
 .nav_CTA a {
-    background-color: #00B774;
+    background-color: #00B774 !important;
     margin: 0;
     height: 100%;
     padding: 1em 2em !important;
