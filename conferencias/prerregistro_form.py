@@ -47,8 +47,3 @@ class PrerregistroForm(forms.Form):
     telefono = forms.CharField(max_length=15, required = False)
     lugar = forms.CharField(max_length=100, required = False)
     recibir_correos = forms.BooleanField(required = False)
-
-class EntrarForm(forms.Form):
-    email = forms.EmailField(error_messages={
-        'required': 'Ingresa tu email.'
-    })

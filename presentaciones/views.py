@@ -3,10 +3,46 @@ from django.conf import settings
 from django.shortcuts import redirect
 from django.http import HttpResponse
 from django.utils import timezone
-from presentaciones.models import Conferencia
+from presentaciones.models import Conferencia, EntrarForm
+from conferencias.models import Prerregistro
 from django.utils.safestring import mark_safe
 
 # Create your views here.
+def verificar(request, username=None):
+    try:
+        user = Prerregistro.objects.get(email=username)
+        if username == "alexae93@gmail.com":
+            request.session['email'] = username
+            
+    except Prerregistro.DoesNotExist:
+        return None
+
+    return user
+
+def entrar(request):
+    if 'email' in request.session:
+        return redirect("/")
+
+    if request.method == 'POST':
+        form = EntrarForm(request.POST)
+        if form.is_valid():
+            user = verificar(request, username=form.cleaned_data.get('email'))
+            if user == None:
+                return render(request, 'LoginEvento.html', {
+                    "error_login": "El email no esta registrado. Favor de registrarse para poder acceder al evento.",
+                    "texto_boton": "REGISTRARME"
+                })
+            else:
+                return redirect("/")
+    else:
+        return render(request, 'LoginEvento.html', {"texto_boton": "REGISTRARME"})
+
+
+def salir(request):
+    if 'email' in request.session:
+        del request.session['email']
+    return redirect("/")
+
 def en_vivo(request):
     fecha = timezone.now()
     conferencias = Conferencia.objects.filter(
@@ -22,12 +58,7 @@ def en_vivo(request):
     if len(list(conferencias_filtradas)) == 0:
         texto_en_vivo = "Por el momento no hay conferencias en vivo. "
     else:
-        texto_en_vivo = " "
-        for conferencia in conferencias_filtradas:
-            if conferencia.lugar == "0":
-                texto_en_vivo += "Aula Magna - " + conferencia.titulo + " • "
-            else:
-                texto_en_vivo += "Sala " + conferencia.lugar + " - " + conferencia.titulo + " • "
+        texto_en_vivo = " " + conferencia.titulo + " • "
 
     while len(texto_en_vivo) < 75:
         texto_en_vivo += texto_en_vivo
@@ -63,4 +94,4 @@ def conferencia(request, conf_uid = None):
             })
 
     else:
-        return redirect("/entrar")
+        return redirect("entrar")

@@ -89,16 +89,14 @@ gtag('config', 'AW-350427249');
                     <div class="fechas">
                         <figure><img src="/static/img/fechas.png"></figure>
                     </div>
-                    <form class="" action="/entrar" method="post">
+                    <form class="" action="entrar" method="post">
                         <div class="BotonUnirse">
                             {% csrf_token %}
+                            <p>Estás a un paso de empezar a vivir esta experiencia, ingresa y disfruta todo el contenido que tenemos preparado para ti.</p>
                             {% if error_login %}
-                            
+
                             <p>{{ error_login }}</p>
 
-                            {% else %}
-
-                            <p>Estás a un paso de empezar a vivir esta experiencia, ingresa y disfruta todo el contenido que tenemos preparado para ti.</p>
                             {% endif %}
                             <input type="email" placeholder="Email con el que te registraste" name="email" required id="id_email" oninput="cambios_forma()">
 

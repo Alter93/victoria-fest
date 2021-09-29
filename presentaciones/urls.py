@@ -3,5 +3,7 @@ from presentaciones import views
 
 urlpatterns = [
     path('', views.conferencia, name='conferencia'),
-    path('<uuid:conf_uid>', views.conferencia, name='conferencia_uuid'),
+    path('entrar', views.entrar, name='entrar'),
+    path('salir', views.salir, name='salir'),
+    path('<slug:conf_uid>', views.conferencia, name='conferencia_uuid'),
 ]

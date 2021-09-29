@@ -1,5 +1,7 @@
 import uuid
 from django.db import models
+from django.utils.text import slugify
+from django import forms
 
 # Create your models here.
 class Conferencista(models.Model):
@@ -17,10 +19,19 @@ class Conferencia(models.Model):
     fecha_hora = models.DateTimeField()
     duracion = models.DurationField()
     vimeo = models.CharField(max_length=200,null=True, blank = True)
-    uuid = models.UUIDField(primary_key=False, default=uuid.uuid4, editable=False)
+    uuid = models.SlugField(primary_key=False, editable=False)
     color = models.CharField(max_length=200,null=True, blank = True)
     id_conferencista = models.ForeignKey('Conferencista', on_delete=models.CASCADE, null=True, blank=True)
+    reprograma = models.IntegerField(null=True, blank = True)
 
+    def save(self, *args, **kwargs):
+        self.uuid = slugify(self.titulo)
+        super(Conferencia, self).save(*args, **kwargs)
 
     def __str__(self):
         return '%s %s' % (self.titulo, self.fecha_hora)
+
+class EntrarForm(forms.Form):
+    email = forms.EmailField(error_messages={
+        'required': 'Ingresa tu email.'
+    })
