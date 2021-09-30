@@ -54,10 +54,12 @@ def envivo(request):
             conferencias_filtradas.append(conferencia)
 
     if len(list(conferencias_filtradas)) == 0:
-        texto_en_vivo = "Por el momento no hay conferencias en vivo. "
+        texto_en_vivo = "Por el momento no hay conferencias en vivo. ✱ "
     else:
-        texto_en_vivo = " " + conferencias_filtradas[0].titulo + " "
+        texto_en_vivo = " EN VIVO ● " + conferencias_filtradas[0].titulo + " ✱ "
 
+    while len(texto_en_vivo) < 75:
+        texto_en_vivo = texto_en_vivo + texto_en_vivo
 
     return HttpResponse(mark_safe(texto_en_vivo))
 
