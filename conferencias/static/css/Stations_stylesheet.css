@@ -124,6 +124,14 @@
     top: 19%
 }
 
+.decoDots3{
+    position: absolute;
+    width: 40%;
+    right: 2%;
+    bottom: 19%
+}
+
+
 
 .botonStations {
     background-color: #FF585D;
@@ -168,6 +176,22 @@
         width: auto;
 }
 
+#carouselConverse{
+    height: 450px;
+    width: 338px;
+    margin: 0 auto;
+}
+
+#carouselConverse .carousel-item{
+        max-height: 450px;
+        width: auto;
+}
+
+#carouselConverse .carousel-item img{
+        height: 100%;
+        width: auto;
+}
+
 .linkQuickbooks{
     height: 100%;
     display: flex;
@@ -200,4 +224,12 @@ padding: 50px;
     font-weight: bold;
 }
 
+.imagenNxxt{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.imagenNxxt img{
+    width: 100%;
+}
 
