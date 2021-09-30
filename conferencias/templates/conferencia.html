@@ -144,10 +144,18 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
 
     <script>
         function cargarEnVivo(){
-            window.history.pushState("State 1", "Title 1", "/evento/new-url");
-            setTimeout(cargarEnVivo, 10000);
+            var client = new XMLHttpRequest();
+            client.open('GET', '/evento/url');
+            client.onreadystatechange = function() {
+                if (client.readyState === 4){
+                    client.responseText;
+                    window.history.pushState("State 1", "Title 1", "texto-evento-de-prueba");
+                }
+            }
+            client.send();
+            setTimeout(cargarEnVivo, 9000);
         }
         window.onload = function () {
-            setTimeout(cargarEnVivo, 10000);
+            setTimeout(cargarEnVivo, 9000);
         }
     </script>
