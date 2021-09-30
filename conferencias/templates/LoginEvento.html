@@ -11,8 +11,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    
+
+
     <!-- Facebook Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -89,14 +89,22 @@ gtag('config', 'AW-350427249');
                     <div class="fechas">
                         <figure><img src="/static/img/fechas.png"></figure>
                     </div>
-                    <div class="BotonUnirse">
-                        <p>Estás a un paso de empezar a vivir esta experiencia, ingresa y disfruta todo el contenido que tenemos preparado para ti.</p>
-                        <input type="email" placeholder="Email con el que te registraste" name="email" required id="id_email" oninput="cambios_forma()">
-                        
-                        <button type="button" data-bs-toggle="offcanvas" data-bs-target="#" aria-controls="offcanvasRight" class="bold">ENTRAR</button>
-                    </div>
+                    <form class="" action="entrar" method="post">
+                        <div class="BotonUnirse">
+                            {% csrf_token %}
+                            <p>Estás a un paso de empezar a vivir esta experiencia, ingresa y disfruta todo el contenido que tenemos preparado para ti.</p>
+                            {% if error_login %}
+
+                            <p>{{ error_login }}</p>
+
+                            {% endif %}
+                            <input type="email" placeholder="Email con el que te registraste" name="email" required id="log_id_email">
+
+                            <button type="submit" data-bs-toggle="offcanvas" data-bs-target="#" aria-controls="offcanvasRight" class="bold">ENTRAR</button>
+                        </div>
+                    </form>
                 </div>
-                
+
                 <div class="registrosnuevos">
                     <p>¿No cuentas con registro? <br>¡No hay problema, puedes hacerlo ahora!</p>
                     <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="bold">REGISTRARME</button>
@@ -105,8 +113,8 @@ gtag('config', 'AW-350427249');
                 <div class="contactoRS">
                     <figure class="deco3"><img src="/static/img/deco3.png"></figure>
                     <div class="RedesSociales">
-                        
-                    
+
+
                         <h2 class="bold">CONTACTO</h2>
                         <div>
                             <a class="light" target="_blank" href="https://www.instagram.com/victoria147org/">INSTAGRAM</a>
@@ -136,7 +144,7 @@ gtag('config', 'AW-350427249');
             <figure class="cross text-reset" data-bs-dismiss="offcanvas"><img src="/static/img/cross.png"></figure>
             <div class="formContainer">
                 <p class="bold">Regístrate para recibir noticias sobre las actividades y eventos que estamos preparando para tí.</p>
-                <form action="/registro" method="post">
+                <form action="/registro" method="post" id="form_reg">
 
                     {% csrf_token %}
 
@@ -249,7 +257,7 @@ gtag('config', 'AW-350427249');
         })
     }
 
-    var form = document.querySelector("form");
+    var form = document.querySelector("#form_reg");
     form.addEventListener("change", cambios_forma);
 
 </script>

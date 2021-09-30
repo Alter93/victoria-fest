@@ -14,7 +14,7 @@
 
 
 
-  
+
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117257163-1"></script>
@@ -58,7 +58,7 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
 </noscript>
 <!-- End Facebook Pixel Code -->
-    
+
 
 </head>
 
@@ -83,22 +83,25 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
                         <a class="nav-link" href="#agenda">Agenda</a>
                     </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#faqs">STATIONS</a>
+                        <a class="nav-link" href="/stations">STATIONS</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#faqs">FAQ's</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/evento/salir">SALIR</a>
                     </li>
                 </ul>
 
 
             </div>
             <div class="nav_CTA col-2">
-                <a class="nav-link boldextended" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" href="#">● EN VIVO</a>
+                <a class="nav-link boldextended" type="button" href="/evento">● EN VIVO</a>
             </div>
         </div>
     </nav>
 
-    
+
 
 
 
@@ -127,7 +130,7 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
         </div>
 
         <div class="bannerCTA">
-            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="bold">EN VIVO AHORA</button>
+            <button type="button" onclick="window.location.href='/evento'" class="bold">EN VIVO AHORA</button>
         </div>
 
 
@@ -160,202 +163,56 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
                     <h4 class="col-8">Evento</h4>
 <!--                    <h4 class="col-2">Horario</h4>-->
                 </div>
-
-
-
-                <div class="eventoSingle row align-items-center eventoNeutral" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
+                {% for conferencia in conferencias_pasado %}
+                <div class="eventoSingle row align-items-center eventoTerminado" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
                     <div class="col-lg-4">
-                        <h3>Ana Victoria García</h3>
+                        <h3>{{ conferencia.id_conferencista.nombre }} {{ conferencia.id_conferencista.apellido }}</h3>
                     </div>
                     <div class="col-lg-6">
-                        <h4 class="bold">¿Por qué estamos aquí?</h4>
+                        <h4 class="bold">{{ conferencia.titulo  }}</h4>
                     </div>
                    <div class="col-lg-2 horarioEvento">
-                        <p>11 • 11:30</p>
+                        <p>{{ conferencia.fecha_hora|date:"H:i"  }}</p>
                     </div>
                 </div>
-                 <div class="eventoSingle row align-items-center eventoLive" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
+                {% endfor %}
+                {% for conferencia in conferencias_presente %}
+                <a href="/evento" style="text-decoration: none !important;">
+                <div class="eventoSingle row align-items-center eventoLive"  href="/evento" role="" aria-expanded="false" aria-controls="collapseEv2">
                     <div class="col-lg-4">
-                        <h3>Dafne Schilling</h3>
+                        <h3>{{ conferencia.id_conferencista.nombre }} {{ conferencia.id_conferencista.apellido }}</h3>
                     </div>
                     <div class="col-lg-6">
-                        <h4 class="bold">Baile para endorfinas</h4>
+                        <h4 class="bold">{{ conferencia.titulo  }}</h4>
                     </div>
-                      <div class="col-lg-2 horarioEvento horarioLive">
+                   <div class="col-lg-2 horarioEvento">
                         <p>EN VIVO</p>
                     </div>
                 </div>
-                 <div class="eventoSingle row align-items-center eventoTerminado" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
+                </a>
+                {% endfor %}
+
+                {% for conferencia in conferencias_futuro %}
+                <div class="eventoSingle row align-items-center eventoNeutral" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
                     <div class="col-lg-4">
-                        <h3>Jason Silva</h3>
+                        <h3>{{ conferencia.id_conferencista.nombre }} {{ conferencia.id_conferencista.apellido }}</h3>
                     </div>
                     <div class="col-lg-6">
-                        <h4 class="bold">Saludo a emprendedoras</h4>
+                        <h4 class="bold">{{ conferencia.titulo  }}</h4>
                     </div>
-                     <div class="col-lg-2 horarioEvento">
-                        <p>11 • 11:30</p>
-                    </div>
-                </div>
-                 <div class="eventoSingle row align-items-center" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>Marco Antonio Regil</h3>
-                    </div>
-                    <div class="col-lg-6">
-                        <h4 class="bold">El poder de la mente y la historia que te cuentas</h4>
-                    </div>
-                     <div class="col-lg-2 horarioEvento">
-                        <p>11 • 11:30</p>
+                   <div class="col-lg-2 horarioEvento">
+                        <p>{{ conferencia.fecha_hora|date:"H:i"  }}</p>
                     </div>
                 </div>
-                 <div class="eventoSingle row align-items-center" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>Romina Sacre</h3>
-                        <h3>Lucia Lobeira</h3>
-                        <h3>Belén de la Rosa</h3>
-                    </div>
-                    <div class="col-lg-6">
-                        <h4 class="bold">Confesionario</h4>
-                    </div>
-                     <div class="col-lg-2 horarioEvento">
-                        <p>11 • 11:30</p>
-                    </div>
-                </div>
-                
-                 <div class="eventoSingle row align-items-center" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>Elisa Sacal</h3>
-                    </div>
-                    <div class="col-lg-6">
-                        <h4 class="bold">Hackea el sueño</h4>
-                    </div>
-                     <div class="col-lg-2 horarioEvento">
-                        <p>11 • 11:30</p>
-                    </div>
-                </div>
-                 <div class="eventoSingle row align-items-center" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>Ale Villalba</h3>
-                    </div>
-                    <div class="col-lg-6">
-                        <h4 class="bold">Tu espíritu, desbloqueate para el éxito</h4>
-                    </div>
-                     <div class="col-lg-2 horarioEvento">
-                        <p>11 • 11:30</p>
-                    </div>
-                </div>
-                 <div class="eventoSingle row align-items-center" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>Leticia Gasca</h3>
-                    </div>
-                    <div class="col-lg-6">
-                        <h4 class="bold">Resiliencia y adaptabilidad</h4>
-                    </div>
-                     <div class="col-lg-2 horarioEvento">
-                        <p>11 • 11:30</p>
-                    </div>
-                </div>
-                <div class="eventoSingle row align-items-center" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>Maribel Quiroga</h3>
-                        <h3>Ma. Dalia Ortiz</h3>
-                        <h3>Priscila Holder</h3>
-                        <h3>Enrique Torre</h3>
-                    </div>
-                    <div class="col-lg-6">
-                        <h4 class="bold">Panel de Diversidad e Inclusión</h4>
-                    </div>
-                    <div class="col-lg-2 horarioEvento">
-                        <p>11 • 11:30</p>
-                    </div>
-                </div>
-                 <div class="eventoSingle row align-items-center" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>Manuela Villegas
-</h3>
-                    </div>
-                    <div class="col-lg-6">
-                        <h4 class="bold">Growth</h4>
-                    </div>
-                     <div class="col-lg-2 horarioEvento">
-                        <p>11 • 11:30</p>
-                    </div>
-                </div>
-                 <div class="eventoSingle row align-items-center" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>Mariana Fresnedo</h3>
-                    </div>
-                    <div class="col-lg-6">
-                        <h4 class="bold">Unión de neuroprogramación y conciencia</h4>
-                    </div>
-                     <div class="col-lg-2 horarioEvento">
-                        <p>11 • 11:30</p>
-                    </div>
-                </div>
-                 <div class="eventoSingle row align-items-center" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>Michael García Novak</h3>
-                    </div>
-                    <div class="col-lg-6">
-                        <h4 class="bold">¿Dónde están las oportunidades?</h4>
-                    </div>
-                     <div class="col-lg-2 horarioEvento">
-                        <p>11 • 11:30</p>
-                    </div>
-                </div>
-                <div class="eventoSingle row align-items-center" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>Arturo Elías Ayub</h3>
-                    </div>
-                    <div class="col-lg-6">
-                        <h4 class="bold">El negociador</h4>
-                    </div>
-                    <div class="col-lg-2 horarioEvento">
-                        <p>11 • 11:30</p>
-                    </div>
-                </div>
-                <div class="eventoSingle row align-items-center" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>Diego Barrazas</h3>
-                    </div>
-                    <div class="col-lg-6">
-                        <h4 class="bold">El mundo de comunicar</h4>
-                    </div>
-                    <div class="col-lg-2 horarioEvento">
-                        <p>11 • 11:30</p>
-                    </div>
-                </div>
-                <div class="eventoSingle row align-items-center" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>Sabrina Castelli</h3>
-                    </div>
-                    <div class="col-lg-6">
-                        <h4 class="bold">Tú, tu empresa y tu dinero</h4>
-                    </div>
-                    <div class="col-lg-2 horarioEvento">
-                        <p>11 • 11:30</p>
-                    </div>
-                </div>
-                <div class="eventoSingle row align-items-center" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>Ana Victoria Garcia</h3>
-                        <h3>Marisa Lazo</h3>
-                        <h3>Andrea Arnau</h3>
-                        
-                    </div>
-                    <div class="col-lg-6">
-                        <h4 class="bold">Final Pitch Contest</h4>
-                    </div>
-                    <div class="col-lg-2 horarioEvento">
-                        <p>11 • 11:30</p>
-                    </div>
-                </div>
+                {% endfor %}
+
 
 
 
             </div>
         </div>
-        
-        
+
+
         <div id="speakers">
             <h2>SPEAKERS</h2>
             <figure class="titleSpeakers"><img class="img-fluid" src="/static/img/SPEAKERS.svg"></figure>
@@ -384,7 +241,7 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
                     </div>
 
                 </div>
-                
+
                          <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/arturoelias.jpg"></figure>
                     <h4 class="bold">Arturo Elías Ayub</h4>
@@ -407,7 +264,7 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
                     </div>
 
                 </div>
-                
+
                  <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/marcoantonioregil.jpg"></figure>
                     <h4 class="bold">Marco Antonio Regil</h4>
@@ -429,7 +286,7 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
                     </div>
 
                 </div>
-                
+
                 <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/mariafresnedo.jpg"></figure>
                     <h4 class="bold">Mariana Fresnedo</h4>
@@ -449,7 +306,7 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
                     </div>
 
                 </div>
-                
+
                 <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/diegobarraza.jpg"></figure>
                     <h4 class="bold">Diego Barrazas</h4>
@@ -515,7 +372,7 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
 
                 </div>
 
-               
+
 
                 <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/elisasacal.jpg"></figure>
@@ -537,7 +394,7 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
                     </div>
 
                 </div>
-                
+
                 <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/alevillalba.jpg"></figure>
                     <h4 class="bold">Ale Villalba</h4>
@@ -601,7 +458,7 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
                     </div>
 
                 </div>
-                
+
                 <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/daliamorales.jpg"></figure>
                     <h4 class="bold">María Dalia Ortiz</h4>
@@ -618,7 +475,7 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
                     </div>
 
                 </div>
-                
+
                 <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/lucialobeira.jpg"></figure>
                     <h4 class="bold">Lucia Lobeira</h4>
@@ -632,13 +489,13 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
                             <div class="rsSpeakers">
                                 <a href="https://www.instagram.com/llobeira/" target="_blank">
                                     <img class="img-fluid" src="/static/img/instagram.svg"></a>
-                            
+
                             </div>
                         </div>
                     </div>
 
                 </div>
-                  
+
 
                   <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/maribelquiroga.jpg"></figure>
@@ -659,7 +516,7 @@ ejecutiva de la Comisión de la Industria de Vinos y Licores.</h5>
                     </div>
 
                 </div>
-                
+
                 <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/priscilaholder.jpg"></figure>
                     <h4 class="bold">Priscila Holder</h4>
@@ -671,14 +528,14 @@ ejecutiva de la Comisión de la Industria de Vinos y Licores.</h5>
                             <p>Organiza y acompaña experiencias de viaje culturales para conocer México de manera responsable. Actualmente colabora con diversos agentes turísticos en Oaxaca y está en proceso de emprender su propia empresa turística.</p>
 
                             <div class="rsSpeakers">
-                               
+
                             </div>
                         </div>
                     </div>
 
                 </div>
 
-                
+
                    <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/enriquetorre.jpg"></figure>
                     <h4 class="bold">Enrique Torre Molina</h4>
@@ -700,7 +557,7 @@ ejecutiva de la Comisión de la Industria de Vinos y Licores.</h5>
                     </div>
 
                 </div>
-                
+
                   <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/sabrinacastelli.jpg"></figure>
                     <h4 class="bold">Sabrina Castelli</h4>
@@ -721,9 +578,9 @@ ejecutiva de la Comisión de la Industria de Vinos y Licores.</h5>
                     </div>
 
                 </div>
-                
-                
-                
+
+
+
                 <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/rominasacre.jpg"></figure>
                     <h4 class="bold">Romina Sacre</h4>
@@ -745,7 +602,7 @@ ejecutiva de la Comisión de la Industria de Vinos y Licores.</h5>
                     </div>
 
                 </div>
-                
+
                 <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/michaelnovak.jpg"></figure>
                     <h4 class="bold">Michael García Novak</h4>
@@ -766,8 +623,8 @@ ejecutiva de la Comisión de la Industria de Vinos y Licores.</h5>
                     </div>
 
                 </div>
-                
-                
+
+
                 <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/andreaarnau.jpg"></figure>
                     <h4 class="bold">Andrea Arnau</h4>
@@ -788,7 +645,7 @@ ejecutiva de la Comisión de la Industria de Vinos y Licores.</h5>
                     </div>
 
                 </div>
-          
+
                 <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/moncaya.jpg"></figure>
                     <h4 class="bold">Moncaya</h4>
@@ -809,8 +666,8 @@ ejecutiva de la Comisión de la Industria de Vinos y Licores.</h5>
                     </div>
 
                 </div>
-                
-              
+
+
 
                 <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/imyoni.jpg"></figure>
@@ -850,13 +707,13 @@ ejecutiva de la Comisión de la Industria de Vinos y Licores.</h5>
                             <div class="rsSpeakers">
                                 <a href="https://www.instagram.com/beludelarosa/" target="_blank">
                                     <img class="img-fluid" src="/static/img/instagram.svg"></a>
-                            
+
                             </div>
                         </div>
                     </div>
 
                 </div>
-                
+
                   <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/marisalazo.jpg"></figure>
                     <h4 class="bold">Marisa Lazo</h4>
@@ -870,7 +727,7 @@ ejecutiva de la Comisión de la Industria de Vinos y Licores.</h5>
                             <div class="rsSpeakers">
                                 <a href="https://www.instagram.com/marisalazo.oficial/" target="_blank">
                                     <img class="img-fluid" src="/static/img/instagram.svg"></a>
-                            
+
                             </div>
                         </div>
                     </div>
@@ -882,7 +739,7 @@ ejecutiva de la Comisión de la Industria de Vinos y Licores.</h5>
 
         </div>
 
-      
+
 
                 <div id="faqs">
             <h2 class="bold">Preguntas<br> Frecuentes</h2>
@@ -1070,7 +927,7 @@ ejecutiva de la Comisión de la Industria de Vinos y Licores.</h5>
                 <figure><img class="" src="/static/img/alianzas/logo_bbva.svg"></figure>
                 <figure><img class="" src="/static/img/alianzas/logo_facebook.svg"></figure>
                  </div>
-                
+
                  <div class="fila2">
                 <figure><img class="" src="/static/img/alianzas/logo_gto.svg"></figure>
                 <figure><img class="" src="/static/img/alianzas/logo_ideagto.svg"></figure>
@@ -1090,7 +947,7 @@ ejecutiva de la Comisión de la Industria de Vinos y Licores.</h5>
             <a href="https://victoria147.org/"> <figure class="logoVictoria"><img src="/static/img/logoVictoriaBlanco.png"></figure></a>
 
         </footer>
-       
+
 
     </div>
 
@@ -1100,6 +957,3 @@ ejecutiva de la Comisión de la Industria de Vinos y Licores.</h5>
 </html>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-
-
-
