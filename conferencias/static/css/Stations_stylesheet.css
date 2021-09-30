@@ -2,13 +2,16 @@
     width: 100%;
     height: auto;
     background-color: #F0F0F0;
-    padding: 5%;
+    padding:  2% 5%;
     min-height: 100vh;
 }
 
 
 .titleSpeakers {
-    width: 100%;
+    width: 70%;
+    margin: 50px auto;
+    background-color: #F0F0F0;
+    padding: 0;
 }
 
 .titleSpeakers img {
@@ -18,7 +21,6 @@
 .filaBloques{
     margin-bottom: 100px;
 }
-
 
 .sponsorBlock{
     background-color: #FAFAFA;
@@ -73,7 +75,8 @@
 
 .videoWrap{
     z-index: 2;
-    height: 100%;
+    height: 85%;
+    max-height: 100%;
 }
 
 .videoWrap2{
@@ -89,6 +92,7 @@
     flex-direction: row;
     padding: 20px 0;
     border-radius: 0 0 10px 10px;
+    z-index: 2;
 }
 
 .blockRS div{
@@ -113,8 +117,40 @@
     top: 9%
 }
 
+.decoDots2{
+    position: absolute;
+    width: 40%;
+    right: 2%;
+    top: 19%
+}
+
+
+.botonStations {
+    background-color: #FF585D;
+    box-shadow: #770BE8 6px 6px;
+    font-size: 22px;
+    color: white !important;
+    text-decoration: none;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    z-index: 1;
+    height: auto;
+    margin: 0 auto;
+}
+
+.botonStations:hover {
+    background-color: #770BE8;
+    box-shadow: #FF585D 6px 6px;
+}
 
 /* Específicos */
+
+
+.imagenModal{
+    cursor: pointer;
+}
 
 #carouselBBVA{
     height: 450px;
@@ -131,4 +167,37 @@
         height: 100%;
         width: auto;
 }
+
+.linkQuickbooks{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.linkQuickbooks div h4{
+    margin-top: 40px !important;
+}
+
+.cuponDiageoModal{
+    background-color: #FFC802;
+    box-shadow: 12px 12px #770be8;
+}
+
+.cuponDiageoModal div{
+padding: 50px;
+}
+
+.cuponDiageoModal div p{
+    font-size: 22px;
+}
+
+.cuponDiageoModal div a{
+    font-size: 28px;
+    color: #770be8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 
