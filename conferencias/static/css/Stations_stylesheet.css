@@ -1,3 +1,8 @@
+.body{
+    width: 100% !important;
+    overflow-x: hidden;
+}
+
 .mainContainer{
     width: 100%;
     height: auto;
@@ -19,7 +24,6 @@
 }
 
 .filaBloques{
-    margin-bottom: 100px;
 }
 
 .patroxBlock{
@@ -31,6 +35,7 @@
     flex-direction: column;
     align-items: center;
     border: 2px solid #FFC802;
+    margin-bottom: 90px;
 }
 
 .dobleBlock{
@@ -155,9 +160,14 @@
 
 /* Específicos */
 
+.centrarCosa{
+    display: flex;
+    flex-direction: column;
+}
 
 .imagenModal{
     cursor: pointer;
+    width: 100%;
 }
 
 #carouselBBVA{
@@ -233,3 +243,147 @@ padding: 50px;
     width: 100%;
 }
 
+
+/* X-small devices (large desktops, less than 576px) */
+
+@media (max-width: 575.98px) {
+    
+    .logosLeon{
+    background-color: white;
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 15px 15px 0 0;
+
+}
+.logosLeon figure{
+    margin: 0 auto;
+}
+.logosLeon figure img{
+    height: 75px;
+    width: auto;
+}
+    
+    .videoWrap2{  
+    z-index: 2;
+    height: 125px;
+    margin: 15px 0;
+    }
+  
+    .imagenGTO{
+    width: 45%;
+    }
+
+    .videosDobleGTO{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    }
+    
+    .fotoColumnaGTO{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    
+    .columnasQuickbooks{
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    }
+    
+    .linkQuickbooks, .fotoQuickbooks{
+        width: 100% !important;
+    }
+    
+    .imagenQKB{
+        width: 40%;
+        margin-bottom: 0;
+    }
+    .linkQuickbooks div h4 {
+    margin-top: 5px !important;
+}
+    
+    .fotoQuickbooks{display: flex;
+    flex-direction: column;
+    align-items: center;}
+    
+    .imagenNxxt img {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+    
+    .columnaBBVA{
+        display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    }
+    .videoBBVA{
+        height: 150px
+    }
+    
+    #carouselBBVA{
+        height: 300px !important;
+        width: 170px;
+    }
+    
+    
+}
+
+
+
+/* Small devices (large desktops, less than 768px) */
+
+@media (max-width: 767.98px) { 
+    
+   .imagenGTO{
+    width: 65%;
+    }
+
+}
+
+/* Medium devices (large desktops, less than 992px) */
+
+@media (max-width: 991.98px) {
+    .patroxBlock{
+        margin-bottom: 50px;
+    }
+   
+
+}
+
+/* Large devices (large desktops, less than 1200px) */
+
+@media (max-width: 1199.98px) {
+    
+    .botonStations {
+    font-size: 18px;
+    padding: 8px 10px;
+}
+    
+    .videoWrap {
+    margin-bottom: 25px;
+}
+    
+    .imagenNxxt {
+    width: 100%;
+    }
+    
+    .imagenNxxt img{
+        width: 100%;
+        max-width: 550px;
+        margin: 0 auto;
+    }
+   
+
+}
+
+/* X-Large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+    
+ 
+
+}
