@@ -65,8 +65,8 @@ body {
     animation-direction: reverse;
 }
 
-.animate-text span {
-    font-size: 6vh;
+.animate-text {
+    font-size: 6vh; 
     -webkit-text-stroke: 1px #30442a;
     text-transform: uppercase;
     display: inline-block;
@@ -238,7 +238,7 @@ figure img {
     height: 400px;
     z-index: 2;
 
-    
+
 }
 
 .registrosnuevos p{
@@ -424,11 +424,11 @@ figure img {
         .deco3 {
            display: none;
         }
-        
+
         .BotonUnirse{
             width: 100vw !important;
         }
-        
+
         .registrosnuevos{
             width: 100vw !important;
         }
@@ -441,7 +441,7 @@ figure img {
     @media (max-width: 991.98px) {
 
         .footerVictoriafest {
-    flex-direction: column;  
+    flex-direction: column;
 }
         .logoVictoria img {
     height: 65px;
@@ -487,8 +487,8 @@ figure img {
     .mainContent{
         width: 100% !important;
     }
-    
-    
+
+
     .textoScroll {
         min-height: 8vh !important;
     }
@@ -541,11 +541,11 @@ figure img {
         width: 100%;
         height: 470px;
     }
-    
+
     .contenedorAmarillo form{
         width: 95%;
     }
-    
+
     .BotonUnirse button {
         background-color: #00B774;
         box-shadow: #770BE8 6px 6px;
@@ -560,44 +560,44 @@ figure img {
     .column2{
         width: 100%;
     }
-    
+
     .BotonUnirse {
         height: auto;
     }
-    
+
     .BotonUnirse button {
     font-size: 1.5em;
 }
-    
+
     .BotonUnirse h3{
         font-size: 26px
     }
     .BotonUnirse p{
         font-size: 18px
     }
-    
+
     .BotonUnirse input{
-    width: 300px;   
+    width: 300px;
 }
-    
+
     .registrosnuevos{
         height: auto;
         padding: 80px 0;
     }
-    
+
     .registrosnuevos p{
         font-size: 22px;
-    }    
-    
+    }
+
     .registrosnuevos button {
 
     font-size: 1.5em;
 
     padding: 15px 20px;
-  
+
     width: 230px;
 }
-    
+
     .RedesSociales{
         width: 300px;
     }

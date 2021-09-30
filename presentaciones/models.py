@@ -24,6 +24,10 @@ class Conferencia(models.Model):
     id_conferencista = models.ForeignKey('Conferencista', on_delete=models.CASCADE, null=True, blank=True)
     reprograma = models.IntegerField(null=True, blank = True)
 
+    @property
+    def fecha_fin(self):
+        return self.fecha_hora + self.duracion
+
     def save(self, *args, **kwargs):
         self.uuid = slugify(self.titulo)
         super(Conferencia, self).save(*args, **kwargs)

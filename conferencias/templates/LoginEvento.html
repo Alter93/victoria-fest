@@ -64,10 +64,8 @@ gtag('config', 'AW-350427249');
 
 
         <div class="textoScroll bg-text-container">
-            <div class="animate-text left">
-                <span>✱ Aqui va ● conf. en vivo&nbsp; </span>
-                <span>✱ Aqui va ● conf. en vivo&nbsp; </span>
-                <span>✱ Aqui va ● conf. en vivo&nbsp; </span>
+            <div class="animate-text left" id="envivo">
+
             </div>
         </div>
 
@@ -79,20 +77,20 @@ gtag('config', 'AW-350427249');
                     <figure class="deco2"><img src="/static/img/decoFlechaverde.svg"></figure>
                     <figure class="logoNow"><img src="/static/img/logonowblanco.svg"></figure>
                      <figure class="deco3"><img src="/static/img/deco3.png"></figure>
-                    
+
                 </div>
 
             </div>
 
 
             <div class="column2">
-                
+
                 <div class="contenedorAmarillo">
                     <div class="fechas">
-                        
+
                         <figure><img src="/static/img/fechaMorado.svg"></figure>
-                        
-                        
+
+
                     </div>
                     <form class="" action="entrar" method="post">
                         <div class="BotonUnirse">
@@ -116,7 +114,7 @@ gtag('config', 'AW-350427249');
                     <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="bold">REGISTRARME</button>
                 </div>
 
-              
+
             </div>
         </div>
 
@@ -130,7 +128,7 @@ gtag('config', 'AW-350427249');
                             <a class="light" target="_blank" href="https://www.youtube.com/user/CanalV147/">YOUTUBE</a>
                         </div>
                  </div>
-            
+
         </footer>
 
 
@@ -262,4 +260,22 @@ gtag('config', 'AW-350427249');
     var form = document.querySelector("#form_reg");
     form.addEventListener("change", cambios_forma);
 
+</script>
+
+<script>
+    function cargarEnVivo(){
+        var client = new XMLHttpRequest();
+        client.open('GET', '/evento/envivo');
+        client.onreadystatechange = function() {
+            if (client.readyState === 4){
+                document.getElementById("envivo").textContent=client.responseText;
+            }
+        }
+        client.send();
+        setTimeout(cargarEnVivo, 600000);
+    }
+    window.onload = function () {
+        cargarEnVivo();
+
+    }
 </script>
