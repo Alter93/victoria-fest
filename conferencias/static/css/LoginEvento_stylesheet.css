@@ -167,39 +167,46 @@ figure img {
 
 .fechas figure {
     padding: -1px;
-    margin: 0 -1px;
+    margin: -1 -1px;
 }
 
 .fechas figure img {
-    height: 501px;
+    height: 601px;
 }
 
 .BotonUnirse {
     width: 50vw;
     background-color: #FFC802;
-    height: 500px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+.BotonUnirse h3{
+    text-align: left;
+    font-size: 46px;
+    color: #770BE8;
+}
+
 
 .BotonUnirse p{
     font-size: 22px;
     max-width: 450px;
     font-size: 1.8em;
     line-height: 1.2;
+    color: #770BE8;
 
 }
 
 .BotonUnirse input{
     width: 500px;
     background-color: #FFC802;
-    border-bottom: 5px black solid !important;
+    border-bottom: 3px #770BE8 solid !important;
     border: 0px black solid;
-    font-size: 2em;
+    font-size: 1.3em;
     margin: 25px 0;
-    color: black !important;
+    color: #770BE8 !important;
 
 }
 
@@ -223,15 +230,23 @@ figure img {
 .registrosnuevos{
     display: flex;
     flex-direction: column;
-    justify-content:space-around;
-    width: 50%;
+    justify-content:center;
+    align-content: center;
+    width: 50vw;
     margin: 0 0 0 auto;
+    background-color: #F7582A;
+    height: 400px;
+    z-index: 2;
+
+    
 }
 
 .registrosnuevos p{
       font-size: 1.8em;
       color: white;
-        line-height: 1.2;
+    line-height: 1.2;
+    margin: 25px auto;
+    text-align: center;
 
 }
 
@@ -245,13 +260,14 @@ figure img {
     cursor: pointer;
     transition: 0.3s ease-in-out;
     width: 320px;
+    margin: 0 auto;
 }
 
 .registrosnuevos button:active,
 .registrosnuevos button:hover {
     background-color: #FFC802;
     box-shadow: #00B774 6px 6px;
-    color: #770BE8;
+    color: #F7582A;
 }
 
 
@@ -281,21 +297,22 @@ figure img {
 .deco3 {
     margin: 0;
     position: absolute;
-    left: 10%;
-    bottom: 0;
+    right: -60%;
+    bottom: 0%;
     opacity: .5;
+    z-index: 1;
 }
 
 .deco3 img {
-    height: 221px;
+    height: 160px !important;
 }
 
 .RedesSociales {
     width: 500px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-bottom: 40px;
+    flex-direction: row;
+ justify-content: space-around;
+    padding-bottom: 0;
     z-index: 2;
 }
 
@@ -304,15 +321,16 @@ figure img {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin: auto 0;
 
 }
 
-.contactoRS a {
+.RedesSociales a {
     color: #FFF;
-    font-size: 1.7em;
+    font-size: 1.2em;
 }
 
-.contactoRS a:hover {
+.RedesSociales a:hover {
     color: #F7582A;
     transition: 0.5s ease-in-out;
 }
@@ -320,11 +338,14 @@ figure img {
 .footerVictoriafest {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
     background-color: black;
     margin: 0;
     padding: 25px 0;
     min-height: 10vh;
+        z-index: 2;
+
 }
 
 .logoVictoria img {
@@ -386,7 +407,7 @@ figure img {
         }
 
         .contenedorAmarillo {
-            width: 100%;
+            width: 100% !important;
         }
 
 
@@ -400,6 +421,17 @@ figure img {
             height: 320px
         }
 
+        .deco3 {
+           display: none;
+        }
+        
+        .BotonUnirse{
+            width: 100vw !important;
+        }
+        
+        .registrosnuevos{
+            width: 100vw !important;
+        }
 
 
     }
@@ -408,6 +440,13 @@ figure img {
     /* Medium devices (tablets, less than 992px) */
     @media (max-width: 991.98px) {
 
+        .footerVictoriafest {
+    flex-direction: column;  
+}
+        .logoVictoria img {
+    height: 65px;
+    margin-bottom: 25px;
+}
 
     }
 
@@ -445,6 +484,11 @@ figure img {
 @media (max-width: 575.98px) {
 
 
+    .mainContent{
+        width: 100% !important;
+    }
+    
+    
     .textoScroll {
         min-height: 8vh !important;
     }
@@ -493,6 +537,15 @@ figure img {
         align-items: center;
     }
 
+    .contenedorAmarillo{
+        width: 100%;
+        height: 470px;
+    }
+    
+    .contenedorAmarillo form{
+        width: 95%;
+    }
+    
     .BotonUnirse button {
         background-color: #00B774;
         box-shadow: #770BE8 6px 6px;
@@ -504,9 +557,53 @@ figure img {
         transition: 0.3s ease-in-out;
     }
 
+    .column2{
+        width: 100%;
+    }
+    
     .BotonUnirse {
-        margin-bottom: 25px;
+        height: auto;
+    }
+    
+    .BotonUnirse button {
+    font-size: 1.5em;
+}
+    
+    .BotonUnirse h3{
+        font-size: 26px
+    }
+    .BotonUnirse p{
+        font-size: 18px
+    }
+    
+    .BotonUnirse input{
+    width: 300px;   
+}
+    
+    .registrosnuevos{
+        height: auto;
+        padding: 80px 0;
+    }
+    
+    .registrosnuevos p{
+        font-size: 22px;
+    }    
+    
+    .registrosnuevos button {
+
+    font-size: 1.5em;
+
+    padding: 15px 20px;
+  
+    width: 230px;
+}
+    
+    .RedesSociales{
+        width: 300px;
     }
 
+    .deco2{
+        display: none;
+    }
 
 }

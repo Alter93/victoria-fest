@@ -65,9 +65,9 @@ gtag('config', 'AW-350427249');
 
         <div class=" textoScroll bg-text-container">
             <div class="animate-text left">
-                <span>✱ es tu momento ● es tu momento&nbsp; </span>
-                <span>✱ es tu momento ● es tu momento&nbsp; </span>
-                <span>✱ es tu momento ● es tu momento&nbsp; </span>
+                <span>✱ Aqui va ● conf. en vivo&nbsp; </span>
+                <span>✱ Aqui va ● conf. en vivo&nbsp; </span>
+                <span>✱ Aqui va ● conf. en vivo&nbsp; </span>
             </div>
         </div>
 
@@ -76,23 +76,29 @@ gtag('config', 'AW-350427249');
         <div class="contentMainColumns">
             <div class="column1">
                 <div>
-                    <figure class="deco2"><img src="/static/img/deco2.png"></figure>
+                    <figure class="deco2"><img src="/static/img/decoFlechaverde.svg"></figure>
                     <figure class="logoNow"><img src="/static/img/logonowblanco.svg"></figure>
-
+                     <figure class="deco3"><img src="/static/img/deco3.png"></figure>
+                    
                 </div>
 
             </div>
 
 
             <div class="column2">
+                
                 <div class="contenedorAmarillo">
                     <div class="fechas">
-                        <figure><img src="/static/img/fechas.png"></figure>
+                        
+                        <figure><img src="/static/img/fechaMorado.svg"></figure>
+                        
+                        
                     </div>
                     <form class="" action="entrar" method="post">
                         <div class="BotonUnirse">
                             {% csrf_token %}
-                            <p>Estás a un paso de empezar a vivir esta experiencia, ingresa y disfruta todo el contenido que tenemos preparado para ti.</p>
+                            <h3 class="boldextended">Estás a un paso.</h3>
+                            <p>Comienza la experiencia, ingresa y disfruta todo el contenido que tenemos preparado para ti.</p>
                             {% if error_login %}
 
                             <p>{{ error_login }}</p>
@@ -106,29 +112,25 @@ gtag('config', 'AW-350427249');
                 </div>
 
                 <div class="registrosnuevos">
-                    <p>¿No cuentas con registro? <br>¡No hay problema, puedes hacerlo ahora!</p>
+                    <p><b>¿No cuentas con registro?</b> <br>¡No hay problema, puedes hacerlo ahora!</p>
                     <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="bold">REGISTRARME</button>
                 </div>
 
-                <div class="contactoRS">
-                    <figure class="deco3"><img src="/static/img/deco3.png"></figure>
-                    <div class="RedesSociales">
-
-
-                        <h2 class="bold">CONTACTO</h2>
-                        <div>
-                            <a class="light" target="_blank" href="https://www.instagram.com/victoria147org/">INSTAGRAM</a>
-                            <a class="light" target="_blank" href="https://www.facebook.com/Victoria147org/">FACEBOOK</a>
-                            <a class="light" target="_blank" href="https://www.youtube.com/user/CanalV147/">YOUTUBE</a>
-                        </div>
-                    </div>
-                </div>
+              
             </div>
         </div>
 
         <footer class="footerVictoriafest">
             <a href="https://victoria147.org/"> <figure class="logoVictoria"><img src="/static/img/logoVictoriaBlanco.png"></figure></a>
 
+            <div>
+                <div class="RedesSociales">
+                            <a class="light" target="_blank" href="https://www.instagram.com/victoria147org/">INSTAGRAM</a>
+                            <a class="light" target="_blank" href="https://www.facebook.com/Victoria147org/">FACEBOOK</a>
+                            <a class="light" target="_blank" href="https://www.youtube.com/user/CanalV147/">YOUTUBE</a>
+                        </div>
+                 </div>
+            
         </footer>
 
 
