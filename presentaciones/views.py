@@ -90,8 +90,7 @@ def conferencia(request, conf_uid = None):
                 return redirect(f"/evento")
 
             return render(request, 'conferencia.html', {
-                "conferencia": conferencia,
-                "fin": conferencia.fecha_hora + conferencia.duracion,
+                "conferencia": conferencia
             })
 
     else:
