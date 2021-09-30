@@ -41,11 +41,11 @@ def salir(request):
         del request.session['email']
     return redirect("/")
 
-def en_vivo(request):
+def envivo(request):
     fecha = timezone.now()
     conferencias = Conferencia.objects.filter(
         fecha_hora__lte=fecha
-    ).order_by('lugar')
+    )
 
     conferencias_filtradas = []
     texto_en_vivo = ""
@@ -56,12 +56,10 @@ def en_vivo(request):
     if len(list(conferencias_filtradas)) == 0:
         texto_en_vivo = "Por el momento no hay conferencias en vivo. "
     else:
-        texto_en_vivo = " " + conferencia.titulo + " • "
+        texto_en_vivo = " " + conferencias_filtradas[0].titulo + " "
 
-    while len(texto_en_vivo) < 75:
-        texto_en_vivo += texto_en_vivo
 
-    return HttpResponse(texto_en_vivo)
+    return HttpResponse(mark_safe(texto_en_vivo))
 
 def conferencia(request, conf_uid = None):
     fecha = timezone.now()
@@ -83,6 +81,9 @@ def conferencia(request, conf_uid = None):
                 conferencia = Conferencia.objects.get(
                     uuid=conf_uid
                 )
+                if (not conferencia.fecha_hora + conferencia.duracion > fecha
+                or not conferencia.fecha_hora < fecha):
+                    return redirect(f"/evento")
             except:
                 return redirect(f"/evento")
 
