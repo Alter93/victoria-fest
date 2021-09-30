@@ -95,3 +95,19 @@ def conferencia(request, conf_uid = None):
 
     else:
         return redirect("entrar")
+
+def cargar_url(request):
+    fecha = timezone.now()
+    conferencias_filtradas = []
+    conferencias = Conferencia.objects.filter(
+        fecha_hora__lte=fecha
+    )
+    for conferencia in conferencias:
+        if (conferencia.fecha_hora + conferencia.duracion > fecha):
+            conferencias_filtradas.append(conferencia)
+    if len(conferencias_filtradas) < 1:
+        url = "/evento/"
+    else:
+        url = f"/evento/{conferencias_filtradas[0].uuid}"
+
+    return HttpResponse(mark_safe(url))
