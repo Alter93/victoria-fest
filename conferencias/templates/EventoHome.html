@@ -1,11 +1,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="/static/css/Home_stylesheet.css" />
-    <link rel="stylesheet" href="/static/css/RegistroModal_stylesheet.css" />
-
-
-
+    <link rel="stylesheet" href="/static/css/EventoHome.css" />
     <link rel="stylesheet" href="/static/css/normalize.css" />
     <link rel="stylesheet" href="/static/fonts/fontstylesheet.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
@@ -18,7 +14,7 @@
 
 
 
-  
+
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117257163-1"></script>
@@ -62,7 +58,7 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
 </noscript>
 <!-- End Facebook Pixel Code -->
-    
+
 
 </head>
 
@@ -86,22 +82,26 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
                     <li class="nav-item">
                         <a class="nav-link" href="#agenda">Agenda</a>
                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/stations">STATIONS</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#faqs">FAQ's</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/evento/salir">SALIR</a>
                     </li>
                 </ul>
 
 
             </div>
             <div class="nav_CTA col-2">
-                <a class="nav-link boldextended" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" href="#">REGISTRARME</a>
+                <a class="nav-link boldextended"  href="/evento">EN VIVO</a>
             </div>
         </div>
     </nav>
 
-    <div id="scrollmenu" class="fixedbot">
-      <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="bold">REGISTRARME</button>
-      </div>
+
 
 
 
@@ -114,8 +114,11 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
                 <div class="livenowHero">
 
             <div class="textoScroll boldextended">
-                <span>EVENTO GRATUITO&nbsp; </span>
-                <span>9AM - 7PM&nbsp; </span>
+                 <div class="animate-text left">
+                <span>EN VIVO ●&nbsp; </span>
+                <span id="envivo">{{ conferencias_presente.0.titulo }}&nbsp; </span>
+                <span>● EN VIVO&nbsp; </span>
+                </div>
             </div>
 
                 </div>
@@ -130,7 +133,7 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
         </div>
 
         <div class="bannerCTA">
-            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="bold">REGISTRARME</button>
+            <button type="button" onclick="window.location.href='/evento'" class="bold">EN VIVO AHORA</button>
         </div>
 
 
@@ -150,6 +153,68 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
 
             </div>
         </div>
+
+          <div id="agenda">
+            <div class="decoDots">
+            </div>
+
+            <h2>AGENDA</h2>
+            <figure class="titleAgenda"><img class="img-fluid" src="/static/img/AGENDA.svg"></figure>
+            <div class="container containerAgenda">
+                <div class="encabezadosAgenda bold row">
+                    <h4 class="col-4">Speaker</h4>
+                    <h4 class="col-8">Evento</h4>
+<!--                    <h4 class="col-2">Horario</h4>-->
+                </div>
+                {% for conferencia in conferencias_pasado %}
+                <div class="eventoSingle row align-items-center eventoTerminado" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
+                    <div class="col-lg-4">
+                        <h3>{{ conferencia.id_conferencista.nombre }} {{ conferencia.id_conferencista.apellido }}</h3>
+                    </div>
+                    <div class="col-lg-6">
+                        <h4 class="bold">{{ conferencia.titulo  }}</h4>
+                    </div>
+                   <div class="col-lg-2 horarioEvento">
+                        <p>{{ conferencia.fecha_hora|date:"H:i"  }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+                {% for conferencia in conferencias_presente %}
+                <a href="/evento" style="text-decoration: none !important;">
+                <div class="eventoSingle row align-items-center eventoLive"  href="/evento" role="" aria-expanded="false" aria-controls="collapseEv2">
+                    <div class="col-lg-4">
+                        <h3>{{ conferencia.id_conferencista.nombre }} {{ conferencia.id_conferencista.apellido }}</h3>
+                    </div>
+                    <div class="col-lg-6">
+                        <h4 class="bold">{{ conferencia.titulo  }}</h4>
+                    </div>
+                   <div class="col-lg-2 horarioEvento">
+                        <p>EN VIVO</p>
+                    </div>
+                </div>
+                </a>
+                {% endfor %}
+
+                {% for conferencia in conferencias_futuro %}
+                <div class="eventoSingle row align-items-center eventoNeutral" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
+                    <div class="col-lg-4">
+                        <h3>{{ conferencia.id_conferencista.nombre }} {{ conferencia.id_conferencista.apellido }}</h3>
+                    </div>
+                    <div class="col-lg-6">
+                        <h4 class="bold">{{ conferencia.titulo  }}</h4>
+                    </div>
+                   <div class="col-lg-2 horarioEvento">
+                        <p>{{ conferencia.fecha_hora|date:"H:i"  }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+
+
+
+
+            </div>
+        </div>
+
 
         <div id="speakers">
             <h2>SPEAKERS</h2>
@@ -179,7 +244,7 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
                     </div>
 
                 </div>
-                
+
                          <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/arturoelias.jpg"></figure>
                     <h4 class="bold">Arturo Elías Ayub</h4>
@@ -202,7 +267,7 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
                     </div>
 
                 </div>
-                
+
                  <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/marcoantonioregil.jpg"></figure>
                     <h4 class="bold">Marco Antonio Regil</h4>
@@ -224,7 +289,7 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
                     </div>
 
                 </div>
-                
+
                 <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/mariafresnedo.jpg"></figure>
                     <h4 class="bold">Mariana Fresnedo</h4>
@@ -244,7 +309,7 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
                     </div>
 
                 </div>
-                
+
                 <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/diegobarraza.jpg"></figure>
                     <h4 class="bold">Diego Barrazas</h4>
@@ -310,7 +375,7 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
 
                 </div>
 
-               
+
 
                 <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/elisasacal.jpg"></figure>
@@ -332,7 +397,7 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
                     </div>
 
                 </div>
-                
+
                 <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/alevillalba.jpg"></figure>
                     <h4 class="bold">Ale Villalba</h4>
@@ -396,7 +461,7 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
                     </div>
 
                 </div>
-                
+
                 <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/daliamorales.jpg"></figure>
                     <h4 class="bold">María Dalia Ortiz</h4>
@@ -413,7 +478,7 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
                     </div>
 
                 </div>
-                
+
                 <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/lucialobeira.jpg"></figure>
                     <h4 class="bold">Lucia Lobeira</h4>
@@ -427,13 +492,13 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
                             <div class="rsSpeakers">
                                 <a href="https://www.instagram.com/llobeira/" target="_blank">
                                     <img class="img-fluid" src="/static/img/instagram.svg"></a>
-                            
+
                             </div>
                         </div>
                     </div>
 
                 </div>
-                  
+
 
                   <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/maribelquiroga.jpg"></figure>
@@ -454,7 +519,7 @@ ejecutiva de la Comisión de la Industria de Vinos y Licores.</h5>
                     </div>
 
                 </div>
-                
+
                 <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/priscilaholder.jpg"></figure>
                     <h4 class="bold">Priscila Holder</h4>
@@ -466,14 +531,14 @@ ejecutiva de la Comisión de la Industria de Vinos y Licores.</h5>
                             <p>Organiza y acompaña experiencias de viaje culturales para conocer México de manera responsable. Actualmente colabora con diversos agentes turísticos en Oaxaca y está en proceso de emprender su propia empresa turística.</p>
 
                             <div class="rsSpeakers">
-                               
+
                             </div>
                         </div>
                     </div>
 
                 </div>
 
-                
+
                    <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/enriquetorre.jpg"></figure>
                     <h4 class="bold">Enrique Torre Molina</h4>
@@ -495,7 +560,7 @@ ejecutiva de la Comisión de la Industria de Vinos y Licores.</h5>
                     </div>
 
                 </div>
-                
+
                   <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/sabrinacastelli.jpg"></figure>
                     <h4 class="bold">Sabrina Castelli</h4>
@@ -516,9 +581,9 @@ ejecutiva de la Comisión de la Industria de Vinos y Licores.</h5>
                     </div>
 
                 </div>
-                
-                
-                
+
+
+
                 <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/rominasacre.jpg"></figure>
                     <h4 class="bold">Romina Sacre</h4>
@@ -540,7 +605,7 @@ ejecutiva de la Comisión de la Industria de Vinos y Licores.</h5>
                     </div>
 
                 </div>
-                
+
                 <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/michaelnovak.jpg"></figure>
                     <h4 class="bold">Michael García Novak</h4>
@@ -561,8 +626,8 @@ ejecutiva de la Comisión de la Industria de Vinos y Licores.</h5>
                     </div>
 
                 </div>
-                
-                
+
+
                 <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/andreaarnau.jpg"></figure>
                     <h4 class="bold">Andrea Arnau</h4>
@@ -583,7 +648,7 @@ ejecutiva de la Comisión de la Industria de Vinos y Licores.</h5>
                     </div>
 
                 </div>
-          
+
                 <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/moncaya.jpg"></figure>
                     <h4 class="bold">Moncaya</h4>
@@ -604,8 +669,8 @@ ejecutiva de la Comisión de la Industria de Vinos y Licores.</h5>
                     </div>
 
                 </div>
-                
-              
+
+
 
                 <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/imyoni.jpg"></figure>
@@ -645,13 +710,13 @@ ejecutiva de la Comisión de la Industria de Vinos y Licores.</h5>
                             <div class="rsSpeakers">
                                 <a href="https://www.instagram.com/beludelarosa/" target="_blank">
                                     <img class="img-fluid" src="/static/img/instagram.svg"></a>
-                            
+
                             </div>
                         </div>
                     </div>
 
                 </div>
-                
+
                   <div class="singleSpeaker">
                     <figure><img class="img-fluid" src="/static/img/Speakers/marisalazo.jpg"></figure>
                     <h4 class="bold">Marisa Lazo</h4>
@@ -665,7 +730,7 @@ ejecutiva de la Comisión de la Industria de Vinos y Licores.</h5>
                             <div class="rsSpeakers">
                                 <a href="https://www.instagram.com/marisalazo.oficial/" target="_blank">
                                     <img class="img-fluid" src="/static/img/instagram.svg"></a>
-                            
+
                             </div>
                         </div>
                     </div>
@@ -677,180 +742,7 @@ ejecutiva de la Comisión de la Industria de Vinos y Licores.</h5>
 
         </div>
 
-        <div id="agenda">
-            <div class="decoDots">
-            </div>
 
-            <h2>AGENDA</h2>
-            <figure class="titleAgenda"><img class="img-fluid" src="/static/img/AGENDA.svg"></figure>
-            <div class="container containerAgenda">
-                <div class="encabezadosAgenda bold row">
-                    <h4 class="col-4">Speaker</h4>
-                    <h4 class="col-8">Evento</h4>
-<!--                    <h4 class="col-2">Horario</h4>-->
-                </div>
-
-
-<!--
-SINGLE EVENT PLACEHOLDER
-
-<div class="eventoSingle row align-items-start" data-bs-toggle="collapse" href="#collapseEv1" role="button" aria-expanded="false" aria-controls="collapseEv1">
-                    <div class="col-lg-3">
-                        <p>Marco Antonio Regil</p>
-                    </div>
-                    <div class="col-lg-7">
-                        <h5 class="bold">Cambia tu historia</h5>
-                        <p class="collapse" id="collapseEv1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod arcu nec odio congue vulputate. Sed in vehicula arcu. Fusce metus mauris, blandit in vestibulum eu, eleifend nec lacus. Sed blandit ipsum tellus, a volutpat nulla suscipit quis. Aenean velit tortor, finibus a posuere ac, placerat et ipsum.
-                        </p>
-                    </div>
-                    <div class="col-lg-2">
-                        <p>11 • 11:30</p>
-                    </div>
-                </div>-->
-
-                <div class="eventoSingle row align-items-center" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>Ana Victoria García</h3>
-                    </div>
-                    <div class="col-lg-8">
-                        <h4 class="bold">¿Por qué estamos aquí?</h4>
-                    </div>
-                </div>
-                 <div class="eventoSingle row align-items-center" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>Dafne Schilling</h3>
-                    </div>
-                    <div class="col-lg-8">
-                        <h4 class="bold">Baile para endorfinas</h4>
-                    </div>
-                </div>
-                 <div class="eventoSingle row align-items-center" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>Jason Silva</h3>
-                    </div>
-                    <div class="col-lg-8">
-                        <h4 class="bold">Saludo a emprendedoras</h4>
-                    </div>
-                </div>
-                 <div class="eventoSingle row align-items-center" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>Marco Antonio Regil</h3>
-                    </div>
-                    <div class="col-lg-8">
-                        <h4 class="bold">El poder de la mente y la historia que te cuentas</h4>
-                    </div>
-                </div>
-                 <div class="eventoSingle row align-items-center" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>Romina Sacre</h3>
-                        <h3>Lucia Lobeira</h3>
-                        <h3>Belén de la Rosa</h3>
-                    </div>
-                    <div class="col-lg-8">
-                        <h4 class="bold">Confesionario</h4>
-                    </div>
-                </div>
-                
-                 <div class="eventoSingle row align-items-center" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>Elisa Sacal</h3>
-                    </div>
-                    <div class="col-lg-8">
-                        <h4 class="bold">Hackea el sueño</h4>
-                    </div>
-                </div>
-                 <div class="eventoSingle row align-items-center" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>Ale Villalba</h3>
-                    </div>
-                    <div class="col-lg-8">
-                        <h4 class="bold">Tu espíritu, desbloqueate para el éxito</h4>
-                    </div>
-                </div>
-                 <div class="eventoSingle row align-items-center" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>Leticia Gasca</h3>
-                    </div>
-                    <div class="col-lg-8">
-                        <h4 class="bold">Resiliencia y adaptabilidad</h4>
-                    </div>
-                </div>
-                <div class="eventoSingle row align-items-center" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>Maribel Quiroga</h3>
-                        <h3>Ma. Dalia Ortiz</h3>
-                        <h3>Priscila Holder</h3>
-                        <h3>Enrique Torre</h3>
-                    </div>
-                    <div class="col-lg-8">
-                        <h4 class="bold">Panel de Diversidad e Inclusión</h4>
-                    </div>
-                </div>
-                 <div class="eventoSingle row align-items-center" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>Manuela Villegas
-</h3>
-                    </div>
-                    <div class="col-lg-8">
-                        <h4 class="bold">Growth</h4>
-                    </div>
-                </div>
-                 <div class="eventoSingle row align-items-center" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>Mariana Fresnedo</h3>
-                    </div>
-                    <div class="col-lg-8">
-                        <h4 class="bold">Unión de neuroprogramación y conciencia</h4>
-                    </div>
-                </div>
-                 <div class="eventoSingle row align-items-center" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>Michael García Novak</h3>
-                    </div>
-                    <div class="col-lg-8">
-                        <h4 class="bold">¿Dónde están las oportunidades?</h4>
-                    </div>
-                </div>
-                <div class="eventoSingle row align-items-center" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>Arturo Elías Ayub</h3>
-                    </div>
-                    <div class="col-lg-8">
-                        <h4 class="bold">El negociador</h4>
-                    </div>
-                </div>
-                <div class="eventoSingle row align-items-center" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>Diego Barrazas</h3>
-                    </div>
-                    <div class="col-lg-8">
-                        <h4 class="bold">El mundo de comunicar</h4>
-                    </div>
-                </div>
-                <div class="eventoSingle row align-items-center" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>Sabrina Castelli</h3>
-                    </div>
-                    <div class="col-lg-8">
-                        <h4 class="bold">Tú, tu empresa y tu dinero</h4>
-                    </div>
-                </div>
-                <div class="eventoSingle row align-items-center" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>Ana Victoria Garcia</h3>
-                        <h3>Marisa Lazo</h3>
-                        <h3>Andrea Arnau</h3>
-                        
-                    </div>
-                    <div class="col-lg-8">
-                        <h4 class="bold">Final Pitch Contest</h4>
-                    </div>
-                </div>
-
-
-
-            </div>
-        </div>
 
                 <div id="faqs">
             <h2 class="bold">Preguntas<br> Frecuentes</h2>
@@ -1040,7 +932,7 @@ SINGLE EVENT PLACEHOLDER
                 <figure><img class="" src="/static/img/alianzas/logo_bbva.svg"></figure>
                 <figure><img class="" src="/static/img/alianzas/logo_facebook.svg"></figure>
                  </div>
-                
+
                  <div class="fila2">
                 <figure><img class="" src="/static/img/alianzas/logo_gto.svg"></figure>
                 <figure><img class="" src="/static/img/alianzas/logo_ideagto.svg"></figure>
@@ -1060,87 +952,6 @@ SINGLE EVENT PLACEHOLDER
             <a href="https://victoria147.org/"> <figure class="logoVictoria"><img src="/static/img/logoVictoriaBlanco.png"></figure></a>
 
         </footer>
-        {% if gracias %}
-        <script>
-            jQuery(window).on('load', function () {
-                $('#modalGracias').modal('show');
-            });
-        </script>
-        <div class="modal fade" id="modalGracias" tabindex="-1" aria-labelledby="modalGracias" aria-hidden="false">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-
-                <h3>Registro guardado con éxito.</h3>
-                <p>¡Ya eres parte del <b>VictoriaFest!</b></p>
-                <p>Revisa tu email para más información.</p>
-
-              </div>
-          </div>
-        </div>
-
-        {% endif %}
-
-        <div class="offcanvas offcanvas-end formularioModal {{ class }}" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="visibility: {{ visibilidad }};">
-
-            <div class="offcanvas-body">
-                <h2>INSCRÍBETE</h2>
-
-
-                <figure class="cross text-reset" data-bs-dismiss="offcanvas"><img src="/static/img/cross_m.svg"></figure>
-                <div class="formContainer">
-                    <p class="bold">Regístrate para recibir noticias sobre las actividades y eventos que estamos preparando para tí.</p>
-                    <form action="/registro" method="post">
-
-                        {% csrf_token %}
-
-                        <input type="email" placeholder="EMAIL" name="email" required id="id_email" oninput="cambios_forma()">
-                        <input class="borderAdjust" type="text" name="nombre" placeholder="NOMBRE" maxlength="100" required id="id_nombre" oninput="cambios_forma()">
-                        <input class="borderAdjust" type="text" placeholder="APELLIDO" name="apellido" maxlength="100" required id="id_apellido" oninput="cambios_forma()">
-                        <select class="borderAdjust" name="genero" id="id_genero">
-                            <option disabled selected value="">Género</option>
-                            <option value="F">Femenino.</option>
-                            <option value="M">Masculino.</option>
-                            <option value="No Binario">No binario.</option>
-                            <option value="NA">Prefiero no decir.</option>
-                        </select>
-
-                        <p class="light">campos opcionales ✱</p>
-
-                        <input type="tel" placeholder="TELÉFONO ✱" name="telefono" maxlength="11" id="phone">
-                        <div class="alert alert-info" style="display: none;"></div>
-                        <div class="alert alert-error" style="display: none;"></div>
-                        <input class="borderAdjust" type="text" placeholder="LUGAR DE RESIDENCIA ✱" name="lugar" maxlength="100" id="id_lugar">
-
-
-                        <select class="borderAdjust" name="emprendedor" id="id_emprendedor">
-                            <option disabled selected value="">¿Eres emprendedor/a?</option>
-                            <option value="No">No, no soy emprendedor/a.</option>
-                            <option value="Tengo una idea de negocio.">Tengo una idea de negocio.</option>
-                            <option value="Acabo de iniciar un negocio (menos de 2 años).">Acabo de iniciar un negocio (menos de 2 años).</option>
-                            <option value="Tengo un negocio en crecimiento (2 a 5 años).">Tengo un negocio en crecimiento (2 a 5 años).</option>
-                            <option value="Tengo un negocio en expansión (más de 5 años).">Tengo un negocio en expansión (más de 5 años).</option>
-
-                        </select>
-                        <div class="checkCorreosContainer">
-                            <p>Estoy interesad@ en recibir correos informativos sobre los programas de Victoria147</p>
-                            <div class="checkCorreos">
-                                <input type="checkbox" name="recibir_correos" checked id="id_recibir_correos">
-                            </div>
-                        </div>
-                        {% if error %}
-                        <p class="boldextended mensajeError">{{ error }}</p>
-                        {% endif %}
-                        <span class="d-inline-block" tabindex="0" id="tooltipbtn" data-bs-toggle="tooltip" data-bs-placement="left" title="Llena los campos obligatorios antes de enviar.">
-                            <input class="botonSubmit " type="submit" value="{{ texto_boton }}" disabled>
-                        </span>
-
-                    </form>
-                </div>
-
-
-
-            </div>
-        </div>
 
 
     </div>
@@ -1152,71 +963,20 @@ SINGLE EVENT PLACEHOLDER
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 
-
 <script>
-        $(window).scroll(function() {
-    var height = $(window).scrollTop();
-    var element = $('#heroHeader');
-    var botonregistro = $('#scrollmenu');
-    if(height  > element.offset().top) {
-        botonregistro.removeClass('esconde');
-    }
-    if(height  < element.offset().top) {
-        botonregistro.addClass('esconde');
-
-    }
-});
-
-    </script>
-
-<script>
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-    var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl)
-    })
-    // Handle international prefixes, format phone input field
-    // Uses intl-tel-input plugin
-    const phoneInputField = document.querySelector("#phone");
-    const phoneInput = window.intlTelInput(phoneInputField, {
-        // https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
-        preferredCountries: ["mx", "ar", "co", "cl"],
-        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-    });
-
-    function cambios_forma() {
-        var emprendedor = document.querySelector("#id_emprendedor");
-        var genero = document.querySelector("#id_genero");
-        var email = document.querySelector("#id_email");
-        var nombre = document.querySelector("#id_nombre");
-        var apellido = document.querySelector("#id_apellido");
-
-        var subbutton = document.querySelector(".botonSubmit");
-        var btn_tooltip = document.querySelector("#tooltipbtn");
-
-        if (emprendedor.value != "" && genero.value != "" &&
-            email.value != "" && apellido.value != "" &&
-            nombre.value != ""
-        ) {
-            subbutton.removeAttribute("disabled");
-            btn_tooltip.removeAttribute("data-bs-toggle");
-            var myTooltipEl = document.getElementById('tooltipbtn')
-            var tooltip = new bootstrap.Tooltip(myTooltipEl)
-            subbutton.setAttribute("value", "REGISTRARME");
-            tooltip.disable()
-        } else {
-            subbutton.setAttribute("disabled", "");
-            var myTooltipEl = document.getElementById('tooltipbtn')
-            var tooltip = new bootstrap.Tooltip(myTooltipEl)
-            tooltip.enable()
+    function cargarEnVivo(){
+        var client = new XMLHttpRequest();
+        client.open('GET', '/evento/envivo');
+        client.onreadystatechange = function() {
+            if (client.readyState === 4){
+                document.getElementById("envivo").textContent=client.responseText;
+            }
         }
-        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-        var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl)
-        })
+        client.send();
+        setTimeout(cargarEnVivo, 600000);
     }
+    window.onload = function () {
+        cargarEnVivo();
 
-    var form = document.querySelector("form");
-    form.addEventListener("change", cambios_forma);
-
-
+    }
 </script>
