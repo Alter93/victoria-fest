@@ -178,6 +178,7 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(247,88,42,1) 10
     z-index: 1;
     margin: 50px auto 0;
     width: 400px;
+    text-align: center;
 }
 
 .botonReprograma:hover {
