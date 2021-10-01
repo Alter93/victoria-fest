@@ -136,28 +136,28 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
 
 
         <div class="videoWrap ratio ratio-16x9">
- <iframe src="https://player.vimeo.com/video/{{ conferencia.vimeo }}" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+ <iframe src="https://player.vimeo.com/video/{{ conferencias_presente.0.vimeo }}" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
         </div>
-             {% if conferencia.reprograma %}
-        <a class="nav-link boldextended botonReprograma" type="button"  href="https://victoria147.org/re-programa/?utm_campaign=Re-programa&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-9gFFmtLIYCA-J9YwkewWWb1ybUHKKMfKf7CtL1UoOqID5PB2qNgEBcXvOyFD4OaJrqMs8b" target="_blank">ÚNETE A REPROGRAMA</a>
+        {% if conferencias_presente.0.reprograma %}
+        <a class="nav-link boldextended botonReprograma"  href="https://victoria147.org/re-programa/?utm_campaign=Re-programa&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-9gFFmtLIYCA-J9YwkewWWb1ybUHKKMfKf7CtL1UoOqID5PB2qNgEBcXvOyFD4OaJrqMs8b" target="_blank">ÚNETE A REPROGRAMA</a>
         {% endif %}
-            
-             {% if conferencia.esultima %}
-        <a class="nav-link boldextended botonReprograma" type="button"  href="/stations" target="_blank">VISITA LAS STATIONS</a>
+
+        {% if conferencias_presente.0.esultima %}
+        <a class="nav-link boldextended botonReprograma"  href="/stations" target="_blank">VISITA LAS STATIONS</a>
         {% endif %}
-            
-            
+
+
                     </div>
 
-        
-        
-        
+
+
+
         <div class="bannerCTA">
             <button type="button" onclick="window.location.href='/stations'" class="bold">VISITAR STATIONS</button>
         </div>
 
 
-      
+
 
           <div id="agenda">
             <div class="decoDots">
@@ -924,7 +924,7 @@ ejecutiva de la Comisión de la Industria de Vinos y Licores.</h5>
                 <h2 class="bold">REPROGRAMARSE ES <wbr> CUESTIONAR LO ESTABLECIDO.</h2>
                 <p>¿Te han tratado de rebelde? ¿de insumisa? ¿incluso de loca?<br> Lógico, las personas que no quieren cambiar van a intentar que tú tampoco lo hagas, que te quedes donde estás, haciendo las cosas como otros dijeron que hay que hacerlas. Pero nadie ha logrado nada quedándose en el mismo sitio, repitiendo fórmulas que no dan resultados. Los verdaderos cambios vienen de las inadaptadas, de las rebeldes, de esas mujeres a las que llaman locas. Si eres una de ellas, este lugar es para ti.
                 </p>
-                
+
                 <a href="https://victoria147.org/re-programa/?utm_campaign=Re-programa&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-9gFFmtLIYCA-J9YwkewWWb1ybUHKKMfKf7CtL1UoOqID5PB2qNgEBcXvOyFD4OaJrqMs8b" target="_blank" class="botonStations bold">SABER MÁS</a>
 
             </div>

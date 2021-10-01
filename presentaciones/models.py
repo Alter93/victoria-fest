@@ -23,6 +23,7 @@ class Conferencia(models.Model):
     color = models.CharField(max_length=200,null=True, blank = True)
     id_conferencista = models.ForeignKey('Conferencista', on_delete=models.CASCADE, null=True, blank=True)
     reprograma = models.IntegerField(null=True, blank = True)
+    esultima = models.IntegerField(null=True, blank = True)
 
     @property
     def fecha_fin(self):
