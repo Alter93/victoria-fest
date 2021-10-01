@@ -279,7 +279,6 @@ nav-link:active {
     justify-content: space-between;
     padding: 40px;
     padding-bottom: 20px;
-
     border: solid #000000 2px;
     border-top: 0;
 }
@@ -301,10 +300,11 @@ nav-link:active {
     width: 100%;
     height: auto;
     padding: 5% 0;
+    margin-top: -2px;
 }
 
 .videoWrap{
-    max-width: 50vw;
+    max-width: 60vw;
     margin: 0 auto;
     border: 12px solid white;
 }
@@ -323,7 +323,7 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(247,88,42,1) 10
 .botonReprograma {
     background-color: #FF585D;
     box-shadow: #770BE8 6px 6px;
-    font-size: 1.8em;
+    font-size: 1.5em;
     color: white;
     border: none;
     padding: 40px 35px;
@@ -331,7 +331,7 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(247,88,42,1) 10
     transition: 0.7s ease-in-out;
     z-index: 1;
     margin: 50px auto 0;
-    width: 400px;
+    width: 420px;
     text-align: center;
 }
 
@@ -878,7 +878,7 @@ color: white;
     display: none !important;
     }
     .eventoSingle{
-    padding: 15px 20px;
+    padding: 10px 20px;
     }
     .eventoSingle div:first-of-type p, .eventoSingle div h5{
         text-align: center;
@@ -918,6 +918,23 @@ color: white;
  opacity: 0 !important; 
     }
     
+    .textoScroll {
+    margin: -5px auto;
+}
+    .videoWrap {
+    max-width: 80vw;
+    margin: 0 auto;
+    border: 12px solid white;
+}
+    
+    .horarioEvento{
+        font-size:14px;
+    }
+    
+    .eventoSingle {
+    text-align: center;
+}
+    
 }
 
 
@@ -938,6 +955,10 @@ color: white;
     
     #agenda h4 {
     font-size: 1.1em;
+}
+    
+     .textoScroll {
+    margin: -9px auto;
 }
     
     
