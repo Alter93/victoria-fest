@@ -110,7 +110,8 @@ nav-link:active {
 
 .barraAvisos{
     background-color: #FF585D;
-    height: 90px;
+    height: auto;
+    min-height: 90px;
     color: white;
     
 }
@@ -233,8 +234,6 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(247,88,42,1) 10
 
 
 
-
-
 .footerVictoriafest {
     display: flex;
     flex-direction: row;
@@ -249,5 +248,57 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(247,88,42,1) 10
     height: 65px;
     margin-top: 25px;
 }
+
+
+
+/*  MEDIA QUERIES  */
+
+/* X-Large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+    
+
+    
+}
+
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+    
+    .nav_CTA {
+    display: none;
+}
+    
+    
+}
+
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    
+    .nav-link {
+    text-align: center;
+    }
+
+    
+}
+
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    
+    
+}
+
+
+
+/* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    
+    .navbar-brand img{
+        height: 25px !important; 
+    }
+   
+}
+
 
 
