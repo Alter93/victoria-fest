@@ -446,7 +446,8 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(247,88,42,1) 10
 }
 
 .titleSpeakers {
-    width: 100%;
+    width: 50%;
+    margin: auto;
 }
 
 .titleSpeakers img {
@@ -611,7 +612,8 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(247,88,42,1) 10
 }
 
 .eventoTerminado{
-    opacity: .5;
+    opacity: 0;
+    display: none;
 }
 
 .horarioLive p{

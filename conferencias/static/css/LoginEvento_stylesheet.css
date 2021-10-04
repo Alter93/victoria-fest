@@ -67,7 +67,6 @@ body {
 
 .animate-text {
     font-size: 6vh; 
-    -webkit-text-stroke: 1px #30442a;
     text-transform: uppercase;
     display: inline-block;
     line-height: .85;
