@@ -101,6 +101,7 @@ def conferencia(request, conf_uid = None):
 def cargar_url(request):
     fecha = timezone.now()
     response_json = {}
+
     conferencias_filtradas = []
     conferencias = Conferencia.objects.filter(
         fecha_hora__lte=fecha
@@ -121,7 +122,7 @@ def cargar_url(request):
         response_json['reprograma'] = conferencias_filtradas[0].reprograma
         response_json['color'] = conferencias_filtradas[0].color
         response_json['titulo'] = conferencias_filtradas[0].titulo
-        response_json['horario'] = conferencias_filtradas[0].fecha_hora.strftime("%H:%M") + " - " + conferencias_filtradas[0].fecha_fin.strftime("%H:%M")
+        response_json['horario'] = timezone.localtime(conferencias_filtradas[0].fecha_hora).strftime("%H:%M") + " - " + timezone.localtime(conferencias_filtradas[0].fecha_fin).strftime("%H:%M")
         response_json['speaker'] = conferencias_filtradas[0].id_conferencista.nombre + " " + conferencias_filtradas[0].id_conferencista.apellido
 
     return HttpResponse(json.dumps(response_json),content_type="application/json")
