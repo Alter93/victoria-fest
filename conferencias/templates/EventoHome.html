@@ -171,19 +171,7 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
                     <h4 class="col-6">Evento</h4>
                     <h4 class="col-2">Horario</h4>
                 </div>
-                {% for conferencia in conferencias_pasado %}
-                <div class="eventoSingle row align-items-center eventoTerminado" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
-                    <div class="col-lg-4">
-                        <h3>{{ conferencia.id_conferencista.nombre }} {{ conferencia.id_conferencista.apellido }}</h3>
-                    </div>
-                    <div class="col-lg-6">
-                        <h4 class="bold">{{ conferencia.titulo  }}</h4>
-                    </div>
-                   <div class="col-lg-2 horarioEvento">
-                        <p>{{ conferencia.fecha_hora|date:"H:i"  }}</p>
-                    </div>
-                </div>
-                {% endfor %}
+
                 {% for conferencia in conferencias_presente %}
                 <a href="/evento" style="text-decoration: none !important;">
                 <div class="eventoSingle row align-items-center eventoLive"  href="/evento" role="" aria-expanded="false" aria-controls="collapseEv2">
@@ -954,7 +942,7 @@ ejecutiva de la Comisión de la Industria de Vinos y Licores.</h5>
                 <figure><img class="logoSmall" src="/static/img/alianzas/Converse.png"></figure>
                 <figure><img class="logoSmall" src="/static/img/alianzas/logo_gaia.svg"></figure>
             </div>
-            
+
             <div class="fila3">
                 <figure><img class="" src="/static/img/alianzas/aliados/chocolat.svg"></figure>
                 <figure><img class="" src="/static/img/alianzas/aliados/allende.svg"></figure>

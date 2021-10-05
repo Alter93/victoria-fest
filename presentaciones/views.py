@@ -115,7 +115,7 @@ def cargar_url(request):
         response_json['titulo'] = "No hay ningun evento"
         response_json['horario'] = ""
         response_json['speaker'] = ""
-        response_json['color'] = "gradientMorada"
+        response_json['color'] = "gradientMorado"
     else:
         url = f"/evento/{conferencias_filtradas[0].uuid}"
         response_json['url'] = url
