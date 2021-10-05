@@ -7,7 +7,7 @@ from django import forms
 class Conferencista(models.Model):
     id = models.BigAutoField(primary_key=True)
     nombre = models.CharField(max_length=200)
-    apellido = models.CharField(max_length=200)
+    apellido = models.CharField(max_length=200,null=True, blank = True)
     biografia = models.CharField(max_length=2000, null=True, blank=True)
     def __str__(self):
         return '%s %s' % (self.nombre, self.apellido)
