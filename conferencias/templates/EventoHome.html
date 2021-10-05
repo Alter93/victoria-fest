@@ -197,7 +197,7 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
                         <h4 class="bold">{{ conferencia.titulo  }}</h4>
                     </div>
                    <div class="col-lg-2 horarioEvento">
-                        <p>{{ conferencia.fecha_hora|date:"H:i"  }}</p>
+                        <p>{{ conferencia.fecha_hora|date:"H:i"  }} - {{ conferencia.fecha_fin|date:"H:i"  }}</p>
                     </div>
                 </div>
                 {% endfor %}
