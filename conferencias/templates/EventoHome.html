@@ -191,7 +191,7 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
                 {% for conferencia in conferencias_futuro %}
                 <div class="eventoSingle row align-items-center eventoNeutral" data-bs-toggle="collapse" href="#collapseEv2" role="" aria-expanded="false" aria-controls="collapseEv2">
                     <div class="col-lg-4">
-                        <h3>{{ conferencia.id_conferencista.nombre }} {{ conferencia.id_conferencista.apellido }}</h3>
+                        <h3>{{ conferencia.id_conferencista.nombre|default_if_none:"" }} {{ conferencia.id_conferencista.apellido|default_if_none:"" }}</h3>
                     </div>
                     <div class="col-lg-6">
                         <h4 class="bold">{{ conferencia.titulo  }}</h4>
