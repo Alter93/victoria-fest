@@ -613,7 +613,7 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(247,88,42,1) 10
 
 .eventoTerminado{
     opacity: 0;
-    display: none;
+    display: none !important;
 }
 
 .horarioLive p{
