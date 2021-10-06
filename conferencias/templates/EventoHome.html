@@ -121,6 +121,7 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
                 </div>
             </div>
 
+
                 </div>
                 <div class="logoHero">
                     <figure><img src="/static/img/logonowblanco.svg"></figure>
@@ -131,12 +132,12 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
                 </div>
             </div>
         </div>
-
+        {% if conferencias_presente %}
         <div class="seccionVideoLive gradientMorado">
 
 
         <div class="videoWrap ratio ratio-16x9">
- <iframe src="https://player.vimeo.com/video/{{ conferencias_presente.0.vimeo }}" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://player.vimeo.com/video/{{ conferencias_presente.0.vimeo }}" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
         </div>
         {% if conferencias_presente.0.reprograma %}
         <a class="nav-link boldextended botonReprograma"  href="https://victoria147.org/re-programa/?utm_campaign=Re-programa&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-9gFFmtLIYCA-J9YwkewWWb1ybUHKKMfKf7CtL1UoOqID5PB2qNgEBcXvOyFD4OaJrqMs8b" target="_blank">ÚNETE A REPROGRAMA</a>
@@ -147,8 +148,8 @@ src="https://www.facebook.com/tr?id=1697646777131073&ev=PageView&noscript=1"/>
         {% endif %}
 
 
-                    </div>
-
+        </div>
+        {% endif %}
 
 
 
