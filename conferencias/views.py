@@ -4,7 +4,7 @@ from django.utils import timezone
 from django.template.loader import render_to_string
 
 from .prerregistro_form import PrerregistroForm
-from .models import Prerregistro
+from .models import Prerregistro, Visitantes
 from presentaciones.models import Conferencia
 from correos.views import crear_correo
 
@@ -34,6 +34,12 @@ def home(request):
         fecha_hora__gt=fecha
     )
     if 'email' in request.session:
+        try:
+            user = Visitantes.objects.get(email = request.session['email'])
+        except Visitantes.DoesNotExist as e:
+            visitante = Visitantes(email = request.session['email'])
+            visitante.save()
+
         return render(request, 'EventoHome.html', {
             "texto_boton": "REGISTRARME",
             "conferencias_pasado": conferencias_pasado,

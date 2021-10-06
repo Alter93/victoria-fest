@@ -1,6 +1,9 @@
 from django.db import models
 
 # Create your models here.
+class Visitantes(models.Model):
+    email = models.EmailField(unique=True)
+
 class Prerregistro(models.Model):
     # Nombre
     # Apellido
