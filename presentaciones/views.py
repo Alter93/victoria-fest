@@ -69,27 +69,14 @@ def conferencia(request, conf_uid = None):
     fecha = timezone.now()
     if 'email' in request.session:
         if conf_uid == None:
-            conferencias_filtradas = []
-            conferencias = Conferencia.objects.filter(
-                fecha_hora__lte=fecha
-            )
-            for conferencia in conferencias:
-                if (conferencia.fecha_hora + conferencia.duracion > fecha):
-                    conferencias_filtradas.append(conferencia)
-            if len(conferencias_filtradas) < 1:
-                return redirect("/#agenda")
-
-            return redirect(f"/evento/{conferencias_filtradas[0].uuid}")
+            return redirect(f"/")
         else:
             try:
                 conferencia = Conferencia.objects.get(
                     uuid=conf_uid
                 )
-                if (not conferencia.fecha_hora + conferencia.duracion > fecha
-                or not conferencia.fecha_hora < fecha):
-                    return redirect(f"/evento")
             except:
-                return redirect(f"/evento")
+                return redirect(f"/")
 
             return render(request, 'conferencia.html', {
                 "conferencia": conferencia

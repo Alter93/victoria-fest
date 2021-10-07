@@ -21,18 +21,7 @@ def gracias(request):
 
 def home(request):
     fecha = timezone.now()
-    conferencias_pasado = Conferencia.objects.filter(
-        fecha_hora__lte=fecha
-    )
-    conferencias_pasado = [x for x in conferencias_pasado if not (x.fecha_hora + x.duracion >= fecha)]
-
-    conferencias_presente = Conferencia.objects.filter(
-        fecha_hora__lte=fecha
-    )
-    conferencias_presente = [x for x in conferencias_presente if (x.fecha_hora + x.duracion >= fecha)]
-    conferencias_futuro = Conferencia.objects.filter(
-        fecha_hora__gt=fecha
-    )
+    conferencias_pasado = Conferencia.objects.all()
     if 'email' in request.session:
         try:
             user = Visitantes.objects.get(email = request.session['email'])
@@ -43,9 +32,7 @@ def home(request):
         return render(request, 'EventoHome.html', {
             "texto_boton": "REGISTRARME",
             "conferencias_pasado": conferencias_pasado,
-            "conferencias_presente": conferencias_presente,
-            "conferencias_futuro": conferencias_futuro,
-
+            "conferencias_presente": conferencias_pasado,
         })
     else:
         return redirect("/evento/entrar")
